@@ -1,0 +1,627 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"is_",
+				"is_dir"
+			],
+			[
+				"post_id",
+				"posix_getpid"
+			],
+			[
+				"drm",
+				"drm_rmpi_needjs"
+			],
+			[
+				"stri",
+				"stristr"
+			],
+			[
+				"fore",
+				"foreground-img"
+			],
+			[
+				"if",
+				"if	if …"
+			],
+			[
+				"ser",
+				"serif-font"
+			],
+			[
+				"sans",
+				"sans-serif-font"
+			],
+			[
+				"r",
+				"rgba()"
+			],
+			[
+				"N",
+				"NOT"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"pr",
+				"Package Control: Remove Package"
+			],
+			[
+				"pm",
+				"Package Control: Remove Package"
+			],
+			[
+				"rp",
+				"Package Control: Remove Package"
+			],
+			[
+				"p",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"ip",
+				"Package Control: Install Package"
+			],
+			[
+				"fp",
+				"Fetch: Package"
+			],
+			[
+				"fm",
+				"Fetch: Manage"
+			],
+			[
+				"fem",
+				"Fetch: Manage"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"fetchm",
+				"Fetch: Manage"
+			],
+			[
+				"fetch",
+				"Fetch: Manage"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"handle",
+				"Set Syntax: Handlebars"
+			],
+			[
+				"gist",
+				"Gist: Open Gist"
+			],
+			[
+				"fetchp",
+				"Fetch: Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"remove p",
+				"Package Control: Remove Package"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: #!/usr/bin/env"
+			],
+			[
+				"snippet",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"packa in",
+				"Package Control: Install Package"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"sy",
+				"Set Syntax: CSS"
+			],
+			[
+				"syntax css",
+				"Set Syntax: CSS"
+			],
+			[
+				"",
+				"Snippet: html"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/template-parts/_slider.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/single-locations.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/archive-locations.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/template-parts/_locations.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/template-parts/_locations-list.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/template-parts/_locations-full.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/header.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/coffee/simple-slider.coffee",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/single-news.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/archive-news.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/archive-testimonials.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/functions.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/functions/_drm-news.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/template-parts/_loop.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/template-parts/_contact.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/footer.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/index.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/package.json",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/front.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/sass/partials/_color-scheme.scss",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/sass/partials/_footer.scss",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/template-parts/_bottom-footer.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/template-parts/_about.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/template-parts/_recent-posts.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/archive-employees.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/template-parts/_employees.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/template-parts/_services.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/template-parts/_showcases.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/template-parts/_social-media.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/template-parts/_feature-boxes.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/template-parts/_contact-form.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/functions/_drm-theme-options.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/functions/_tgm-plugin-activation.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/Gruntfile.js",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/sass/style.scss",
+		"/C/xampp/htdocs/drm-coffeescript-style-guide/README.md",
+		"/C/xampp/htdocs/drm-html5-style-guide/drm-html5-style-guide.md",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/sass/_extend.scss",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/style.css",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-slider/plugin.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-slider/js/display.js",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-slider/js/dist/drm-slider.1.0.0.min.js",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-feature-boxes/css/admin.css",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-feature-boxes/css/display.css",
+		"/C/xampp/htdocs/wordpress-plugins/drm-slider/css/sass/_media-queries.scss",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-slider/css/sass/_media-queries.scss",
+		"/C/xampp/htdocs/wordpress-plugins/drm-slider/js/display.js",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/js/mlp-slider.js",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/single-showcases.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/styles/sass/_showcases.scss",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/styles/sass/_locations.scss",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/js/drm-responsive.1.0.0.js",
+		"/C/xampp/htdocs/dynamicresponsemedia/application/views/partials/slider.blade.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/archive-showcases.php",
+		"/C/xampp/htdocs/mlp-laravel/public_html/css/sass/_mlp-slider.scss",
+		"/C/xampp/htdocs/dynamicresponsemedia/application/views/partials/footer.blade.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/styles/sass/_employees.scss",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/single-employees.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/styles/sass/_services.scss",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/archive-services.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-slider/css/sass/display.scss",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/styles/sass/styles.scss",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/styles/sass/_general.scss",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/styles/styles.css",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/single-services.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/styles/sass/_main-content.scss",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/styles/sass/_media-queries.scss",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-slider/css/sass/config.rb",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-slider/css/display.css",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/single-projects.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/archive-projects.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-services/plugin.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-projects/class-drm-projects.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-locations/class-drm-locations.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/styles/sass/_projects.scss",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-read-more-post-instant/js/script.js",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/loop.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/comments.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/contact.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/styles/sass/_forms.scss",
+		"/C/xampp/htdocs/salonsugarland/wp-config.php",
+		"/C/xampp/htdocs/massagepearland/wp-config.php",
+		"/C/xampp/htdocs/wordpress-plugins/drm-social-media-widget/drm-social-media-widget.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/single-service.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/archive-service.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/styles/style_coral.css",
+		"/C/Users/Beth/AppData/Roaming/Sublime Text 2/Packages/SublimeOnSaveBuild/SublimeOnSaveBuild.py",
+		"/C/Users/Beth/AppData/Roaming/Sublime Text 2/Packages/SASS Build/SASS - Compressed.sublime-build",
+		"/C/Users/Beth/AppData/Roaming/Sublime Text 3/Installed Packages/SASS Build.sublime-package",
+		"/C/Users/Beth/AppData/Roaming/Sublime Text 3/Installed Packages/SublimeOnSaveBuild.sublime-package",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/styles/sass/styles.css",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/styles/sass/config.rb",
+		"/C/Users/Beth/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Beth/AppData/Roaming/Sublime Text 3/Packages/SublimeOnSaveBuild/SublimeOnSaveBuild.sublime-settings",
+		"/C/Users/Beth/AppData/Roaming/Sublime Text 3/Packages/User/SublimeOnSaveBuild.sublime-settings",
+		"/C/Users/Beth/AppData/Roaming/Sublime Text 3/Packages/User/SCSS.sublime-settings",
+		"/C/xampp/htdocs/wordpress-themes/drm-responsive/styles/sass/config.rb",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/styles/sass/_reset.scss",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/styles/_footer.css",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/styles/_comments.css",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/styles/sass/_services.css",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/styles/sass/services.css",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/single.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-services/views/display.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/services.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-read-more-post-instant/drm-read-more-post-instant.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/pagination.php",
+		"/C/xampp/htdocs/mlp-laravel/public_html/js/mlp-slider.js",
+		"/C/xampp/htdocs/dynamicresponsemedia/public_html/js/dynamic-response-media.0.1.0.js",
+		"/C/xampp/htdocs/wordpress-themes/drm-responsive/functions.php",
+		"/C/xampp/htdocs/dynamicresponsemedia/public_html/js/main.js",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-filter/drm-filter.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-portfolio/drm-project-custom-posts.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-theme-options/drm-theme-options.php",
+		"/C/xampp/htdocs/nailskaty/wp-config.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-show-rel-posts/drm-show-rel-posts.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-show-rel-posts/styles.css",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-show-rel-posts/.gitignore",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-show-rel-posts/syles.css",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-show-action-call/views/admin.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-show-action-call/plugin.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-show-action-call/css/display.css",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-show-action-call/views/display.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-show-action-call/css/sass/display.scss",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-show-action-call/css/sass/config.rb",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-slider/views/admin.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-social-media-widget/drm-social-media-widget.php",
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-feature-boxes/plugin.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"TEMPLATEPATH . '/images/compressed/slide-images/' . $slide_set",
+			"section",
+			"videos",
+			"newss",
+			"Newss",
+			"Testimonial",
+			"testimonial",
+			"FF3399",
+			"mlp-",
+			"$pink;",
+			"div",
+			"div ",
+			"showcase-image",
+			"service",
+			"&&",
+			"auto",
+			"5",
+			" )",
+			"#slider",
+			"0",
+			"0 0 0 0;",
+			"0",
+			" 0px",
+			"service_",
+			"postId",
+			"post_id",
+			"drm_rmpi",
+			"rpmi",
+			"//\n",
+			"drm_rmpi_add_js",
+			"vdrm",
+			"\"",
+			"slider",
+			"drm_google_plus_url",
+			"slider",
+			"Slider",
+			"slider_theme",
+			"Call to Action",
+			"$slide_options",
+			"Slider Options",
+			"DRM_Action Call_Options",
+			"drm_Action Call",
+			"DRM_Slider_Options",
+			"drm_slider_options",
+			"DRM_Slider_Options",
+			"drm_slider_options",
+			"DRM_Slider_Options",
+			"Slider",
+			"'required'              => true",
+			"'force_activation'      => true",
+			"'er_",
+			"spa1",
+			"'er_",
+			"er_",
+			"er",
+			"font-family: $sans-serif-font;",
+			"font-family: $sans-serif-font;	",
+			"font-family: $serif-font;",
+			"font-family",
+			"%;",
+			"h1, h2, h3, h4, h5, h6 {\n	font-family: $sans-serif-font;\n}",
+			"$secondary-color",
+			"foreground",
+			"fore",
+			"ctrl+alt+c",
+			"ctrl+alt+q",
+			"ctrl+alt+p",
+			"height",
+			"js",
+			"'current'",
+			"\n				console.log(currentSlide);\n				console.log(prevSlide);\n				console.log(nextSlide);",
+			"console.log(current);",
+			"article",
+			"ul ",
+			"nav ",
+			"header ",
+			"#bus",
+			"#bus-phone",
+			"#main-menu",
+			"#sidebar",
+			".headerRight",
+			".headerLeft",
+			"#header",
+			"#wrapper",
+			"nav",
+			"php",
+			">",
+			"// Get a",
+			"\n//Gets",
+			"color: $main-color;",
+			"color: $main-color;	",
+			"color: $main-color;",
+			"foreground",
+			"text-color",
+			"images",
+			"holder",
+			"{\n",
+			"img",
+			"figure",
+			".widget ",
+			"#footer-content ",
+			".widgettitle",
+			"#slideList",
+			".feature-box ",
+			"#feature-box-holder ",
+			"div",
+			"div ",
+			"#slide-list ",
+			".slide",
+			"slideList",
+			"slideImage",
+			"slideHolder",
+			"sliderNav",
+			"featureBox",
+			"featureBoxHolder",
+			".widget ",
+			"#sidebar",
+			"'Nobile', Verdana, Arial, sans-serif",
+			"'Noticia Text', Georgia, serif",
+			"font-family: 'Noticia Text', Georgia, serif;",
+			"styles/",
+			".post-nav ",
+			".pagenav ",
+			".post-meta ",
+			".post-image",
+			".about ",
+			".widget ",
+			"#bottom-footer "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"h1, h2, h3, h4, h5, h6 {\n	font-family: $serif-font;\n}",
+			"main-nav",
+			"mainNav"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.coffeecompile_output":
+	{
+		"height": 110.0
+	},
+	"output.exec":
+	{
+		"height": 60.0
+	},
+	"project": "drm-sass-utilities.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"slid",
+				"wp-content\\themes\\drm-responsive\\includes\\template-parts\\_slider.php"
+			],
+			[
+				"loca",
+				"wp-content\\themes\\drm-responsive\\single-locations.php"
+			],
+			[
+				"functgm",
+				"wp-content\\themes\\drm-responsive\\includes\\functions\\_tgm-plugin-activation.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\xampp\\htdocs\\wordpress-themes\\drm-responsive\\drm-responsive.sublime-project"
+			],
+			[
+				"mlp",
+				"/C/xampp/htdocs/mlp-laravel/mlp-laravel.sublime-project"
+			],
+			[
+				"m",
+				"/C/xampp/htdocs/mlp-laravel/mlp-laravel.sublime-project"
+			],
+			[
+				"el",
+				"/C/xampp/htdocs/wordpress/wp-content/themes/elr-theme-boilerplate/elr-wp-theme-boilerplate.sublime-project"
+			],
+			[
+				"la",
+				"/C/xampp/htdocs/backbone-laravel-practice/laravel-backbone-practice.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 279.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
