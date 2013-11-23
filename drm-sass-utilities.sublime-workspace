@@ -212,6 +212,8 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/drm-utilities/drm-sass-utilities/drm-sass-utilities.sublime-project",
+		"/C/xampp/htdocs/drm-utilities/drm-sass-utilities/drm-sass-utilities.sublime-workspace",
 		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/includes/template-parts/_slider.php",
 		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/single-locations.php",
 		"/C/xampp/htdocs/nailskaty/wp-content/themes/drm-responsive/archive-locations.php",
@@ -337,9 +339,7 @@
 		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-show-action-call/views/display.php",
 		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-show-action-call/css/sass/display.scss",
 		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-show-action-call/css/sass/config.rb",
-		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-slider/views/admin.php",
-		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-social-media-widget/drm-social-media-widget.php",
-		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-feature-boxes/plugin.php"
+		"/C/xampp/htdocs/nailskaty/wp-content/plugins/drm-slider/views/admin.php"
 	],
 	"find":
 	{
