@@ -9,16 +9,17 @@
 
 + Media Query Breakpoints
 
-++ trenta
-++ venti
-++ grande
-++ tall
-++ short
-++ espresso
-++ bean
+	+ trenta
+	+ venti
+	+ grande
+	+ tall
+	+ short
+	+ espresso
+	+ bean
 
 + Extends
 
-++ %container
-+++ Centers an element on the page
-+++ for elements that take up the entire width of the wrapper
+	+ %container
+	
+		+ Centers an element on the page
+		+ for elements that take up the entire width of the wrapper
