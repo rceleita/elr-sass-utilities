@@ -1,7 +1,7 @@
-+ Dynamic Response Media Sass Utilities
+# Dynamic Response Media Sass Utilities
 
 @import files into styles.scss in the following order:
 
-variables
-media-queries
-extends
++ variables
++ media-queries
++ extends
