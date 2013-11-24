@@ -48,7 +48,7 @@
 	@include clearfix;
 }
 
-// Centers an element on the page
+// Centers an element horizontally on the page
 
 %center-block {
 	display: block;
@@ -97,17 +97,17 @@
 
 // For main section headings; Usually applied to H1
 
-@mixin section-heading($align: center) {
+@mixin section-heading($align: center, $size: 24) {
 	text-align: $align;
-	@include em-font(24em);
+	@include em-font($size#em);
 }
 
 // For main section sub-headings; Usually applied to H2
 
-@mixin section-sub-heading($align: center) {
+@mixin section-sub-heading($align: center, $size: 20) {
 	text-align: $align;
 	margin: 0 0 20px 0;
-	@include em-font(20em);
+	@include em-font($size#em);
 }
 
 // Styles post-meta elements
@@ -279,6 +279,13 @@
 @mixin square($width) {
 	width: $width;
 	height: $width;
+}
+
+// Creates a retangular element
+
+@mixin rectangle($width, $height) {
+	width: $width;
+	height: $height;
 }
 
 // Styles a <div> or <figure> with a transparent border that sits on top of the <img> element
