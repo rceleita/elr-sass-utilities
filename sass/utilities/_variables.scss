@@ -18,10 +18,19 @@ $default-line-height: 1.5;
 
 // font faces
 
-$serif-font: 'Noticia Text', Georgia, serif;
+$serif-font: Georgia, serif;
 $sans-serif-font: 'Open Sans', sans-serif;
 
 // typography
 
 $default-font-size: 16;
 $font-size: 16px;
+
+// colors
+
+// add more colors below
+
+$dark-grey: #333;
+
+$text-color: $dark-grey;
+$link-color: blue;

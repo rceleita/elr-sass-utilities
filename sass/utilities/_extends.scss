@@ -89,7 +89,7 @@
 	@include breakpoint(tall) {
 		height: auto;
 	}
-}	
+}
 
 /*-----------------------------------------------------------------------------
 	Mixins
@@ -99,7 +99,7 @@
 
 @mixin section-heading($align: center, $size: 24) {
 	text-align: $align;
-	@include em-font($size#em);
+	@include em-font($size#{em});
 }
 
 // For main section sub-headings; Usually applied to H2
@@ -107,8 +107,104 @@
 @mixin section-sub-heading($align: center, $size: 20) {
 	text-align: $align;
 	margin: 0 0 20px 0;
-	@include em-font($size#em);
+	@include em-font($size#{em});
 }
+
+// An unstyled list
+// li elements have a 20px indent
+
+@mixin unstyled-list() {
+	margin: 0;
+	padding: 5px;
+
+	li {
+		list-style: none;
+		margin: 0;
+		padding: 5px 5px 5px 20px;
+	}
+}
+
+@mixin floated-list() {
+	@extend %reset-box;
+
+	li {
+		list-style: none;
+		display: block;
+		float: left;
+		margin: 0;
+		padding: 5px 10px 5px 10px;
+	}
+}
+
+// creates a nav-bar with a transparent background
+
+@mixin nav-bar($text-color: $text-color, $hover-color: $link-color) {
+	@extend %reset-box;
+
+	li {
+		@extend %reset-box;
+		list-style: none;
+		display: block;
+		float: left;
+
+		a {
+			padding: 5px 10px 5px 10px;
+			width: 100%;
+			text-align: center;
+			color: $text-color;
+			@include tranistion(all, 3s);
+
+			&:hover {
+				color: $hover-color;
+				@include tranistion(all, 3s);
+			}	
+		}	
+	}
+}
+
+// creates a nav bar with a solid color background
+// hover state will invert text color and background color
+
+@mixin nav-bar-solid($text-color: white, $background-color: $link-color) {
+	background-color: $background-color;
+	@include nav-bar($text-color, $background-color);
+
+	a {
+		margin: 0;
+		background-color: $background-color;
+
+		&:hover {
+			background-color: $text-color;
+		}	
+	}
+}
+
+// creates a nav-bar with a pill shaped button that shows on hover
+
+@mixin nav-bar-pills($text-color: $link-color, $hover-color: white ) {
+	@include nav-bar($text-color, $hover-color);
+
+	a {
+		margin: 0;
+		color: $text-color;
+		@include border-radius(5px);
+		
+		&:hover {
+			background-color: $text-color;
+			color: $hover-color;
+		}
+	}
+}
+
+// creates a nav-bar with a pill shaped buttons
+
+@mixin nav-bar-pills-solid($text-color: white, $background-color: $link-color) {
+	@include nav-bar-pills($text-color, $background-color);
+
+	a {
+		background-color: $background-color;
+	}
+}	
 
 // Styles post-meta elements
 
@@ -151,28 +247,9 @@
 // Styles a rounded button with a 1px border and solid background
 // Useful for <button> and <a> elements
 
-@mixin button-solid($color, $bk-color, $width) {
-	width: $width;
-	background-color: $color;
-	color: $bk-color;
-	font-weight: bold;
-	text-align: center;
-	display: block;
-	padding: 10px 0 10px 0;
-	margin: 10px auto 10px auto;
-	text-decoration: none;
-	@include border-radius(3px);
-	@include text-shadow(none);
-	@include box-sizing(border-box);
-	@include transition(all, .3s ease-out);
-
-	&:hover {
-		background-color: $bk-color;
-		color: $color;
-		text-decoration: none;
-		@include text-shadow(none);
-		@include transition(all, .3s ease-in);
-	}	
+@mixin button-solid($bk-color, $color, $width) {
+	background-color: $bk-color;
+	@include button-link($color, $bk-color, $width);
 }
 
 // Applies a solid 2px drop shadow to an element
