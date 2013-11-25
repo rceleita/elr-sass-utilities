@@ -9,26 +9,51 @@
 	padding: 0;
 	margin-right: auto;
 	margin-left: auto;
-	@include box-sizing(border-box);
 	@include clearfix;
 
 	@include breakpoint(trenta) {
 		width: 80%;
 		margin-left: 10%;
 		margin-right: 10%;
+		@include box-sizing(border-box);
 	}
 
 	@include breakpoint(venti) {
 		width: 95%;
 		margin-left: 2.5%;
 		margin-right: 2.5%;
+		@include box-sizing(border-box);
 	}
 
 	@include breakpoint(grande) {
 		width: 100%;
 		margin-left: 0;
 		margin-right: 0;
+		@include box-sizing(border-box);
 	}
+}
+
+%container-full-width {
+	margin: 0;
+	@include clearfix;
+
+	@include breakpoint(trenta) {
+		padding-left: 10%;
+		padding-right: 10%;
+		@include box-sizing(border-box);
+	}
+
+	@include breakpoint(venti) {
+		padding-left: 2.5%;
+		padding-right: 2.5%;
+		@include box-sizing(border-box);
+	}
+
+	@include breakpoint(grande) {
+		padding-left: 0;
+		padding-right: 0;
+		@include box-sizing(border-box);
+	}	
 }
 
 // Sets margin and padding to 0
@@ -124,6 +149,18 @@
 	}
 }
 
+@mixin inline-list() {
+	@extend %reset-box;
+
+	li {
+		display: inline;
+
+		a {
+			display: inline;
+		}
+	}
+}
+
 @mixin floated-list() {
 	@extend %reset-box;
 
@@ -152,11 +189,13 @@
 			width: 100%;
 			text-align: center;
 			color: $text-color;
-			@include tranistion(all, 3s);
+			text-decoration: none;
+			@include box-sizing(border-box);
+			@include transition(all, .3s);
 
-			&:hover {
+			&:hover, &:focus {
 				color: $hover-color;
-				@include tranistion(all, 3s);
+				@include transition(all, .3s);
 			}	
 		}	
 	}
@@ -173,7 +212,7 @@
 		margin: 0;
 		background-color: $background-color;
 
-		&:hover {
+		&:hover, &:focus {
 			background-color: $text-color;
 		}	
 	}
@@ -189,7 +228,7 @@
 		color: $text-color;
 		@include border-radius(5px);
 		
-		&:hover {
+		&:hover, &:focus {
 			background-color: $text-color;
 			color: $hover-color;
 		}
@@ -202,6 +241,7 @@
 	@include nav-bar-pills($text-color, $background-color);
 
 	a {
+		margin: 0 5px 0 5px;
 		background-color: $background-color;
 	}
 }	
@@ -234,6 +274,10 @@
 	@include text-shadow(none);
 	@include box-sizing(border-box);
 	@include transition(all, .3s ease-out);
+
+	&:visited {
+		color: $color;		
+	}
 
 	&:hover {
 		background-color: $color;
@@ -333,6 +377,13 @@
 	}	
 }
 
+// Creates a slightly transparent background with a hex color backup
+
+@mixin background-transparent($color, $opacity: .7) {
+	background-color: $color;
+	background-color: rgba($color, $opacity);
+}
+
 // Creates a slightly transparent border with a hex color backup
 // Accepts a hex color value and pixel value for border-width
 
@@ -417,8 +468,8 @@
 
 // creates a thick bottom drop shadow
 
-@mixin boxy-drop-shadow($color) {
-	@include box-shadow($grey 0 30px 15px -20px);	
+@mixin boxy-drop-shadow($color: $grey) {
+	@include box-shadow($color 0 30px 15px -20px);	
 }
 
 // creates a double border effect
@@ -429,10 +480,9 @@
 }
 
 // calculates em font size from px font size
-// size should be in ems
 
 @mixin em-font($size) {
-	font-size: ($size / $default-font-size);
+	font-size: ($size / $default-font-size)#{em};
 }
 
 // vertically center element
