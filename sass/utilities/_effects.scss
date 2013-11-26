@@ -10,7 +10,7 @@
 
 // Creates a slightly transparent background with a hex color backup
 
-@mixin background-transparent($color, $opacity: .7) {
+@mixin background-transparent($color, $opacity: 0.7) {
 	background-color: $color;
 	background-color: rgba($color, $opacity);
 }
@@ -18,14 +18,14 @@
 // Creates a slightly transparent border with a hex color backup
 // Accepts a hex color value and pixel value for border-width
 
-@mixin border-transparent($color, $thickness) {
+@mixin border-transparent($color, $thickness: 5px, $opacity: 0.7) {
 	border-color: $color;
-	border-color: rgba($color, 0.7); 
+	border-color: rgba($color, $opacity); 
 	border-width: $thickness;
 	border-style: solid;	
 }
 
-// Creates an element with a stictched effect
+// Creates an element with a stitched effect
 // Takes an optional border and opacity argument
 
 @mixin stitched-box($color, $stitch-color: white, $border-radius: 0, $border-color: none, $opacity: 1) {
@@ -47,7 +47,7 @@
 	}
 }
 
-// Creates a stictched top and bottom border
+// Creates a stitched top and bottom border
 
 @mixin stitched-row($color, $stitch-color: white, $border-color: none, $opacity: 1) {
 	padding: 5px 0 5px 0;
@@ -71,7 +71,7 @@
 // Specify a width and height on <div>/<figure> and <img> elements
 // Make sure the containing element has a z-index of 100 and position: relative
 
-@mixin figure-transparent-border($color, $thickness, $bk-color) {
+@mixin figure-transparent-border($color, $thickness: 5px, $bk-color) {
 	margin: auto;
 	@include box-sizing(border-box);
 	@include border-transparent($color, $thickness);
@@ -106,7 +106,7 @@
 
 // creates a bottom border with a slight shadow effect
 
-@mixin inset-heading($color, $color2) {
+@mixin inset-border($color, $color2) {
 	border-bottom: 1px solid $color;
 	@include box-shadow(0 1px 0 $color2);
 }
