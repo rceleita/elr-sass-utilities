@@ -144,4 +144,3 @@ breakpoint deminsions can be customized in variables file
 		@include inset-box($color);
 
 	+ creates a slight box shadow
-	

@@ -187,13 +187,13 @@
 
 // Styles a rectangular button with a 2px solid drop shadow
 
-@mixin rectangle-button($color, $text) {
+@mixin rectangle-button($color, $text, $border-radius: 0) {
 	background-color: $color;
 	font-weight: bold;
 	color: $text;
 	margin: 20px 0 20px 0;
 	padding: 10px 60px 10px 60px;
-	@include border-radius(0);
+	@include border-radius($border-radius);
 	@include solid-drop-shadow(darken($color, 10%));
 	@include transition(all, .3s ease-out);
 
