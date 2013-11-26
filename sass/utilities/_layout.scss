@@ -1,0 +1,180 @@
+/*-----------------------------------------------------------------------------
+	Layout
+-----------------------------------------------------------------------------*/
+
+// Centers an element on the page; for elements that take up the entire width 
+// of the wrapper
+
+%container {
+	padding: 0;
+	margin-right: auto;
+	margin-left: auto;
+	@include clearfix;
+
+	@include breakpoint(trenta) {
+		width: 80%;
+		margin-left: 10%;
+		margin-right: 10%;
+		@include box-sizing(border-box);
+	}
+
+	@include breakpoint(venti) {
+		width: 95%;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		@include box-sizing(border-box);
+	}
+
+	@include breakpoint(grande) {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		@include box-sizing(border-box);
+	}
+}
+
+%container-full-width {
+	margin: 0;
+	@include clearfix;
+
+	@include breakpoint(trenta) {
+		padding-left: 10%;
+		padding-right: 10%;
+		@include box-sizing(border-box);
+	}
+
+	@include breakpoint(venti) {
+		padding-left: 2.5%;
+		padding-right: 2.5%;
+		@include box-sizing(border-box);
+	}
+
+	@include breakpoint(grande) {
+		padding-left: 0;
+		padding-right: 0;
+		@include box-sizing(border-box);
+	}	
+}
+
+// Sets margin and padding to 0
+
+%reset-box {
+	margin: 0;
+	padding: 0;
+}
+
+// For elements that take up the entire width of their container; for 
+// container-inner elements
+
+%row {
+	@extend %reset-box;
+	width: 100%;
+	display: block;
+	@include clearfix;
+}
+
+// Centers an element horizontally on the page
+
+%center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Modern clearfix
+// Use instead of overflow:hidden to clear floats
+
+@mixin clearfix {
+    &:after, &:before {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+	// for ie6 and ie7 support 
+    & {
+        *zoom: 1;
+    }
+}
+
+// Styles box elements to take up the entire width of their container
+// Accepts total number of elements for each row
+// Each element will be the exact same width
+
+@mixin feature-box($total: 3) {
+	margin: 0;
+	width: ( 100% / $total );
+	float: left;
+	@include box-sizing(border-box);
+
+	@include breakpoint(tall) {
+		padding: 10px;
+		width: 100%;
+		float: none;
+		@include box-sizing(border-box);
+	}
+}
+
+// Styles box elements to take up the entire width of their container
+// Accepts total number of elements for each row
+// Each element will be the exact same width
+
+@mixin feature-box-margin($total: 3, $margin: 1%) {
+	margin: $margin;
+	width: (100% / $total) - ($margin * 2);
+	float: left;
+	@include box-sizing(border-box);
+
+	@include breakpoint(tall) {
+		padding: 10px;
+		margin: 0;
+		width: 100%;
+		float: none;
+		@include box-sizing(border-box);
+	}	
+}
+
+// calculates em font size from px font size
+
+@mixin em-font($size) {
+	font-size: ($size / $default-font-size)#{em};
+}
+
+// calculates em font size from px font size
+
+@mixin em-margin($top, $right, $bottom, $left) {
+	@if $right == null {
+		margin: ($top / $default-font-size)#{em};
+	} @else {
+		margin: ($top / $default-font-size)#{em}, ($right / $default-font-size)#{em}, ($bottom / $default-font-size)#{em}, ($left / $default-font-size)#{em};		
+	}
+}
+
+// calculates em font size from px font size
+
+@mixin em-padding($top, $right, $bottom, $left) {
+	@if $right == null {
+		padding: ($top / $default-font-size)#{em};
+	} @else {
+		padding: ($top / $default-font-size)#{em}, ($right / $default-font-size)#{em}, ($bottom / $default-font-size)#{em}, ($left / $default-font-size)#{em};		
+	}
+}
+
+// vertically center element
+
+@mixin vertically-center($container-element-height, $height) {
+	position: absolute;
+	height: $height;
+	top: ($container-element-height / 2) - ($height / 2);
+}
+
+// horizonatally center element
+
+@mixin horizonatally-center($container-element-width, $width) {
+	position: absolute;
+	width: $width;
+	top: ($container-element-width / 2) - ($width / 2);
+}

@@ -1,0 +1,102 @@
+/*-----------------------------------------------------------------------------
+	Page Elements
+-----------------------------------------------------------------------------*/
+
+// End of post block
+
+%info-block {
+	@extend %center-block;
+	width: 90%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	padding: 2%;
+	text-align: center;
+	@include box-sizing(border-box);
+
+	@include breakpoint(tall) {
+		width: 100%;
+	}
+}
+
+%feature-heading {
+	margin: 20px 0 0 0;
+	font-weight: bold;
+	overflow: hidden;
+	font-size: (20em / $default-font-size);	
+
+	@include breakpoint(trenta) {
+		height: 60px;
+	}	
+
+	@include breakpoint(venti) {
+		height: 60px;
+	}
+
+	@include breakpoint(tall) {
+		height: auto;
+	}
+}
+
+// For main section headings; Usually applied to H1
+
+@mixin section-heading($align: center, $size: 24) {
+	text-align: $align;
+	@include em-font($size#{em});
+}
+
+// For main section sub-headings; Usually applied to H2
+
+@mixin section-sub-heading($align: center, $size: 20) {
+	text-align: $align;
+	margin: 0 0 20px 0;
+	@include em-font($size#{em});
+}
+
+// An unstyled list
+// li elements have a 20px indent
+
+@mixin unstyled-list() {
+	margin: 0;
+	padding: 5px;
+
+	li {
+		list-style: none;
+		margin: 0;
+		padding: 5px 5px 5px 20px;
+	}
+}
+
+@mixin inline-list() {
+	@extend %reset-box;
+
+	li {
+		display: inline;
+
+		a {
+			display: inline;
+		}
+	}
+}
+
+@mixin floated-list() {
+	@extend %reset-box;
+
+	li {
+		list-style: none;
+		display: block;
+		float: left;
+		margin: 0;
+		padding: 5px 10px 5px 10px;
+	}
+}
+
+// Styles post-meta elements
+
+@mixin post-meta($image) {
+	background-image: $image;
+	background-repeat: no-repeat;
+	background-position: 0 2px;
+	padding: 2px 0 2px 16px;
+	margin-right: 7px;
+	@include em-font(14em);
+}

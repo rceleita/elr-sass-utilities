@@ -1,0 +1,25 @@
+/*-----------------------------------------------------------------------------
+	Shapes
+-----------------------------------------------------------------------------*/
+
+// Creates a circular element
+
+@mixin round-element($width) {
+	width: $width;
+	height: $width;
+	@include border-radius(($width / 2));	
+}
+
+// Creates a square element
+
+@mixin square($width) {
+	width: $width;
+	height: $width;
+}
+
+// Creates a retangular element
+
+@mixin rectangle($width, $height) {
+	width: $width;
+	height: $height;
+}

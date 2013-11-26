@@ -1,0 +1,205 @@
+/*-----------------------------------------------------------------------------
+	Navigation Elements
+-----------------------------------------------------------------------------*/
+
+// creates a nav-bar with a transparent background
+
+@mixin nav-bar($text-color: $text-color, $hover-color: $link-color, $align: left) {
+	@extend %reset-box;
+
+	li {
+		@extend %reset-box;
+		list-style: none;
+		display: block;
+		float: left;
+
+		a {
+			padding: 5px 10px 5px 10px;
+			width: 100%;
+			text-align: $align;
+			color: $text-color;
+			text-decoration: none;
+			@include box-sizing(border-box);
+			@include transition(all, .3s);
+
+			&:hover, &:focus {
+				color: $hover-color;
+				@include transition(all, .3s);
+			}	
+		}	
+	}
+}
+
+@mixin nav-bar-stacked($text-color: $text-color, $hover-color: $link-color, $align: left) {
+	@include nav-bar($text-color, $hover-color, $align);
+
+	li {
+		float: none;	
+	}	
+}
+
+// creates a nav bar with a solid color background
+// hover state will invert text color and background color
+
+@mixin nav-bar-solid($text-color: white, $background-color: $link-color, $align: center) {
+	background-color: $background-color;
+	@include nav-bar($text-color, $background-color, $align);
+
+	a {
+		display: block;
+		margin: 0;
+		background-color: $background-color;
+
+		&:hover, &:focus {
+			background-color: $text-color;
+		}	
+	}
+}
+
+@mixin nav-bar-solid-stacked($text-color: white, $background-color: $link-color, $align: left) {
+	background-color: $background-color;
+	@include nav-bar-stacked($text-color, $background-color, $align);
+
+	a {
+		display: block;
+		background-color: $background-color;
+
+		&:hover, &:focus {
+			background-color: $text-color;
+		}	
+	}
+}
+
+// creates a nav-bar with a pill shaped button that shows on hover
+
+@mixin nav-bar-pills($text-color: $link-color, $hover-color: white, $align: left ) {
+	@include nav-bar($text-color, $hover-color, $align);
+
+	li {
+		margin-right: 5px;
+
+		&:last-child {
+			margin-right: 0;
+		}		
+	}
+
+	a {
+		color: $text-color;
+		@include border-radius(5px);
+		
+		&:hover, &:focus {
+			background-color: $text-color;
+			color: $hover-color;
+		}
+	}
+}
+
+@mixin nav-bar-pills-stacked($text-color: $link-color, $hover-color: white, $align: left ) {
+	@include nav-bar-pills($text-color, $hover-color, $align);
+
+	li {
+		float: none;
+		margin-right: 0;
+		margin-bottom: 5px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}	
+	}
+
+	a {
+		display: block;
+	}
+}
+
+// creates a nav-bar with a pill shaped buttons
+
+@mixin nav-bar-pills-solid($text-color: white, $background-color: $link-color, $align: left) {
+	@include nav-bar-pills($text-color, $background-color, $align);
+
+	li {
+		margin-left: 5px;
+
+		&:first-child {
+			margin-left: 0;
+		}	
+	}
+
+	a {
+		background-color: $background-color;
+	}
+}
+
+@mixin nav-bar-pills-solid-stacked($text-color: white, $background-color: $link-color, $align: left) {
+	@include nav-bar-pills-stacked($text-color, $background-color, $align);
+
+	li {
+		margin-top: 5px;
+
+		&:first-child {
+			margin-top: 0;
+		}	
+	}
+
+	a {
+		background-color: $background-color;
+	}
+}
+
+// Styles a rounded button with a 1px border and transparent background
+// Useful for <button> and <a> elements
+
+@mixin button-link($color, $bk-color, $width) {
+	width: $width;
+	border: 1px solid $color;
+	color: $color;
+	font-weight: bold;
+	text-align: center;
+	display: block;
+	padding: 10px 0 10px 0;
+	margin: 10px auto 10px auto;
+	text-decoration: none;
+	@include border-radius(3px);
+	@include text-shadow(none);
+	@include box-sizing(border-box);
+	@include transition(all, .3s ease-out);
+
+	&:visited {
+		color: $color;		
+	}
+
+	&:hover {
+		background-color: $color;
+		color: $bk-color;
+		text-decoration: none;
+		@include text-shadow(none);
+		@include transition(all, .3s ease-in);
+	}	
+}
+
+// Styles a rounded button with a 1px border and solid background
+// Useful for <button> and <a> elements
+
+@mixin button-solid($bk-color, $color, $width) {
+	background-color: $bk-color;
+	@include button-link($color, $bk-color, $width);
+}
+
+// Styles a rectangular button with a 2px solid drop shadow
+
+@mixin rectangle-button($color, $text) {
+	background-color: $color;
+	font-weight: bold;
+	color: $text;
+	margin: 20px 0 20px 0;
+	padding: 10px 60px 10px 60px;
+	@include border-radius(0);
+	@include solid-drop-shadow(darken($color, 10%));
+	@include transition(all, .3s ease-out);
+
+	&:hover {
+		background-color: lighten($color, 10%);
+		@include solid-drop-shadow($color);
+		@include transition(all, .3s ease-in);
+	}	
+}	

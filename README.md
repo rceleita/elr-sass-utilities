@@ -9,7 +9,7 @@
 
 + Media Query Breakpoints
 
-	breakpoint deminsions can be updated in variables file
+	breakpoint deminsions can be customized in variables file
 
 	+ trenta
 	+ venti
@@ -19,11 +19,19 @@
 	+ espresso
 	+ bean
 
+		@include breakpoint(trenta) {
+			// place rules here
+		}
+
+		@include breakpoint(venti) {
+			// place rules here
+		}
+
 + Extends
 
 	+ %container
 
-		@extend %container;
+			@extend %container;
 
 		+ Centers an element on the page
 		+ for elements that take up the entire width of the wrapper
@@ -31,32 +39,32 @@
 
 	+ %reset-box
 	
-		@extend %reset-box;
+			@extend %reset-box;
 
 		+ removes margin and padding from an element
 
 	+ %row
 	
-		@extend %row;
+			@extend %row;
 
 		+ creates an element that completely fills its container
 
 	+ %center-block
 	
-		@extend %center-block;
+			@extend %center-block;
 
 		+ centers an element horizontally
-		+ only works on elements with a definted width style
+		+ only works on elements with a definted width rule
 
 	+ %info-block
 	
-		@extend %info-block;
+			@extend %info-block;
 
 		+ creates a horizontally centered box that takes up 90% of its container
 		+ text is centered
 
 	+ %feature-heading
 	
-		@extend %feature-heading;
+			@extend %feature-heading;
 
 		+ heading for feature boxes					

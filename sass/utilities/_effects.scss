@@ -1,0 +1,131 @@
+/*-----------------------------------------------------------------------------
+	Effects
+-----------------------------------------------------------------------------*/
+
+// Applies a solid 2px drop shadow to an element
+
+@mixin solid-drop-shadow($color) {
+	@include box-shadow($color 0 2px 0);
+}
+
+// Creates a slightly transparent background with a hex color backup
+
+@mixin background-transparent($color, $opacity: .7) {
+	background-color: $color;
+	background-color: rgba($color, $opacity);
+}
+
+// Creates a slightly transparent border with a hex color backup
+// Accepts a hex color value and pixel value for border-width
+
+@mixin border-transparent($color, $thickness) {
+	border-color: $color;
+	border-color: rgba($color, 0.7); 
+	border-width: $thickness;
+	border-style: solid;	
+}
+
+// Creates an element with a stictched effect
+// Takes an optional border and opacity argument
+
+@mixin stitched-box($color, $stitch-color: white, $border-radius: 0, $border-color: none, $opacity: 1) {
+	padding: 5px;
+	border: 1px $stitch-color dashed;
+
+	@if $opacity == 1 {
+		background: $color;
+	} @else {
+		@include background-transparent($color, $opacity);		
+	}
+
+	@include border-radius($border-radius);
+
+	@if $border-color == none {
+		@include single-box-shadow(rgba($color, $opacity), 0, 0, 0, 5px);
+	} @else {
+		@include box-shadow(0 0 0 5px rgba($color, $opacity), 0 0 0 6px $border-color);
+	}
+}
+
+// Creates a stictched top and bottom border
+
+@mixin stitched-row($color, $stitch-color: white, $border-color: none, $opacity: 1) {
+	padding: 5px 0 5px 0;
+	border-top: 1px $stitch-color dashed;
+	border-bottom: 1px $stitch-color dashed;
+
+	@if $opacity == 1 {
+		background: $color;
+	} @else {
+		@include background-transparent($color, $opacity);		
+	}
+
+	@if $border-color == none {
+		@include box-shadow(0 0 0 3px rgba($color, $opacity), 0 0 0 3px rgba($color, $opacity));
+	} @else {
+		@include box-shadow(0 0 0 3px rgba($color, $opacity), 0 0 0 3px rgba($color, $opacity), 0 0 0 4px $border-color, 0 0 0 4px $border-color);
+	}	
+}
+
+// Styles a <div> or <figure> with a transparent border that sits on top of the <img> element
+// Specify a width and height on <div>/<figure> and <img> elements
+// Make sure the containing element has a z-index of 100 and position: relative
+
+@mixin figure-transparent-border($color, $thickness, $bk-color) {
+	margin: auto;
+	@include box-sizing(border-box);
+	@include border-transparent($color, $thickness);
+	@include transition(border, .3s ease-out);
+
+	img {
+		z-index: -10;
+		position: relative;
+		top: -$thickness;
+		left: -$thickness;
+		background-color: $color;
+		@include box-sizing(border-box);
+	}
+
+	&:hover {
+		@include border-transparent($bk-color, $thickness);
+		@include transition(border, .3s ease-in);
+	}
+}
+
+// creates a shadow with two thick borders and one thin border
+
+@mixin triple-shadow($color1, $color2) {
+	@include box-shadow(0 0 0 3px $color1, 0 0 0 10px $color2, 0 0 0 11px $color1);
+}
+
+// gives a slight shadow effect to text
+
+@mixin inset-text($color) {
+	@include text-shadow(1px 1px 0 $color);
+}
+
+// creates a bottom border with a slight shadow effect
+
+@mixin inset-heading($color, $color2) {
+	border-bottom: 1px solid $color;
+	@include box-shadow(0 1px 0 $color2);
+}
+
+// creates a slight box shadow
+
+@mixin inset-box($color) {
+	@include box-shadow(1px 1px 0 $color);	
+}
+
+// creates a thick bottom drop shadow
+
+@mixin boxy-drop-shadow($color: $grey) {
+	@include box-shadow($color 0 30px 15px -20px);	
+}
+
+// creates a double border effect
+
+@mixin double-border($color1, $color2, $color3) {
+	border: 1px solid $color1;
+	@include box-shadow($color2 0 0 0 1px, $color3 0 0 0 2px);
+}

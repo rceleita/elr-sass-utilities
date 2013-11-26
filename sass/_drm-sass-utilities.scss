@@ -21,6 +21,10 @@
 	Sass Utilities
 -----------------------------------------------------------------------------*/	
 
-	@import "utilities/variables";
+	@import "variables";
 	@import "utilities/media-queries";
-	@import "utilities/extends";			
+	@import "utilities/layout";
+	@import "utilities/shapes";		
+	@import "utilities/page-elements";
+	@import "utilities/navigation";				
+	@import "utilities/effects";					
