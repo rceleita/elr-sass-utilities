@@ -71,7 +71,7 @@
 // Specify a width and height on <div>/<figure> and <img> elements
 // Make sure the containing element has a z-index of 100 and position: relative
 
-@mixin figure-transparent-border($color, $thickness: 5px, $bk-color) {
+@mixin figure-transparent-border($color, $thickness: 5px, $hover-color) {
 	margin: auto;
 	@include box-sizing(border-box);
 	@include border-transparent($color, $thickness);
@@ -98,7 +98,7 @@
 	@include box-shadow(0 0 0 3px $color1, 0 0 0 10px $color2, 0 0 0 11px $color1);
 }
 
-// gives a slight shadow effect to text
+// gives a slight shadow effect on text
 
 @mixin inset-text($color) {
 	@include text-shadow(1px 1px 0 $color);
@@ -106,9 +106,9 @@
 
 // creates a bottom border with a slight shadow effect
 
-@mixin inset-border($color, $color2) {
+@mixin inset-border($color) {
 	border-bottom: 1px solid $color;
-	@include box-shadow(0 1px 0 $color2);
+	@include box-shadow(0 1px 0 lighten($color, 40%));
 }
 
 // creates a slight box shadow

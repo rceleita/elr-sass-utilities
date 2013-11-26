@@ -3,29 +3,29 @@
 ## Installation
 
 + Add utilities folder and _drm-sass-utilities.scss to project sass folder
-+ Import _drm-sass-utilities.scss into main scss folder
++ Import _drm-sass-utilities.scss into main scss file
 
 ## Documentation
 
 ### Media Query Breakpoints
 
-	breakpoint deminsions can be customized in variables file
+breakpoint deminsions can be customized in variables file
 
-	+ trenta
-	+ venti
-	+ grande
-	+ tall
-	+ short
-	+ espresso
-	+ bean
++ trenta
++ venti
++ grande
++ tall
++ short
++ espresso
++ bean
 
-			@include breakpoint(trenta) {
-				// place rules here
-			}
+		@include breakpoint(trenta) {
+			// place rules here
+		}
 
-			@include breakpoint(venti) {
-				// place rules here
-			}
+		@include breakpoint(venti) {
+			// place rules here
+		}
 
 ### Layout Utilities
 
@@ -110,5 +110,38 @@
 
 		@include stitched-row($color, $stitched-color, $border-color, $opacity);
 
-	+ Creates a stitced top and bottom border
-	+ Takes an optional border and opacity argument	
+	+ Creates a stitched top and bottom border
+	+ Takes an optional border and opacity argument
+
++ figure-transparent-border
+
+		@include figure-transparent-border($color, $thickness, $hover-color);
+
+	+ Styles a <div> or <figure> with a transparent border that sits on top of the <img> element
+	+ Specify a width and height on <div>/<figure> and <img> elements
+	+ Make sure the containing element has a z-index of 100 and position: relative
+
++ triple-shadow
+
+		@include triple-shadow($color1, $color2);
+
+	+ creates a shadow with two thick borders and one thin border
+	
++ inset-text
+
+		@include inset-text($color);
+
+	+ creates a slight shadow effect on text
+
++ inset-border
+
+		@include inset-border($color);
+
+	+ creates a bottom border with a slight shadow effect
+	
++ inset-box
+
+		@include inset-box($color);
+
+	+ creates a slight box shadow
+	
