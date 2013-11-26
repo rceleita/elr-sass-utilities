@@ -117,8 +117,8 @@ breakpoint deminsions can be customized in variables file
 
 		@include figure-transparent-border($color, $thickness, $hover-color);
 
-	+ Styles a <div> or <figure> with a transparent border that sits on top of the <img> element
-	+ Specify a width and height on <div>/<figure> and <img> elements
+	+ Styles a div or figure with a transparent border that sits on top of the <img> element
+	+ Specify a width and height on div or figure and img elements
 	+ Make sure the containing element has a z-index of 100 and position: relative
 
 + triple-shadow
