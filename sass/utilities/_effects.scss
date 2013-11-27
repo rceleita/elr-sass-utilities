@@ -57,7 +57,7 @@
 	@if $opacity == 1 {
 		background: $color;
 	} @else {
-		@include background-transparent($color, $opacity);		
+		@include drm-background-transparent($color, $opacity);		
 	}
 
 	@if $border-color == none {
@@ -71,7 +71,7 @@
 // Specify a width and height on <div>/<figure> and <img> elements
 // Make sure the containing element has a z-index of 100 and position: relative
 
-@mixin drm-figure-transparent-border($color, $thickness: 5px, $hover-color) {
+@mixin drm-figure-transparent-border($color, $hover-color, $thickness: 5px) {
 	margin: auto;
 	@include box-sizing(border-box);
 	@include border-transparent($color, $thickness);

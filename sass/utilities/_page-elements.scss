@@ -13,7 +13,7 @@
 	text-align: center;
 	@include box-sizing(border-box);
 
-	@include breakpoint(tall) {
+	@include drm-breakpoint(tall) {
 		width: 100%;
 	}
 }
@@ -24,15 +24,15 @@
 	overflow: hidden;
 	font-size: (20em / $default-font-size);	
 
-	@include breakpoint(trenta) {
+	@include drm-breakpoint(trenta) {
 		height: 60px;
 	}	
 
-	@include breakpoint(venti) {
+	@include drm-breakpoint(venti) {
 		height: 60px;
 	}
 
-	@include breakpoint(tall) {
+	@include drm-breakpoint(tall) {
 		height: auto;
 	}
 }
