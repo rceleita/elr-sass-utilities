@@ -4,22 +4,55 @@
 
 // Creates a circular element
 
-@mixin round-element($width) {
-	width: $width;
-	height: $width;
-	@include border-radius(($width / 2));	
+@mixin drm-circle($diameter) {
+	display: block;
+	width: $diameter;
+	height: $diameter;
+	@include border-radius(($diameter / 2));	
 }
 
 // Creates a square element
 
-@mixin square($width) {
+@mixin drm-square($width) {
+	display: block;
 	width: $width;
 	height: $width;
 }
 
-// Creates a retangular element
+// Creates a rounded square element
 
-@mixin rectangle($width, $height) {
+@mixin drm-rounded-square($width, $border-radius: 3px) {
+	border-radius: $border-radius;
+	@include drm-square($width);
+}
+
+// Creates a rectangular element
+
+@mixin drm-rectangle($width, $height) {
+	display: block;
 	width: $width;
 	height: $height;
 }
+
+// Creates a rounded rectangular element
+
+@mixin drm-rounded-rectangle($width, $height, $border-radius: 3px) {
+	border-radius: $border-radius;
+	@include drm-rectangle($width, $height);
+}
+
+// Creates a triagle element
+
+// Creates an equilateral triangle
+
+// Creates a right triangle
+
+// Creates a diamond
+
+// Creates a pentagon
+
+// Creates a hexagon
+
+// ribbon heading heading
+
+// ribbon wrapper

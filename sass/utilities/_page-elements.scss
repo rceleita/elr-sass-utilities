@@ -4,8 +4,8 @@
 
 // End of post block
 
-%info-block {
-	@extend %center-block;
+%drm-info-block {
+	@extend %drm-center-block;
 	width: 90%;
 	margin-top: 5%;
 	margin-bottom: 5%;
@@ -18,7 +18,7 @@
 	}
 }
 
-%feature-heading {
+%drm-feature-heading {
 	margin: 20px 0 0 0;
 	font-weight: bold;
 	overflow: hidden;
@@ -39,23 +39,23 @@
 
 // For main section headings; Usually applied to H1
 
-@mixin section-heading($align: center, $size: 24) {
+@mixin drm-section-heading($align: center, $size: 24) {
 	text-align: $align;
-	@include em-font($size#{em});
+	@include drm-em-font($size);
 }
 
 // For main section sub-headings; Usually applied to H2
 
-@mixin section-sub-heading($align: center, $size: 20) {
+@mixin drm-section-sub-heading($align: center, $size: 20) {
 	text-align: $align;
 	margin: 0 0 20px 0;
-	@include em-font($size#{em});
+	@include drm-em-font($size);
 }
 
 // An unstyled list
 // li elements have a 20px indent
 
-@mixin unstyled-list() {
+@mixin drm-unstyled-list() {
 	margin: 0;
 	padding: 5px;
 
@@ -66,8 +66,8 @@
 	}
 }
 
-@mixin inline-list() {
-	@extend %reset-box;
+@mixin drm-inline-list() {
+	@extend %drm-reset-box;
 
 	li {
 		display: inline;
@@ -78,8 +78,8 @@
 	}
 }
 
-@mixin floated-list() {
-	@extend %reset-box;
+@mixin drm-floated-list() {
+	@extend %drm-reset-box;
 
 	li {
 		list-style: none;
@@ -92,11 +92,15 @@
 
 // Styles post-meta elements
 
-@mixin post-meta($image) {
+@mixin drm-post-meta($image) {
 	background-image: $image;
 	background-repeat: no-repeat;
 	background-position: 0 2px;
 	padding: 2px 0 2px 16px;
 	margin-right: 7px;
-	@include em-font(14em);
+	@include drm-em-font(14em);
 }
+
+// triangle bulleted list
+
+// checked bulleted list

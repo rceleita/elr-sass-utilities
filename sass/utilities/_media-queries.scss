@@ -2,7 +2,7 @@
 	Media Query Breaking Points
 -------------------------------------------------------------------------------*/
 
-@mixin breakpoint($point) {
+@mixin drm-breakpoint($point) {
 
   @if $point == trenta {
     	@media screen and (min-width: $trenta) { @content; }

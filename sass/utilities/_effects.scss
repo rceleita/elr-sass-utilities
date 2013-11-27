@@ -4,13 +4,13 @@
 
 // Applies a solid 2px drop shadow to an element
 
-@mixin solid-drop-shadow($color) {
+@mixin drm-solid-drop-shadow($color) {
 	@include box-shadow($color 0 2px 0);
 }
 
 // Creates a slightly transparent background with a hex color backup
 
-@mixin background-transparent($color, $opacity: 0.7) {
+@mixin drm-background-transparent($color, $opacity: 0.7) {
 	background-color: $color;
 	background-color: rgba($color, $opacity);
 }
@@ -18,7 +18,7 @@
 // Creates a slightly transparent border with a hex color backup
 // Accepts a hex color value and pixel value for border-width
 
-@mixin border-transparent($color, $thickness: 5px, $opacity: 0.7) {
+@mixin drm-border-transparent($color, $thickness: 5px, $opacity: 0.7) {
 	border-color: $color;
 	border-color: rgba($color, $opacity); 
 	border-width: $thickness;
@@ -28,7 +28,7 @@
 // Creates an element with a stitched effect
 // Takes an optional border and opacity argument
 
-@mixin stitched-box($color, $stitch-color: white, $border-radius: 0, $border-color: none, $opacity: 1) {
+@mixin drm-stitched-box($color, $stitch-color: white, $border-radius: 0, $border-color: none, $opacity: 1) {
 	padding: 5px;
 	border: 1px $stitch-color dashed;
 
@@ -49,7 +49,7 @@
 
 // Creates a stitched top and bottom border
 
-@mixin stitched-row($color, $stitch-color: white, $border-color: none, $opacity: 1) {
+@mixin drm-stitched-row($color, $stitch-color: white, $border-color: none, $opacity: 1) {
 	padding: 5px 0 5px 0;
 	border-top: 1px $stitch-color dashed;
 	border-bottom: 1px $stitch-color dashed;
@@ -71,7 +71,7 @@
 // Specify a width and height on <div>/<figure> and <img> elements
 // Make sure the containing element has a z-index of 100 and position: relative
 
-@mixin figure-transparent-border($color, $thickness: 5px, $hover-color) {
+@mixin drm-figure-transparent-border($color, $thickness: 5px, $hover-color) {
 	margin: auto;
 	@include box-sizing(border-box);
 	@include border-transparent($color, $thickness);
@@ -94,38 +94,38 @@
 
 // creates a shadow with two thick borders and one thin border
 
-@mixin triple-shadow($color1, $color2) {
+@mixin drm-triple-shadow($color1, $color2) {
 	@include box-shadow(0 0 0 3px $color1, 0 0 0 10px $color2, 0 0 0 11px $color1);
 }
 
 // gives a slight shadow effect on text
 
-@mixin inset-text($color) {
+@mixin drm-inset-text($color) {
 	@include text-shadow(1px 1px 0 $color);
 }
 
 // creates a bottom border with a slight shadow effect
 
-@mixin inset-border($color) {
+@mixin drm-inset-border($color) {
 	border-bottom: 1px solid $color;
 	@include box-shadow(0 1px 0 lighten($color, 40%));
 }
 
 // creates a slight box shadow
 
-@mixin inset-box($color) {
+@mixin drm-inset-box($color) {
 	@include box-shadow(1px 1px 0 $color);	
 }
 
 // creates a thick bottom drop shadow
 
-@mixin boxy-drop-shadow($color: $grey) {
+@mixin drm-boxy-drop-shadow($color: $grey) {
 	@include box-shadow($color 0 30px 15px -20px);	
 }
 
 // creates a double border effect
 
-@mixin double-border($color1, $color2, $color3) {
+@mixin drm-double-border($color1, $color2, $color3) {
 	border: 1px solid $color1;
 	@include box-shadow($color2 0 0 0 1px, $color3 0 0 0 2px);
 }
