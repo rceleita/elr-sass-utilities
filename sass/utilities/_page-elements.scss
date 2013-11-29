@@ -52,6 +52,16 @@
 	@include drm-em-font($size);
 }
 
+// makes a pill heading
+
+@mixin drm-pill-heading($bk-color, $text-color) {
+	font-weight: bold;
+	background-color: $bk-color;
+	color: $text-color;
+	padding: 5px 10px 5px 10px;
+	@include border-radius(3px);	
+}
+
 // ribbon heading heading
 
 @mixin drm-ribbon-heading($color, $font, $stitch-color, $text-color, $text-shadow) {
@@ -121,13 +131,19 @@
 // li elements have a 20px indent
 
 @mixin drm-unstyled-list() {
-	margin: 0;
-	padding: 5px;
 
 	li {
 		list-style: none;
 		margin: 0;
 		padding: 5px 5px 5px 20px;
+	}
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
 
@@ -139,6 +155,38 @@
 
 		a {
 			display: inline;
+		}
+	}
+}
+
+// triangle bulleted list
+
+@mixin drm-triangle-list() {
+	padding-left: 20px;
+	@include drm-unstyled-list();
+
+	li {
+		&:before {
+			content: "\25B6";
+			display: block;
+			float: left;
+			margin-left: -20px;		
+		}
+	}
+}
+
+// checked bulleted list
+
+@mixin drm-checked-list() {
+	padding-left: 20px;
+	@include drm-unstyled-list();
+
+	li {
+		&:before {
+			content: "\2713";
+			display: block;
+			float: left;
+			margin-left: -20px;		
 		}
 	}
 }
@@ -160,12 +208,29 @@
 @mixin drm-post-meta($image) {
 	background-image: $image;
 	background-repeat: no-repeat;
-	background-position: 0 2px;
+	background-position: left center;
 	padding: 2px 0 2px 16px;
 	margin-right: 7px;
 	@include drm-em-font(14);
 }
 
-// triangle bulleted list
-
-// checked bulleted list
+@mixin context-box($type: info) {
+	@if $type == info {
+		background-color: lighten($info-color, 20%);
+		border: 1px solid $info-color;
+	} @elseif $type == danger {
+		background-color: lighten($danger-color, 20%);
+		border: 1px solid $danger-color;		
+	} @elseif $type == warning {
+		background-color: lighten($warning-color, 20%);
+		border: 1px solid $warning-color;		
+	} @elseif $type == success {
+		background-color: lighten($success-color, 20%);
+		border: 1px solid $success-color;		
+	} @elseif $type == muted {
+		background-color: lighten($muted-color, 20%);
+		border: 1px solid $muted-color;		
+	} @else {
+		@warn "#{error("That's not a context box type!")}";
+	}
+}

@@ -12,25 +12,36 @@ $short: 750px;
 $espresso: 550px;
 $bean: 370px;
 
-// layout
-
-$default-line-height: 1.5;
-
 // font faces
 
-$serif-font: Georgia, serif;
-$sans-serif-font: 'Open Sans', sans-serif;
+$serif-font: Georgia, 'Times New Roman', serif;
+$sans-serif-font: 'Open Sans', Helvetica, Arial, sans-serif;
 
 // typography
 
 $default-font-size: 16;
-$font-size: 16px;
+$default-line-height: 1.5;
 
 // colors
 
 // add more colors below
 
+$almost-black: #111;
 $dark-grey: #333;
+$darker-grey: #666666;
+$grey: #999;
+$light-grey: #ccc;
+$lighter-grey: #ddd;
+$lightest-grey: #eee;
+$off-white: #e2e2e2;
+$almost-white: #f1f1f1;
+
+// font colors
 
 $text-color: $dark-grey;
-$link-color: blue;
+$link-color: #428bca;
+$danger-color: #B90A07; // red
+$warning-color: #D1CB34; // yellow
+$success-color: #468847; // green
+$info-color: #3a87ad; // blue
+$muted-color: $grey;
