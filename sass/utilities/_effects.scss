@@ -35,7 +35,7 @@
 	@if $opacity == 1 {
 		background: $color;
 	} @else {
-		@include background-transparent($color, $opacity);		
+		@include drm-background-transparent($color, $opacity);		
 	}
 
 	@include border-radius($border-radius);
@@ -82,7 +82,7 @@
 @mixin drm-figure-transparent-border($color, $hover-color, $thickness: 5px) {
 	margin: auto;
 	@include box-sizing(border-box);
-	@include border-transparent($color, $thickness);
+	@include drm-border-transparent($color, $thickness);
 	@include transition(border, .3s ease-out);
 
 	img {
@@ -95,7 +95,7 @@
 	}
 
 	&:hover {
-		@include border-transparent($bk-color, $thickness);
+		@include drm-border-transparent($hover-color, $thickness);
 		@include transition(border, .3s ease-in);
 	}
 }
