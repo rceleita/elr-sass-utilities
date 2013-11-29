@@ -159,6 +159,7 @@
 	padding: 10px 0 10px 0;
 	margin: 10px auto 10px auto;
 	text-decoration: none;
+	cursor: pointer;
 	@include border-radius(3px);
 	@include text-shadow(none);
 	@include box-sizing(border-box);
@@ -181,25 +182,31 @@
 // Useful for <button> and <a> elements
 
 @mixin drm-button-solid($bk-color, $color, $width) {
+	border: none;
 	background-color: $bk-color;
+	cursor: pointer;
 	@include drm-button-link($color, $bk-color, $width);
 }
 
 // Styles a rectangular button with a 2px solid drop shadow
 
 @mixin drm-rectangle-button($color, $text, $border-radius: 0) {
+	border: 1px solid darken($color, 10%);
 	background-color: $color;
 	font-weight: bold;
 	color: $text;
 	margin: 20px 0 20px 0;
 	padding: 10px 60px 10px 60px;
+	cursor: pointer;
 	@include border-radius($border-radius);
-	@include solid-drop-shadow(darken($color, 10%));
+	@include drm-solid-drop-shadow(darken($color, 10%));
 	@include transition(all, .3s ease-out);
+	@include drm-em-font(16);
 
 	&:hover {
 		background-color: lighten($color, 10%);
-		@include solid-drop-shadow($color);
+		border: 1px solid $color;
+		@include drm-solid-drop-shadow($color);
 		@include transition(all, .3s ease-in);
 	}	
 }

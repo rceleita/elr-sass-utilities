@@ -270,8 +270,6 @@
     width: $width;
 }
 
-// ribbon heading heading
-
 // ribbon wrapper
 
 @mixin drm-ribbon-wrapper ($height, $color, $stitch-color) {
@@ -281,23 +279,25 @@
 	text-align: center;
 	margin: 20px 0 0 0;
 	height: $height;
-	@include drm-stitched-row($color, $stitch-color);
+	@include drm-stitched-row($color, white, none, 1, $darker-grey);
 	@include box-sizing(border-box);
 
 	&:before {
 		content: "";
 		position: absolute;
 		top: -22px;
-		left: -2px;
-		@include drm-triangle(bottom-right, 8px, 10px, darken($color, 20%));
+		left: -4px;
+		z-index: -10;
+		@include drm-triangle(bottom-right, 10px, 9px, darken($color, 20%));
 	}
 
 	&:after {
 		content: "";
 		position: absolute;
 		top: -22px;
-		right: -3px;
-		@include drm-triangle(bottom-left, 8px, 10px, darken($color, 20%));
+		right: -5px;
+		z-index: -10;
+		@include drm-triangle(bottom-left, 10px, 9px, darken($color, 20%));
 	}
 }	
 

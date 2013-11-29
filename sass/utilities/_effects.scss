@@ -5,7 +5,7 @@
 // Applies a solid 2px drop shadow to an element
 
 @mixin drm-solid-drop-shadow($color) {
-	@include box-shadow($color 0 2px 0);
+	@include box-shadow($color 0 3px 0);
 }
 
 // Creates a slightly transparent background with a hex color backup
@@ -49,7 +49,7 @@
 
 // Creates a stitched top and bottom border
 
-@mixin drm-stitched-row($color, $stitch-color: white, $border-color: none, $opacity: 1) {
+@mixin drm-stitched-row($color, $stitch-color: white, $border-color: none, $opacity: 1, $shadow: 'transparent') {
 	padding: 5px 0 5px 0;
 	border-top: 1px $stitch-color dashed;
 	border-bottom: 1px $stitch-color dashed;
@@ -59,12 +59,20 @@
 	} @else {
 		@include drm-background-transparent($color, $opacity);		
 	}
-
-	@if $border-color == none {
-		@include box-shadow(0 0 0 3px rgba($color, $opacity), 0 0 0 3px rgba($color, $opacity));
+	
+	@if $shadow == 'transparent' {
+		@if $border-color == none {
+			@include box-shadow(0 0 0 3px rgba($color, $opacity), 0 0 0 3px rgba($color, $opacity));
+		} @else {
+			@include box-shadow(0 0 0 3px rgba($color, $opacity), 0 0 0 3px rgba($color, $opacity), 0 0 0 4px $border-color, 0 0 0 4px $border-color);
+		}			
 	} @else {
-		@include box-shadow(0 0 0 3px rgba($color, $opacity), 0 0 0 3px rgba($color, $opacity), 0 0 0 4px $border-color, 0 0 0 4px $border-color);
-	}	
+		@if $border-color == none {
+			@include box-shadow(0 0 0 3px rgba($color, $opacity), 0 0 0 3px rgba($color, $opacity), 0 1px 1px 4px $shadow);
+		} @else {
+			@include box-shadow(0 0 0 3px rgba($color, $opacity), 0 0 0 3px rgba($color, $opacity), 0 0 0 4px $border-color, 0 0 0 4px $border-color, 0 1px 1px 5px $shadow);
+		}
+	}
 }
 
 // Styles a <div> or <figure> with a transparent border that sits on top of the <img> element

@@ -52,6 +52,71 @@
 	@include drm-em-font($size);
 }
 
+// ribbon heading heading
+
+@mixin drm-ribbon-heading($color, $font, $stitch-color, $text-color, $text-shadow) {
+	margin: 40px auto 20px auto;
+	font-family: $font;
+	color: $text-color;
+	text-align: center;
+	line-height: 1.1;
+	position: relative;
+	height: 45px - 6;
+	@include drm-em-font(24);
+	@include drm-stitched-row($color, $stitch-color, none, 1, $darker-grey);
+	@include drm-inset-text($text-shadow);
+	@include box-sizing(border-box);
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: -14px;
+		left: -36px;
+		z-index: -10;
+		border: 20px solid $color;
+		border-right-width: 30px;
+		border-left-color: transparent;
+		@include box-shadow($darker-grey 1px 1px 1px);
+		@include drm-rectangle(0, 0);
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: -14px;
+		right: -36px;
+		z-index: -10;
+		border: 20px solid $color;
+		border-left-width: 30px;
+		border-right-color: transparent;
+		@include box-shadow($darker-grey -1px 1px 1px);
+		@include drm-rectangle(0, 0);
+	}
+
+	.ribbon-content {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 35px;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: -19px;
+			left: -2px;
+			@include drm-triangle(bottom-right, 16px, 5px, darken($color, 20%));
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: -19px;
+			right: -3px;
+			@include drm-triangle(bottom-left, 16px, 5px, darken($color, 20%));
+		}
+	}
+}
+
 // An unstyled list
 // li elements have a 20px indent
 
