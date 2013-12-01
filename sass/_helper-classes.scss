@@ -7,11 +7,15 @@
 -----------------------------------------------------------------------------*/
 
 body {
-  	padding: 0;
 	line-height: $default-line-height;
 	font-size: $default-font-size#{px};
-	font-family: $sans-serif-font;
-	color: $text-color;
+	font-family: $font-family;
+	color: #333;
+
+	@include drm-breakpoint(tall) {		
+		font-size: ($default-font-size + 2)#{px};
+		line-height: $default-line-height + .2;
+	}
 }
 
 .wrapper {
@@ -62,6 +66,10 @@ body {
 	text-transform: uppercase;
 }
 
+.smaller-text {
+	@include drm-em-font(10);
+}
+
 .left {
 	text-align: left;
 }
@@ -95,12 +103,12 @@ body {
 }
 
 mark, .highlight {
-	color: $drm-blue;
+	color: $link-color;
 }
 
 p {
-	margin: 10px 0 10px 0;
-	padding: 0;
+	margin: 0;
+	padding: 10px 0 10px 0;
 }
 
 small {
@@ -108,8 +116,9 @@ small {
 }
 
 blockquote {
+	margin: 0;
+	padding: 10px;
 	font-style: italic;
-	padding: 8px 30px 15px 15px;
 }
 
 cite {
@@ -125,14 +134,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+	padding: 5px 0 5px 0;
+	text-transform: capitalize;
 	@include drm-em-font(26);
 }
 
 h2 {
+	padding: 5px 0 5px 0;
+	text-transform: capitalize;
 	@include drm-em-font(24);
 }
 
 h3 {
+	padding: 5px 0 5px 0;
+	text-transform: capitalize;
 	@include drm-em-font(18);
 }
 
@@ -148,13 +163,28 @@ h6 {
 	Lists
 -----------------------------------------------------------------------------*/
 
+ul {
+	padding: 10px 10px 10px 40px;
+	list-style: disc;	
+}
+
 ol {
+	padding: 10px 10px 10px 40px;
 	list-style: decimal;
 }
 
 li, dd, dt {
 	margin: 0;
 	padding: 5px 0 5px 0;
+}
+
+dl {
+	list-style: disc;
+	padding: 5px;
+}
+
+dt {
+	font-weight: bold;
 }
 
 .unstlyled-list {

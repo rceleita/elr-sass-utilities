@@ -114,9 +114,9 @@
 
 // creates a bottom border with a slight shadow effect
 
-@mixin drm-inset-border($color) {
+@mixin drm-inset-border($color, $shadow-color) {
 	border-bottom: 1px solid $color;
-	@include box-shadow(0 1px 0 lighten($color, 40%));
+	@include box-shadow(0 1px 0 $shadow-color);
 }
 
 // creates a slight box shadow

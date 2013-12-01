@@ -149,7 +149,7 @@
 // Styles a rounded button with a 1px border and transparent background
 // Useful for <button> and <a> elements
 
-@mixin drm-button-link($color, $bk-color, $width) {
+@mixin drm-button-link($color: white, $bk-color: #333, $width: 40%, $align: center, $border-radius: 3px) {
 	width: $width;
 	border: 1px solid $color;
 	color: $color;
@@ -157,7 +157,6 @@
 	text-align: center;
 	display: block;
 	padding: 10px 0 10px 0;
-	margin: 10px auto 10px auto;
 	text-decoration: none;
 	cursor: pointer;
 	@include border-radius(3px);
@@ -165,8 +164,11 @@
 	@include box-sizing(border-box);
 	@include transition(all, .3s ease-out);
 
-	&:visited {
-		color: $color;		
+	@if $align == center {
+		margin: 10px auto 10px auto;		
+	} @else {
+		margin-top: 10px;
+		margin-bottom: 10px;
 	}
 
 	&:hover {
@@ -181,16 +183,41 @@
 // Styles a rounded button with a 1px border and solid background
 // Useful for <button> and <a> elements
 
-@mixin drm-button-solid($bk-color, $color, $width) {
-	border: none;
+@mixin drm-button-solid($bk-color: #333, $color: white, $width: 40%, $align: center, $border-radius: 3px) {
 	background-color: $bk-color;
+	width: $width;
+	border: none;
+	color: $color;
+	font-weight: bold;
+	text-align: center;
+	display: block;
+	padding: 10px 0 10px 0;
+	text-decoration: none;
 	cursor: pointer;
-	@include drm-button-link($color, $bk-color, $width);
+	@include border-radius(3px);
+	@include text-shadow(none);
+	@include box-sizing(border-box);
+	@include transition(all, .3s ease-out);
+
+	@if $align == center {
+		margin: 10px auto 10px auto;		
+	} @else {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	&:hover {
+		background-color: $color;
+		color: $bk-color;
+		text-decoration: none;
+		@include text-shadow(none);
+		@include transition(all, .3s ease-in);
+	}	
 }
 
 // Styles a rectangular button with a 2px solid drop shadow
 
-@mixin drm-rectangle-button($color, $text, $border-radius: 0) {
+@mixin drm-rectangle-button($color: #333, $text: white, $border-radius: 0, $width: 40%) {
 	border: 1px solid darken($color, 10%);
 	background-color: $color;
 	font-weight: bold;
@@ -198,10 +225,12 @@
 	margin: 20px 0 20px 0;
 	padding: 10px 60px 10px 60px;
 	cursor: pointer;
+	width: $width;
 	@include border-radius($border-radius);
 	@include drm-solid-drop-shadow(darken($color, 10%));
 	@include transition(all, .3s ease-out);
 	@include drm-em-font(16);
+	@include box-sizing(border-box);
 
 	&:hover {
 		background-color: lighten($color, 10%);
