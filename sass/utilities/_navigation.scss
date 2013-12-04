@@ -202,7 +202,7 @@
 // Styles a rounded button with a 1px border and solid background
 // Useful for <button> and <a> elements
 
-@mixin drm-button-solid($bk-color: #333, $color: white, $width: 40%, $align: center, $border-radius: 3px) {
+@mixin drm-button-solid($bk-color: #333, $color: white, $width: 40%, $align: center, $border-radius: 3px, $border-color: none) {
 	background-color: $bk-color;
 	width: $width;
 	color: $color;
@@ -217,8 +217,8 @@
 	@include box-sizing(border-box);
 	@include transition(all, .3s ease-out);
 
-	@if $color == white {
-		border: 1px solid $bk-color;		
+	@if $border-color != none {
+		border: 1px solid $border-color;		
 	} @else {
 		border: none;
 	}
