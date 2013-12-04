@@ -5,7 +5,7 @@
 @mixin drm-form-state($glow, $background, $border) {
 	background: $background;
 	border: solid 1px $border;
-	@include transition(border .5s ease-out, background .5s ease-out);
+	@include single-transition(all, .5s, ease-out);
 
 	&:hover {
 		border: 1px solid $glow;
