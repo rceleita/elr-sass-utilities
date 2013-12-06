@@ -9,7 +9,7 @@ These are some sass extends and mixins that we are using over and over in our pr
 + Add utilities folder and _drm-sass-utilities.scss to project sass folder
 + Import _drm-sass-utilities.scss into main scss file
 
-## Documentation
+## Sass Utilities
 
 ### Media Query Breakpoints
 
@@ -161,37 +161,56 @@ breakpoint deminsions can be customized in variables file
 
 		@include drm-solid-drop-shadow($color);
 
-	+ Applies a solid 2px drop shadow to an element
+	+ Applies a solid 3px drop shadow to an element
+	+ Arguments:
+		+ color: color of the drop shadow
 
 + drm-background-transparent
 
 		@include drm-background-transparent($color, $opacity);
 
-	+ Creates a slightly transparent background with a hex color backup
+	+ Creates a slightly transparent background with a hex color fallback for browsers that do not support rgba colors
 	+ Default opacity of 0.7
+	+ Arguments:
+		+ color: element background color
+		+ opacity: opacity of the element background color (optional - defualts to 0.7)
 
 + drm-border-transparent
 
 		@include drm-border-transparent($color, $thickness, $opacity);
 
-	+ Creates a slightly transparent border with a hex color backup
+	+ Creates a slightly transparent border with a hex color fallback for browsers that do not support rgba colors
 	+ Accepts a hex color value and pixel value for border-width
 	+ Default thickness of 5px
 	+ Default opacity of 0.7
+	* Arguments:
+		+ color: hex color for element border
+		+ thickness: border width (optional - defualts to 5px)
+		+ opacity: opacity of element border (optional - defualts to 0.7)
 
 + drm-stitched-box
 
 		@include drm-stitched-box($color, $stitch-color, $border-radius, $border-color, $opacity);
 
 	+ Creates an element with a stitched border effect
-	+ Takes an optional border and opacity argument
+	+ Arguments:
+		+ color: background color of element
+		+ stitch-color: color of stitches (optional - defaults to white)
+		+ border-radius: optional - defaults to 0
+		+ border-color: optional - defaults to none
+		+ opacity: optional - defaults to 1 for no transparency
 
 + drm-stitched-row
 
-		@include drm-stitched-row($color, $stitched-color, $border-color, $opacity);
+		@include drm-stitched-row($color, $stitched-color, $border-color, $opacity, $shadow);
 
 	+ Creates a stitched top and bottom border
-	+ Takes an optional border and opacity argument
+	+ Arguments:
+		+ color: background color of element
+		+ stitch-color: color of stitches (optional - defaults to white)
+		+ border-color: optional - defaults to none
+		+ opacity: optional - defaults to 1 for no transparency
+		+ shadow: adds a drop shadow (optional - defaults to transparent for no shadow)
 
 + drm-figure-transparent-border
 
@@ -236,4 +255,110 @@ breakpoint deminsions can be customized in variables file
 
 		@include drm-double-border($color1, $color2, $color3);
 
-	+ creates a double border effect				
+	+ creates a double border effect
+
+## Helper Methods
+
+### General
+
++ body
+
++ .wrapper
+
+### Clear and Alignment
+
++ .pull-left
+
++ .pull-right
+
++ .clear
+
+### Typography
+
++ .bold
+
++ .italic
+
++ .underline
+
++ .uppercase
+
++ .smaller-text
+
++ .left
+
++ .right
+
++ .center
+
++ .muted
+
++ .danger
+
++ .error
+
++ .info
+
++ .warning
+
++ .success
+
++ mark
+
++ .highlight
+
++ p
+
++ small
+
++ blockquote
+
++ cite
+
+### Headings
+
+remove default bold from all heading elements
+
++ h1
+
++ h2
+
++ h3
+
++ h4
+
++ h5
+
++ h6
+
+### Lists
+
++ ul
+
++ ol
+
++ li
+
++ dl
+
++ dd
+
++ dt
+
++ .unstyled-list
+
++ .inline-list
+
++ .triangle-list
+
++ .checked-list
+
+### Links
+
++ a
+
+### Tables
+
++ table
+
++ td

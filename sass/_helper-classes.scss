@@ -34,6 +34,10 @@ body {
 	float: right;
 }
 
+.clear {
+	@include drm-clearfix();
+}
+
 /*-----------------------------------------------------------------------------
 	Typography
 -----------------------------------------------------------------------------*/
@@ -76,6 +80,11 @@ body {
 
 .danger {
 	color: $danger-color;	
+}
+
+.error {
+	color: $danger-color;
+	font-weight: bold;
 }
 
 .info {
@@ -183,10 +192,6 @@ dt {
 	@include drm-inline-list();
 }
 
-.unstlyled-list {
-	@include drm-unstyled-list();
-}
-
 .triangle-list {
 	@include drm-triangle-list();
 }
@@ -224,4 +229,8 @@ table {
 td {
 	text-align: left;
 	font-weight: normal;
+}
+
+thead {
+	font-weight: bold;
 }

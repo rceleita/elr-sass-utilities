@@ -22,7 +22,7 @@
 	margin: 20px 0 0 0;
 	font-weight: bold;
 	overflow: hidden;
-	font-size: (20em / $default-font-size);	
+	@include drm-em-font(20);	
 
 	@include drm-breakpoint(trenta) {
 		height: 60px;
