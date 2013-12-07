@@ -38,6 +38,13 @@ breakpoint deminsions can be customized in variables file
 		@extend %drm-container;
 
 	+ Centers an element on the page
+	+ includes built in breakpoints for responsiveness
+
++ %drm-container-full-width
+
+		@extend %drm-container-full-width;
+
+	+ Centers an element on the page
 	+ for elements that take up the entire width of the wrapper
 	+ includes built in breakpoints for responsiveness
 
@@ -58,7 +65,104 @@ breakpoint deminsions can be customized in variables file
 		@extend %drm-center-block;
 
 	+ centers an element horizontally
-	+ only works on elements with a definted width rule	
+	+ only works on elements with a definted width rule
+
++ %drm-comment-titles
+
+		@extend %drm-comment-titles;
+
+	+ comment titles
+
++ %drm-heading
+
+		@extend %drm-heading;
+
+	+ heading formatting
+
++ %drm-lists
+
+		@extend %drm-lists;
+
+	+ list formatting
+
++ drm-feature-box
+
+		@include drm-feature-box($total);
+
+	+ creates a row of equally sized boxes
+	+ **Arguments:**
+		+ $total: total number of boxes per row (optional - defaults to 3)
+
++ drm-feature-box-margin
+
+		@include drm-feature-box-margin($total, $margin);
+
+	+ creates a row of equally sized boxes with margins
+	+ **Arguments:**
+		+ $total: total number of boxes per row (optional - defaults to 3)
+		+ $margin: margin for feature boxes (optional - defaults to 1%)
+
++ drm-circle-blocks
+
+		@include drm-circle-blocks($container-element-width, $margin, $total);
+
+	+ creates a row of equally sized circle elements	
+	+ **Arguments:**
+		+ $container-element-width: width of container element (optional - defaults to to 1000px)
+		+ $margin: margin for circle blocks (optional - defaults to 20px)
+		+ $total: total number of elements per row (optional - defaults to 3)
+
++ drm-em-font
+
+		@include drm-em-font($size);
+
+	+ converts px font to em font
+	+ **Arguments:**
+		+ $size: takes a whole number
+
++ drm-em-margin
+
+		@include drm-em-margin($top, $right, $bottom, $left);
+
+	+ converts px margin to em margin
+	+ $top is required, the rest are optional
+	+ if $right is null the first argument is used for all sides of element
+	+ **Arguments:**
+		+ $top
+		+ $right
+		+ $bottom
+		+ $left
+
++ drm-em-padding
+
+		@include drm-em-padding($top, $right, $bottom, $left);
+
+	+ converts px padding to em padding
+	+ $top is required, the rest are optional
+	+ if $right is null the first argument is used for all sides of element
+	+ **Arguments:**
+		+ $top
+		+ $right
+		+ $bottom
+		+ $left
+
++ drm-vertically-center
+
+		@include drm-vertically-center($container-element-height, $height);
+
+	+ vertically centers an element using absolute positioning	
+	+ **Arguments:**
+		+ $container-element-height: height of container element
+		+ $height: height of element to be positioned vertically	
+
++ drm-horizontally-center
+
+		@include drm-horizontally-center($container-element-width, $width);
+
+	+ horizontally centers an element using absolute positioning	
+	+ **Arguments:**
+		+ $container-element-width: width of container element
+		+ $width: width of element to be positioned horizontally		
 
 ### Page Element Utilities
 
@@ -117,6 +221,10 @@ breakpoint deminsions can be customized in variables file
 	+ has a transparent background
 	+ has a a:hover effect
 	+ takes an optional $align argument; otherwize left alignment
+	+ **Arguments:**
+		+ $text-color: color of navigation link text (optional - defaults to $text-color)
+		+ $hover-color: color of text when user mouses over a link (optional - defaults to $link-color)
+		+ $align: text alignment (optional - defaults to left)
 
 + drm-nav-bar-stacked
 
@@ -125,7 +233,11 @@ breakpoint deminsions can be customized in variables file
 	+ creates a vertical list of links
 	+ has a transparent background
 	+ has a a:hover effect
-	+ takes an optional $align argument; otherwize left alignment			
+	+ takes an optional $align argument; otherwize left alignment
+	+ **Arguments:**
+		+ $text-color: color of navigation link text (optional - defaults to $text-color)
+		+ $hover-color: color of text when user mouses over a link (optional - defaults to $link-color)
+		+ $align: text alignment (optional - defaults to left)			
 
 + drm-nav-bar-solid
 
@@ -133,6 +245,10 @@ breakpoint deminsions can be customized in variables file
 
 	+ creates a horizontal list of links with a solid color background
 	+ hover state will invert text color and background color
+	+ **Arguments:**
+		+ $text-color: color of navigation link text (optional - defaults to white)
+		+ $background-color: color of link element's background (optional - defaults to $link-color)
+		+ $align: text-alignment (optional - defaults to center)
 
 + drm-nav-bar-solid-stacked
 
@@ -140,20 +256,93 @@ breakpoint deminsions can be customized in variables file
 
 	+ creates a vertical list of links with a solid color background
 	+ hover state will invert text color and background color
+	+ **Arguments:**
+		+ $text-color: color of navigation link text (optional - defaults to white)
+		+ $background-color: color of link element's background (optional - defaults to $link-color)
+		+ $align: text-alignment (optional - defaults to center)			
 
 + drm-nav-bar-pills
 
+		@include drm-nav-bar-pills($text-color, $hover-color, $align);
+
+	+ creates a horizontal list of links with a pill shaped background when a user mouses over link element
+	+ hover state will invert text color and background color
+	+ **Arguments:**
+		+ $text-color: color of navigation link text (optional - defaults to white)
+		+ $hover-color: color of link element's background (optional - defaults to $link-color)
+		+ $align: text-alignment (optional - defaults to center)
+
 + drm-nav-bar-pills-stacked
 
-+ drm-nar-bar-pills-solid
+		@include drm-nav-bar-pills-stacked($text-color, $hover-color, $align);
+
+	+ creates a vertical list of links with a pill shaped background when a user mouses over link element
+	+ hover state will invert text color and background color
+	+ **Arguments:**
+		+ $text-color: color of navigation link text (optional - defaults to white)
+		+ $hover-color: color of link element's background (optional - defaults to $link-color)
+		+ $align: text-alignment (optional - defaults to center)			
+
++ drm-nav-bar-pills-solid
+
+		@include drm-nav-bar-pills-solid($text-color, $background-color, $align);
+
+	+ creates a horizontal list of links with a pill shaped background
+	+ hover state will invert text color and background color
+	+ **Arguments:**
+		+ $text-color: color of navigation link text (optional - defaults to white)
+		+ $background-color: color of link element's background (optional - defaults to $link-color)
+		+ $align: text-alignment (optional - defaults to center)
 
 + drm-nav-bar-pills-solid-stacked
 
+		@include drm-nav-bar-pills-solid-stacked($text-color, $background-color, $align);
+
+	+ creates a vertical list of links with a pill shaped background
+	+ hover state will invert text color and background color
+	+ **Arguments:**
+		+ $text-color: color of navigation link text (optional - defaults to white)
+		+ $background-color: color of link element's background (optional - defaults to $link-color)
+		+ $align: text-alignment (optional - defaults to center)
+
 + drm-button-link
+
+		@include drm-button-link($color, $bk-color, $width, $center, $border-radius);
+
+	+ creates a button with a 1px border and transparent background
+	+ has a solid background when a user mouses over button
+	+ **Arguments:**
+		+ $color: color of border and text (optional - defaults to white)
+		+ $bk-color: background color on hover state (optional - defaults to $link-color)
+		+ $width: width of button (optional - defaults to 40%)
+		+ $center: alignment of link or button element (optional - defaults to center)
+		+ $border-radius: optional - defaults to 3px	
 
 + drm-button-solid
 
-+ drm-rectangle-button				
+		@include drm-button-solid($bk-color, $color, $width, $center, $border-radius, $border-color);
+
+	+ creates a solid button
+	+ inverts text and background on hover state
+	+ **Arguments:**
+		+ $bk-color: background-color of element (optional - defaults to $link-color)
+		+ $color: text color of element	(optional - defaults to white)
+		+ $width: width of button (optional - defaults to 40%)
+		+ $center: alignment of link or button element (optional - defaults to center)
+		+ $border-radius: optional - defaults to 3px
+		+ $border-color: color of border (optional - defaults to none for no border)
+
++ drm-rectangle-button
+
+		@include drm-rectangular-button($color, $text, $border-radius, $width);
+
+	+ creates a solid button with a 3px drop shadow
+	+ button has a 1px border that is slightly darker than the button
+	+ **Arguments:**
+		+ $color: background-color of button (optional - defaults to $link-color)
+		+ $text: text color (optional - defaults to white)
+		+ $border-radius: optional - defaults to 0 for no radius
+		+ $width: width or button (optional - defaults to 40%) 					
 
 ### Effects Utilities
 
@@ -162,18 +351,17 @@ breakpoint deminsions can be customized in variables file
 		@include drm-solid-drop-shadow($color);
 
 	+ Applies a solid 3px drop shadow to an element
-	+ Arguments:
-		+ color: color of the drop shadow
+	+ **Arguments:**
+		+ $color: color of the drop shadow
 
 + drm-background-transparent
 
 		@include drm-background-transparent($color, $opacity);
 
 	+ Creates a slightly transparent background with a hex color fallback for browsers that do not support rgba colors
-	+ Default opacity of 0.7
-	+ Arguments:
-		+ color: element background color
-		+ opacity: opacity of the element background color (optional - defualts to 0.7)
+	+ **Arguments:**
+		+ $color: element background color
+		+ $opacity: opacity of the element background color (optional - defualts to 0.7)
 
 + drm-border-transparent
 
@@ -181,36 +369,34 @@ breakpoint deminsions can be customized in variables file
 
 	+ Creates a slightly transparent border with a hex color fallback for browsers that do not support rgba colors
 	+ Accepts a hex color value and pixel value for border-width
-	+ Default thickness of 5px
-	+ Default opacity of 0.7
-	* Arguments:
-		+ color: hex color for element border
-		+ thickness: border width (optional - defualts to 5px)
-		+ opacity: opacity of element border (optional - defualts to 0.7)
+	* **Arguments:**
+		+ $color: hex color for element border
+		+ $thickness: border width (optional - defualts to 5px)
+		+ $opacity: opacity of element border (optional - defualts to 0.7)
 
 + drm-stitched-box
 
 		@include drm-stitched-box($color, $stitch-color, $border-radius, $border-color, $opacity);
 
 	+ Creates an element with a stitched border effect
-	+ Arguments:
-		+ color: background color of element
-		+ stitch-color: color of stitches (optional - defaults to white)
-		+ border-radius: optional - defaults to 0
-		+ border-color: optional - defaults to none
-		+ opacity: optional - defaults to 1 for no transparency
+	+ **Arguments:**
+		+ $color: background color of element
+		+ $stitch-color: color of stitches (optional - defaults to white)
+		+ $border-radius: optional - defaults to 0
+		+ $border-color: optional - defaults to none
+		+ $opacity: optional - defaults to 1 for no transparency
 
 + drm-stitched-row
 
 		@include drm-stitched-row($color, $stitched-color, $border-color, $opacity, $shadow);
 
 	+ Creates a stitched top and bottom border
-	+ Arguments:
-		+ color: background color of element
-		+ stitch-color: color of stitches (optional - defaults to white)
-		+ border-color: optional - defaults to none
-		+ opacity: optional - defaults to 1 for no transparency
-		+ shadow: adds a drop shadow (optional - defaults to transparent for no shadow)
+	+ **Arguments:**
+		+ $color: background color of element
+		+ $stitch-color: color of stitches (optional - defaults to white)
+		+ $border-color: optional - defaults to none
+		+ $opacity: optional - defaults to 1 for no transparency
+		+ $shadow: adds a drop shadow (optional - defaults to transparent for no shadow)
 
 + drm-figure-transparent-border
 
@@ -219,43 +405,68 @@ breakpoint deminsions can be customized in variables file
 	+ Styles a div or figure with a transparent border that sits on top of the <img> element
 	+ Specify a width and height on div or figure and img elements
 	+ Make sure the containing element has a z-index of 100 and position: relative
+	+ **Arguments:**
+		+ $color: color of transparent border
+		+ $hover-color: color of border when users mouse over element
+		+ $thickness: thickness of transparent border (optional - defaults to 5px)
 
 + drm-triple-shadow
 
 		@include drm-triple-shadow($color1, $color2);
 
-	+ creates a shadow with two thick borders and one thin border
+	+ creates a shadow with two thick borders and one thin border using solid box-shadows
+	+ **Arguments:**
+		+ $color1: color of outside, thick borders
+		+ $color2: color of inside, thin border
 	
 + drm-inset-text
 
-		@include drm-inset-text($color);
+		@include drm-inset-text($shadow-color);
 
 	+ creates a slight shadow effect on text
+	+ **Arguments:**
+		+ $shadow-color: color of text-shadow (optional - defaults to $shadow-color)
 
 + drm-inset-border
 
-		@include drm-inset-border($color);
+		@include drm-inset-border($color, $shadow-color);
 
 	+ creates a bottom border with a slight shadow effect
+	+ **Arguments:**
+		+ $color: color of bottom-border
+		+ $shadow-color: color of text-shadow (optional - defaults to $shadow-color)
 	
 + drm-inset-box
 
-		@include drm-inset-box($color);
+		@include drm-inset-box($shadow-color);
 
 	+ creates a slight box shadow
+	+ **Arguments:**
+		+ $shadow-color: color of text-shadow (optional - defaults to $shadow-color) 
 
 + drm-boxy-drop-shadow
 
-		@include drm-boxy-drop-shadow($color);
+		@include drm-boxy-drop-shadow($shadow-color);
 
 	+ creates a thick drop shadow
 	+ takes an optional color argument
+	+ **Arguments:**
+		+ $shadow-color: color of text-shadow (optional - defaults to $shadow-color)
 
-+ drm-double-border
+### Forms
 
-		@include drm-double-border($color1, $color2, $color3);
++ drm-form-state
 
-	+ creates a double border effect
+		@include drm-form-state($glow, $background, $border)
+
+	+ adds form state styles for form controls
+	+ glow effect when a user mouses over and element
+	+ darker outline and lighter background on focus state
+	+ smooth transition effects when changing form states
+	+ **Arguments:**
+		+ $glow: color of glow effect (optional - defaults to aqua)
+		+ $background: color of form element background (optional - defaults to light grey)
+		+ $border: color of form element border (optional - defaults to grey)	
 
 ## Helper Methods
 

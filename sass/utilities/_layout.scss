@@ -49,6 +49,8 @@
 
 %drm-container-full-width {
 	margin: 0;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
 	@include drm-clearfix();
 
 	@include drm-breakpoint(trenta) {
@@ -156,6 +158,15 @@
 	}	
 }
 
+@mixin drm-circle-blocks($container-width: 1000px, $margin: 20px, $total: 3) {
+	$margin-total: ($margin * 2) * $total;
+
+	float: left;
+	margin: $margin;
+	@include drm-circle( ( $container-width - 120 ) / $total );
+	@include box-sizing(border-box);	
+}
+
 // calculates em font size from px font size
 
 @mixin drm-em-font($size) {
@@ -196,13 +207,4 @@
 	position: absolute;
 	width: $width;
 	top: ($container-element-width / 2) - ($width / 2);
-}
-
-@mixin drm-circle-blocks($container-width: 1000px, $margin: 20px, $total: 3) {
-	$margin-total: ($margin * 2) * $total;
-
-	float: left;
-	margin: $margin;
-	@include drm-circle( ( $container-width - 120 ) / $total );
-	@include box-sizing(border-box);	
 }
