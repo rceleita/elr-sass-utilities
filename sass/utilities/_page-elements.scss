@@ -223,6 +223,7 @@
 
 @mixin drm-floated-list() {
 	@extend %drm-reset-box;
+	@include drm-clearfix();
 
 	li {
 		list-style: none;
@@ -245,6 +246,8 @@
 }
 
 @mixin context-box($type: info) {
+	padding: 10px 20px 10px 20px;
+
 	@if $type == info {
 		background-color: lighten($info-color, 20%);
 		border: 1px solid $info-color;

@@ -212,6 +212,7 @@ breakpoint deminsions can be customized in variables file
 
 		@include drm-ribbon-heading($color, $stitch-color, $text-color, $text-shadow);
 
+
 		<h1><span class="ribbon-content">Ribbon Heading</span></h1>
 
 	+ styles a heading with a ribbon style
@@ -248,7 +249,43 @@ breakpoint deminsions can be customized in variables file
 		@include drm-inline-list();
 
 	+ sets li and a elements to inline
-	+ removes margin and padding from container			
+	+ removes margin and padding from container
+
++ **drm-triangle-list**
+
+		@include drm-triangle-list();
+
+	+ creates a list with triangle bullets
+	
++ **drm-checked-list**
+
+		@include drm-checked-list();
+
+	+ creates a list with checkmark bullets
+
++ **drm-floated-list**
+
+		@include drm-floated-list()
+
+	+ creates a list of elements floated to the left
+
++ **drm-post-meta**
+
+		@include drm-post-meta($image);
+
+	+ adds an image to the left of a wordpress post meta element
+	+ **Arguments:*
+		+ $image: icon to display next to post meta element (should be about 15px square)
+
++ **context-box**
+
+		@include context-box($type);
+
+	+ styles a block element with a light backround and darker border
+	+ color variables are set in variables.scss
+	+ useful for displaying messages to users
+	+ **Arguments:**
+		+ $type: message content; can be: info, danger, warning, success, muted
 
 ### Shapes Utilities
 
