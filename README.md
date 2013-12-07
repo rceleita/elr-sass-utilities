@@ -177,7 +177,78 @@ breakpoint deminsions can be customized in variables file
 
 		@extend %drm-feature-heading;
 
-	+ heading for feature boxes	
+	+ heading for feature boxes
+
++ **drm-section-heading**
+	
+		@include drm-section-heading($align, $size);
+
+	+ styles a basic section heading
+	+ usually applied to h1 elements
+	+ **Arguments:**
+		+ $align: text-alignment (optional - defaults to center)
+		+ $size: font-size (optional - defaults to 24px)
+
++ **drm-section-sub-heading**
+	
+		@include drm-section-sub-heading($align, $size);
+
+	+ styles a basic section sub-heading
+	+ usually applied to h2 elements
+	+ **Arguments:**
+		+ $align: text-alignment (optional - defaults to center)
+		+ $size: font-size (optional - defaults to 20px)
+
++ **drm-pill-heading**
+
+		@include drm-pill-heading($bk-color, $text-color);
+
+	+ styles a text element with a solid background and a slight border radius
+	+ **Arguments:**
+		+ $bk-color: background color of text element
+		+ $text-color: color of text
+
++ **drm-ribbon-heading**
+
+		@include drm-ribbon-heading($color, $stitch-color, $text-color, $text-shadow);
+
+		<h1><span class="ribbon-content">Ribbon Heading</span></h1>
+
+	+ styles a heading with a ribbon style
+	+ ribbon folds sit below heading
+	+ **Arguments:**
+		+ $color: ribbon color
+		+ $stitch-color: color of stitch effect (optional - defaults to white)
+		+ $text-color: color of text (optional - defaults to white)
+		+ $text-shadow: color of text-shadow (optional - defaults to none for no text-shadow)
+
++ **drm-unstyled-list**
+
+		@include drm-unstyled-list($align);
+
+	+ removes default bullets and numbers from a list
+	+ also applies hover underline states to link elements within list
+	+ **Arguments:**
+		+ $align: text-alignment (optional - defaults to left)
+
++ **drm-border-list**
+
+		@include drm-border-list($align, $border-color, $shadow-color);
+
+	+ styles a list with 1px bottom borders on each li element
+	+ **Arguments:**
+		+ $align: text-alignment (optional - defaults to left)
+		+ $border-color: color of bottom border (optional - defaults to dark grey)
+		+ $shadow-color: optional shadow color for inset effect
+			+ recommend lighten($border-color, 30%)
+			+ optional - defaults to none for no shadow effect
+
++ **drm-inline-list**
+	
+		@include drm-inline-list();
+
+	+ sets li and a elements to inline
+	+ removes margin and padding from container			
 
 ### Shapes Utilities
 
@@ -199,9 +270,9 @@ breakpoint deminsions can be customized in variables file
 
 	+ creates a perfect square with rounded corners		
 	
-+ **drm-retangle**
++ **drm-rectangle**
 
-		@include drm-retangle($width, $height);
+		@include drm-rectangle($width, $height);
 
 	+ creates a rectangle
 

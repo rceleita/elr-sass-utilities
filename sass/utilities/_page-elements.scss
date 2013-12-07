@@ -64,9 +64,8 @@
 
 // ribbon heading
 
-@mixin drm-ribbon-heading($color, $font, $stitch-color, $text-color, $text-shadow) {
+@mixin drm-ribbon-heading($color, $stitch-color: white, $text-color: white, $text-shadow: none) {
 	margin: 40px auto 20px auto;
-	font-family: $font;
 	color: $text-color;
 	text-align: center;
 	line-height: 1.1;

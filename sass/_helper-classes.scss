@@ -11,6 +11,7 @@ body {
 	font-size: $default-font-size#{px};
 	font-family: $font-family;
 	color: #333;
+	background-color: white;
 
 	@include drm-breakpoint(tall) {		
 		font-size: ($default-font-size + 2)#{px};
