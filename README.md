@@ -33,14 +33,14 @@ breakpoint deminsions can be customized in variables file
 
 ### Layout Utilities
 
-+ %drm-container
++ **%drm-container**
 
 		@extend %drm-container;
 
 	+ Centers an element on the page
 	+ includes built in breakpoints for responsiveness
 
-+ %drm-container-full-width
++ **%drm-container-full-width**
 
 		@extend %drm-container-full-width;
 
@@ -48,44 +48,44 @@ breakpoint deminsions can be customized in variables file
 	+ for elements that take up the entire width of the wrapper
 	+ includes built in breakpoints for responsiveness
 
-+ %drm-reset-box
++ **%drm-reset-box**
 
 		@extend %drm-reset-box;
 
 	+ removes margin and padding from an element
 
-+ %drm-row
++ **%drm-row**
 
 		@extend %drm-row;
 
 	+ creates an element that completely fills its container
 
-+ %drm-center-block
++ **%drm-center-block**
 
 		@extend %drm-center-block;
 
 	+ centers an element horizontally
 	+ only works on elements with a definted width rule
 
-+ %drm-comment-titles
++ **%drm-comment-titles**
 
 		@extend %drm-comment-titles;
 
 	+ comment titles
 
-+ %drm-heading
++ **%drm-heading**
 
 		@extend %drm-heading;
 
 	+ heading formatting
 
-+ %drm-lists
++ **%drm-lists**
 
 		@extend %drm-lists;
 
 	+ list formatting
 
-+ drm-feature-box
++ **drm-feature-box**
 
 		@include drm-feature-box($total);
 
@@ -93,7 +93,7 @@ breakpoint deminsions can be customized in variables file
 	+ **Arguments:**
 		+ $total: total number of boxes per row (optional - defaults to 3)
 
-+ drm-feature-box-margin
++ **drm-feature-box-margin**
 
 		@include drm-feature-box-margin($total, $margin);
 
@@ -102,7 +102,7 @@ breakpoint deminsions can be customized in variables file
 		+ $total: total number of boxes per row (optional - defaults to 3)
 		+ $margin: margin for feature boxes (optional - defaults to 1%)
 
-+ drm-circle-blocks
++ **drm-circle-blocks**
 
 		@include drm-circle-blocks($container-element-width, $margin, $total);
 
@@ -112,7 +112,7 @@ breakpoint deminsions can be customized in variables file
 		+ $margin: margin for circle blocks (optional - defaults to 20px)
 		+ $total: total number of elements per row (optional - defaults to 3)
 
-+ drm-em-font
++ **drm-em-font**
 
 		@include drm-em-font($size);
 
@@ -120,7 +120,7 @@ breakpoint deminsions can be customized in variables file
 	+ **Arguments:**
 		+ $size: takes a whole number
 
-+ drm-em-margin
++ **drm-em-margin**
 
 		@include drm-em-margin($top, $right, $bottom, $left);
 
@@ -133,7 +133,7 @@ breakpoint deminsions can be customized in variables file
 		+ $bottom
 		+ $left
 
-+ drm-em-padding
++ **drm-em-padding**
 
 		@include drm-em-padding($top, $right, $bottom, $left);
 
@@ -146,7 +146,7 @@ breakpoint deminsions can be customized in variables file
 		+ $bottom
 		+ $left
 
-+ drm-vertically-center
++ **drm-vertically-center**
 
 		@include drm-vertically-center($container-element-height, $height);
 
@@ -155,7 +155,7 @@ breakpoint deminsions can be customized in variables file
 		+ $container-element-height: height of container element
 		+ $height: height of element to be positioned vertically	
 
-+ drm-horizontally-center
++ **drm-horizontally-center**
 
 		@include drm-horizontally-center($container-element-width, $width);
 
@@ -166,14 +166,14 @@ breakpoint deminsions can be customized in variables file
 
 ### Page Element Utilities
 
-+ %drm-info-block
++ **%drm-info-block**
 
 		@extend %drm-info-block;
 
 	+ creates a horizontally centered box that takes up 90% of its container
 	+ text is centered
 
-+ %drm-feature-heading
++ **%drm-feature-heading**
 
 		@extend %drm-feature-heading;
 
@@ -181,31 +181,31 @@ breakpoint deminsions can be customized in variables file
 
 ### Shapes Utilities
 
-+ drm-circle
++ **drm-circle**
 
 		@include drm-circle($diameter);
 
 	+ creates a perfect circle
 	
-+ drm-square
++ **drm-square**
 
 		@include drm-square($width);
 
 	+ creates a perfect square
 
-+ drm-rounded-square
++ **drm-rounded-square**
 
 		@include drm-rounded-square($width, $border-radius);
 
 	+ creates a perfect square with rounded corners		
 	
-+ drm-retangle
++ **drm-retangle**
 
 		@include drm-retangle($width, $height);
 
 	+ creates a rectangle
 
-+ drm-rounded-rectangle
++ **drm-rounded-rectangle**
 
 		@include drm-rounded-rectangle($width, $height, $border-radius);
 
@@ -213,7 +213,7 @@ breakpoint deminsions can be customized in variables file
 
 ### Navigation Utilities
 
-+ drm-nav-bar
++ **drm-nav-bar**
 
 		@include drm-nav-bar($text-color, $hover-color, $align);
 
@@ -226,7 +226,7 @@ breakpoint deminsions can be customized in variables file
 		+ $hover-color: color of text when user mouses over a link (optional - defaults to $link-color)
 		+ $align: text alignment (optional - defaults to left)
 
-+ drm-nav-bar-stacked
++ **drm-nav-bar-stacked**
 
 		@include drm-nav-bar-stacked($text-color, $hover-color, $align)
 
@@ -239,7 +239,7 @@ breakpoint deminsions can be customized in variables file
 		+ $hover-color: color of text when user mouses over a link (optional - defaults to $link-color)
 		+ $align: text alignment (optional - defaults to left)			
 
-+ drm-nav-bar-solid
++ **drm-nav-bar-solid**
 
 		@include drm-nav-bar-solid($text-color, $background-color, $align);
 
@@ -250,7 +250,7 @@ breakpoint deminsions can be customized in variables file
 		+ $background-color: color of link element's background (optional - defaults to $link-color)
 		+ $align: text-alignment (optional - defaults to center)
 
-+ drm-nav-bar-solid-stacked
++ **drm-nav-bar-solid-stacked**
 
 		@include drm-nav-bar-solid-stacked($text-color, $background-color, $align);
 
@@ -261,7 +261,7 @@ breakpoint deminsions can be customized in variables file
 		+ $background-color: color of link element's background (optional - defaults to $link-color)
 		+ $align: text-alignment (optional - defaults to center)			
 
-+ drm-nav-bar-pills
++ **drm-nav-bar-pills**
 
 		@include drm-nav-bar-pills($text-color, $hover-color, $align);
 
@@ -272,7 +272,7 @@ breakpoint deminsions can be customized in variables file
 		+ $hover-color: color of link element's background (optional - defaults to $link-color)
 		+ $align: text-alignment (optional - defaults to center)
 
-+ drm-nav-bar-pills-stacked
++ **drm-nav-bar-pills-stacked**
 
 		@include drm-nav-bar-pills-stacked($text-color, $hover-color, $align);
 
@@ -283,7 +283,7 @@ breakpoint deminsions can be customized in variables file
 		+ $hover-color: color of link element's background (optional - defaults to $link-color)
 		+ $align: text-alignment (optional - defaults to center)			
 
-+ drm-nav-bar-pills-solid
++ **drm-nav-bar-pills-solid**
 
 		@include drm-nav-bar-pills-solid($text-color, $background-color, $align);
 
@@ -294,7 +294,7 @@ breakpoint deminsions can be customized in variables file
 		+ $background-color: color of link element's background (optional - defaults to $link-color)
 		+ $align: text-alignment (optional - defaults to center)
 
-+ drm-nav-bar-pills-solid-stacked
++ **drm-nav-bar-pills-solid-stacked**
 
 		@include drm-nav-bar-pills-solid-stacked($text-color, $background-color, $align);
 
@@ -305,7 +305,7 @@ breakpoint deminsions can be customized in variables file
 		+ $background-color: color of link element's background (optional - defaults to $link-color)
 		+ $align: text-alignment (optional - defaults to center)
 
-+ drm-button-link
++ **drm-button-link**
 
 		@include drm-button-link($color, $bk-color, $width, $center, $border-radius);
 
@@ -318,7 +318,7 @@ breakpoint deminsions can be customized in variables file
 		+ $center: alignment of link or button element (optional - defaults to center)
 		+ $border-radius: optional - defaults to 3px	
 
-+ drm-button-solid
++ **drm-button-solid**
 
 		@include drm-button-solid($bk-color, $color, $width, $center, $border-radius, $border-color);
 
@@ -332,7 +332,7 @@ breakpoint deminsions can be customized in variables file
 		+ $border-radius: optional - defaults to 3px
 		+ $border-color: color of border (optional - defaults to none for no border)
 
-+ drm-rectangle-button
++ **drm-rectangle-button**
 
 		@include drm-rectangular-button($color, $text, $border-radius, $width);
 
@@ -342,11 +342,38 @@ breakpoint deminsions can be customized in variables file
 		+ $color: background-color of button (optional - defaults to $link-color)
 		+ $text: text color (optional - defaults to white)
 		+ $border-radius: optional - defaults to 0 for no radius
-		+ $width: width or button (optional - defaults to 40%) 					
+		+ $width: width or button (optional - defaults to 40%)
+
++ **drm-pill-button-link**
+
+		@include drm-pill-button-link($height, $color, $bk-color, $width, $center);
+
+	+ creates a pill shaped button with a 1px border and transparent background
+	* has a solid background color on hover state
+	+ **Arguments:**
+		+ $height: height of button (optional - defaults to 50px)
+		+ $color: text-color (optional - defualts to white)
+		+ $bk-color: background color of button (optional - defaults to $link-color)
+		+ $width: width of button (optional - defaults to 40%)
+		+ $center: centers element in container (optional - defaults to center)
+
++ **drm-pill-button-solid**
+
+		@include drm-pill-button-solid($height, $color, $bk-color, $width, $center, $border-color);
+
+	+ creates a pill shaped button with a solid background
+	+ inverts text and background color on hover state
+	+ **Arguments:**
+		+ $height: height of button (optional - defaults to 50px)
+		+ $color: text-color (optional - defualts to white)
+		+ $bk-color: background color of button (optional - defaults to $link-color)
+		+ $width: width of button (optional - defaults to 40%)
+		+ $center: centers element in container (optional - defaults to center)
+		+ $border-color: optional border color - defaults to none for no border
 
 ### Effects Utilities
 
-+ drm-solid-drop-shadow
++ **drm-solid-drop-shadow**
 
 		@include drm-solid-drop-shadow($color);
 
@@ -354,7 +381,7 @@ breakpoint deminsions can be customized in variables file
 	+ **Arguments:**
 		+ $color: color of the drop shadow
 
-+ drm-background-transparent
++ **drm-background-transparent**
 
 		@include drm-background-transparent($color, $opacity);
 
@@ -363,7 +390,7 @@ breakpoint deminsions can be customized in variables file
 		+ $color: element background color
 		+ $opacity: opacity of the element background color (optional - defualts to 0.7)
 
-+ drm-border-transparent
++ **drm-border-transparent**
 
 		@include drm-border-transparent($color, $thickness, $opacity);
 
@@ -374,7 +401,7 @@ breakpoint deminsions can be customized in variables file
 		+ $thickness: border width (optional - defualts to 5px)
 		+ $opacity: opacity of element border (optional - defualts to 0.7)
 
-+ drm-stitched-box
++ **drm-stitched-box**
 
 		@include drm-stitched-box($color, $stitch-color, $border-radius, $border-color, $opacity);
 
@@ -386,7 +413,7 @@ breakpoint deminsions can be customized in variables file
 		+ $border-color: optional - defaults to none
 		+ $opacity: optional - defaults to 1 for no transparency
 
-+ drm-stitched-row
++ **drm-stitched-row**
 
 		@include drm-stitched-row($color, $stitched-color, $border-color, $opacity, $shadow);
 
@@ -398,7 +425,7 @@ breakpoint deminsions can be customized in variables file
 		+ $opacity: optional - defaults to 1 for no transparency
 		+ $shadow: adds a drop shadow (optional - defaults to transparent for no shadow)
 
-+ drm-figure-transparent-border
++ **drm-figure-transparent-border**
 
 		@include drm-figure-transparent-border($color, $thickness, $hover-color);
 
@@ -410,7 +437,7 @@ breakpoint deminsions can be customized in variables file
 		+ $hover-color: color of border when users mouse over element
 		+ $thickness: thickness of transparent border (optional - defaults to 5px)
 
-+ drm-triple-shadow
++ **drm-triple-shadow**
 
 		@include drm-triple-shadow($color1, $color2);
 
@@ -419,7 +446,7 @@ breakpoint deminsions can be customized in variables file
 		+ $color1: color of outside, thick borders
 		+ $color2: color of inside, thin border
 	
-+ drm-inset-text
++ **drm-inset-text**
 
 		@include drm-inset-text($shadow-color);
 
@@ -427,7 +454,7 @@ breakpoint deminsions can be customized in variables file
 	+ **Arguments:**
 		+ $shadow-color: color of text-shadow (optional - defaults to $shadow-color)
 
-+ drm-inset-border
++ **drm-inset-border**
 
 		@include drm-inset-border($color, $shadow-color);
 
@@ -436,7 +463,7 @@ breakpoint deminsions can be customized in variables file
 		+ $color: color of bottom-border
 		+ $shadow-color: color of text-shadow (optional - defaults to $shadow-color)
 	
-+ drm-inset-box
++ **drm-inset-box**
 
 		@include drm-inset-box($shadow-color);
 
@@ -444,7 +471,7 @@ breakpoint deminsions can be customized in variables file
 	+ **Arguments:**
 		+ $shadow-color: color of text-shadow (optional - defaults to $shadow-color) 
 
-+ drm-boxy-drop-shadow
++ **drm-boxy-drop-shadow**
 
 		@include drm-boxy-drop-shadow($shadow-color);
 
@@ -455,7 +482,7 @@ breakpoint deminsions can be customized in variables file
 
 ### Forms
 
-+ drm-form-state
++ **drm-form-state**
 
 		@include drm-form-state($glow, $background, $border)
 
