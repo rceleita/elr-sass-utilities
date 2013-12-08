@@ -24,6 +24,14 @@ body {
 }	
 
 /*-----------------------------------------------------------------------------
+	Visibility
+-----------------------------------------------------------------------------*/	
+
+.hide {
+	display: none;
+}
+
+/*-----------------------------------------------------------------------------
 	Clear and Alignment
 -----------------------------------------------------------------------------*/
 
@@ -63,40 +71,44 @@ body {
 	@include drm-em-font(10);
 }
 
-.left {
+.text-left {
 	text-align: left;
 }
 
-.right {
+.text-right {
 	text-align: right;
 }
 
-.center {
+.text-center {
 	text-align: center;
 }
 
-.muted {
+.text-justified {
+	text-align: justify;
+}
+
+.text-muted {
 	color: $muted-color;
 }
 
-.danger {
+.text-danger {
 	color: $danger-color;	
 }
 
-.error {
+.text-error {
 	color: $danger-color;
 	font-weight: bold;
 }
 
-.info {
+.text-info {
 	color: $info-color;
 }
 
-.warning {
+.text-warning {
 	color: $warning-color;
 }
 
-.success {
+.text-success {
 	color: $success-color;
 }
 

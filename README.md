@@ -15,13 +15,7 @@ These are some sass extends and mixins that we are using over and over in our pr
 
 breakpoint deminsions can be customized in variables file
 
-+ trenta
-+ venti
-+ grande
-+ tall
-+ short
-+ espresso
-+ bean
++ **@drm-breakpoint**
 
 		@include drm-breakpoint(trenta) {
 			// place rules here
@@ -30,6 +24,24 @@ breakpoint deminsions can be customized in variables file
 		@include drm-breakpoint(venti) {
 			// place rules here
 		}
+
+	+ **Arguments:**
+		+ $point: breakpoint name	
+			+ trenta
+			+ venti
+			+ grande
+			+ tall
+			+ short
+			+ espresso
+			+ bean
+
++ **drm-hide-breapoint**
+
+		@include drm-hide-breakpoint($point);
+
+	+ hides element at breakpoint
+	+ **Arguments:**
+		+ $point: breakpoint name		
 
 ### Layout Utilities
 
@@ -212,8 +224,9 @@ breakpoint deminsions can be customized in variables file
 
 		@include drm-ribbon-heading($color, $stitch-color, $text-color, $text-shadow);
 
-
-		<h1><span class="ribbon-content">Ribbon Heading</span></h1>
+	**html implementation**	
+		
+		~~~<h1><span class="ribbon-content">Ribbon Heading</span></h1>~~~
 
 	+ styles a heading with a ribbon style
 	+ ribbon folds sit below heading
@@ -294,30 +307,155 @@ breakpoint deminsions can be customized in variables file
 		@include drm-circle($diameter);
 
 	+ creates a perfect circle
-	
-+ **drm-square**
 
-		@include drm-square($width);
++ **drm-ellipse**
 
-	+ creates a perfect square
+		@include drm-ellipse($height, $width, $display);
 
-+ **drm-rounded-square**
-
-		@include drm-rounded-square($width, $border-radius);
-
-	+ creates a perfect square with rounded corners		
+	+ creates an ellipse		
 	
 + **drm-rectangle**
 
-		@include drm-rectangle($width, $height);
+		@include drm-rectangle($width, $height, $display, $border-radius);
 
-	+ creates a rectangle
+	+ creates a rectangle	
+	
++ **drm-square**
 
-+ **drm-rounded-rectangle**
+		@include drm-square($width, $display, $border-radius);
 
-		@include drm-rounded-rectangle($width, $height, $border-radius);
+	+ creates a perfect square
 
-	+ creates a rectangle with rounded corners						 
++ **drm-triangle**
+
+		@include drm-triangle($direction, $base, $height, $color);
+
+	+ creates a triangle element
+	+ **Arguments:**
+		+ $direction: optional - defaults to top for a triangle that points up
+			+ use top-left, top-right, bottom-left, or bottom-right for a right triangle
+		+ $base: size of triangle (optional - defaults to 50px)
+		+ $height: optional - defaults to half
+			+ for a flatter triangle use $height: half
+			+ use $height: auto for a triangle of equal height and width
+		+ $color: triangle color (optional - defaults to light grey color)		  	
+
++ **drm-equilateral-triangle**
+
+		@include drm-equilateral-triangle($direction, $base, $color);
+
+	+ creates an equilateral triangle element
+	+ **Arguments:**
+		+ $direction: optional - defaults to top for a triangle that points up
+			+ use top, right, left, or bottom
+		+ $base: size of triangle (optional - defaults to 50px)
+		+ $color: triangle color (optional - defaults to light grey color)			
+
++ **drm-quadrilateral-diamond**
+
+		@include drm-quadrilateral-diamond($size, $skew);
+
+	+ creates a diamond shaped element
+	+ **Arguments:**
+		+ $size: size of triangle element
+		+ $skew: use positive skew for horizontal diamond; negative skew for vertical diamond
+			+ optional - defaults to 0 for an equilateral diamond	
+
++ **drm-pentagon**
+
+		@include drm-pentagon($width, $height, $background-color);
+
+	+ creates a five sided element
+	+ **Arguments:**
+		+ $width: width of pentagon element
+		+ $height: height of pentagon element
+		+ $background-color: color of pentagon element	
+
++ **drm-hexagon**
+
+		@include drm-hexagon($width, $height, $background-color);
+
+	+ creates a six sided element
+	+ **Arguments:**
+		+ $width: width of hexagon element
+		+ $height: height of hexagon element
+		+ $background-color: color of hexagon element		
+
++ **drm-octagon**
+
+		@include drm-octagon($width, $height, $background-color);
+
+	+ creates an eight sided element
+	+ **Arguments:**
+		+ $width: width of octagon element
+		+ $height: height of octagon element
+		+ $background-color: color of octagon element		
+
++ **drm-parallelogram**
+
+		@include drm-parallelogram($width, $height, $skew);
+
+	+ creates a parallelogram shaped element	
+	+ **Arguments:**
+		+ $width: width of parallelogram
+		+ $height: height of parallelogram
+		+ $skew: acute angle degree of parallelogram element (optional - defaults to 20)
+
++ **drm-trapezoid**
+
+		@include drm-trapezoid($width, $height, $background-color);
+
+	+ creates a trapezoid shaped element	
+	+ **Arguments:**
+		+ $width: width of trapezoid element
+		+ $height: height of trapezoid element
+		+ $background-color: color of trapezoid element
+
++ **drm-ribbon-wrapper**
+
+		@include drm-ribbon-wrapper($height, $color, $stitch-color);
+
+	+ creates a stitched ribbon that wraps a block element	
+	+ **Arguments:**
+		+ $height: height of ribbon
+		+ $color: $color of ribbon wrapper
+		+ $stitch-color: color of stitches (optional - defaults to white)
+
++ **drm-star-5**
+
+		@include drm-star-5($width, $background-color, $z-index);
+
+	+ **Arguments:**
+		+ $width: width of element
+		+ $background-color: color of element (optional - defaults to light grey)
+		+ $z-index:	optional - defaults to 0
+
++ **drm-star-6**
+
+		@include drm-star-6($width, $background-color, $z-index);
+
+	+ **Arguments:**
+		+ $width: width of element
+		+ $background-color: color of element (optional - defaults to light grey)
+		+ $z-index:	optional - defaults to 0
+
++ **drm-star-8**
+
+		@include drm-star-8($width, $background-color, $z-index);
+
+	+ **Arguments:**
+		+ $width: width of element
+		+ $background-color: color of element (optional - defaults to light grey)
+		+ $z-index:	optional - defaults to 0
+
++ **drm-badge**	
+
+		@include drm-badge($width, $background-color, $z-index);
+
+	+ **Arguments:**
+		+ $width: width of element
+		+ $background-color: color of element (optional - defaults to light grey)
+		+ $z-index:	optional - defaults to 0
 
 ### Navigation Utilities
 

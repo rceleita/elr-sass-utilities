@@ -255,10 +255,13 @@
 	padding: 10px 60px 10px 60px;
 	cursor: pointer;
 	width: $width;
-	@include border-radius($border-radius);
 	@include drm-solid-drop-shadow(darken($color, 10%));
 	@include transition(all, .3s ease-out);
 	@include box-sizing(border-box);
+
+	@if $border-radius != 0 {
+		@include border-radius($border-radius);	
+	}
 
 	&:visited {
 		color: $color;

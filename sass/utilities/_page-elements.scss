@@ -73,8 +73,11 @@
 	height: 45px - 6;
 	@include drm-em-font(24);
 	@include drm-stitched-row($color, $stitch-color, none, 1, $darker-grey);
-	@include drm-inset-text($text-shadow);
 	@include box-sizing(border-box);
+
+	@if $text-shadow != none {
+		@include drm-inset-text($text-shadow);	
+	}
 
 	&:before {
 		content: "";
@@ -245,8 +248,12 @@
 	@include drm-em-font(14);
 }
 
-@mixin context-box($type: info) {
+@mixin context-box($type: info, $border-radius: 0) {
 	padding: 10px 20px 10px 20px;
+
+	@if $border-radius != 0 {
+		border-radius: $border-radius;
+	}
 
 	@if $type == info {
 		background-color: lighten($info-color, 20%);
