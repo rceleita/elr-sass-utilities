@@ -35,7 +35,7 @@ breakpoint deminsions can be customized in variables file
 			+ espresso
 			+ bean
 
-+ **drm-hide-breapoint**
++ **drm-hide-breakpoint**
 
 		@include drm-hide-breakpoint($point);
 
@@ -226,7 +226,7 @@ breakpoint deminsions can be customized in variables file
 
 	**html implementation**	
 		
-		~~~<h1><span class="ribbon-content">Ribbon Heading</span></h1>~~~
+		<h1><span class="ribbon-content">Ribbon Heading</span></h1>
 
 	+ styles a heading with a ribbon style
 	+ ribbon folds sit below heading
@@ -307,24 +307,39 @@ breakpoint deminsions can be customized in variables file
 		@include drm-circle($diameter);
 
 	+ creates a perfect circle
+	+ **Arguments:**
+		+ $diameter: diameter of circle
 
 + **drm-ellipse**
 
-		@include drm-ellipse($height, $width, $display);
+		@include drm-ellipse($width, $height, $display);
 
-	+ creates an ellipse		
+	+ creates an ellipse
+	+ **Arguments:**
+		+ $width: width of ellipse
+		+ $height: height of ellipse
+		+ $display: optional - defaults to block		
 	
 + **drm-rectangle**
 
 		@include drm-rectangle($width, $height, $display, $border-radius);
 
-	+ creates a rectangle	
+	+ creates a rectangle
+	+ **Arguments:**
+		+ $width: width of rectangle
+		+ $height: height of rectangle
+		+ $display: optional - defaults to block
+		+ $border-radius - optional - defaults to 0 for no border-radius	
 	
 + **drm-square**
 
 		@include drm-square($width, $display, $border-radius);
 
 	+ creates a perfect square
+	+ **Arguments:**
+		+ $width: width and height of square
+		+ $display: optional - defaults to block
+		+ $border-radius - optional - defaults to 0 for no border-radius	
 
 + **drm-triangle**
 
