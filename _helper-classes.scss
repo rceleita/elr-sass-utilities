@@ -112,6 +112,10 @@ body {
 	color: $success-color;
 }
 
+mark {
+	background-color: transparent;
+}
+
 mark, .highlight {
 	color: $link-color;
 }

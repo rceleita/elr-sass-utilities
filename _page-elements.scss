@@ -237,6 +237,25 @@
 	}
 }
 
+@mixin drm-list-group($background-color: white, $text-color: #333, $border-radius: 0, $border-color: #999) {
+	@extend %drm-reset-box;
+	border: 1px solid $border-color;
+	background-color: $background-color;
+	color: $text-color;
+
+	li {
+		list-style: none;
+		display: block;
+		margin: 0;
+		padding: 5px 10px 5px 10px;
+		border-bottom: 1px solid $border-color;
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+}
+
 // Styles post-meta elements
 
 @mixin drm-post-meta($image) {
