@@ -56,22 +56,54 @@
 
 	@if $opacity == 1 {
 		background: $color;
-	} @else {
-		@include drm-background-transparent($color, $opacity);		
-	}
 	
-	@if $shadow == 'transparent' {
-		@if $border-color == none {
-			@include box-shadow(0 0 0 3px rgba($color, $opacity));
+		@if $shadow == 'transparent' {
+			@if $border-color == none {
+				@include box-shadow(0 0 0 3px $color);
+			} @else {
+				@include box-shadow(0 0 0 3px $color, 0 0 0 4px $border-color);
+			}			
 		} @else {
-			@include box-shadow(0 0 0 3px $color, 0 0 0 4px $border-color);
-		}			
-	} @else {
-		@if $border-color == none {
-			@include box-shadow(0 0 0 3px $color, 0 1px 1px 4px $shadow);
-		} @else {
-			@include box-shadow(0 0 0 3px $color, 0 0 0 4px $border-color, 0 1px 1px 5px $shadow);
+			@if $border-color == none {
+				@include box-shadow(0 0 0 3px $color, 0 1px 1px 4px $shadow);
+			} @else {
+				@include box-shadow(0 0 0 3px $color, 0 0 0 4px $border-color, 0 1px 1px 5px $shadow);
+			}
 		}
+
+	} @elseif $opacity < 0.6 {
+		@include drm-background-transparent($color, $opacity);
+	
+		@if $shadow == 'transparent' {
+			@if $border-color == none {
+				@include box-shadow(0 0 0 3px rgba($color, $opacity));
+			} @else {
+				@include box-shadow(0 0 0 3px rgba($color, $opacity + 0.2), 0 0 0 4px $border-color);
+			}			
+		} @else {
+			@if $border-color == none {
+				@include box-shadow(0 0 0 3px rgba($color, $opacity + 0.2), 0 1px 1px 4px $shadow);
+			} @else {
+				@include box-shadow(0 0 0 3px rgba($color, $opacity + 0.2), 0 0 0 4px $border-color, 0 1px 1px 5px $shadow);
+			}
+		}
+
+	} @else {
+		@include drm-background-transparent($color, $opacity);
+	
+		@if $shadow == 'transparent' {
+			@if $border-color == none {
+				@include box-shadow(0 0 0 3px rgba($color, $opacity));
+			} @else {
+				@include box-shadow(0 0 0 3px rgba($color, $opacity), 0 0 0 4px $border-color);
+			}			
+		} @else {
+			@if $border-color == none {
+				@include box-shadow(0 0 0 3px rgba($color, $opacity), 0 1px 1px 4px $shadow);
+			} @else {
+				@include box-shadow(0 0 0 3px rgba($color, $opacity), 0 0 0 4px $border-color, 0 1px 1px 5px $shadow);
+			}
+		}		
 	}
 }
 

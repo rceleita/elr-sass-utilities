@@ -16,7 +16,7 @@
     }
 }
 
-// Centers an element on the page; for elements that take up the entire width 
+// Centers an element on the page; container for elements that take up the entire width 
 // of the wrapper
 
 %drm-container {
@@ -50,7 +50,8 @@
 }
 
 %drm-container-full-width {
-	margin: 0;
+	margin-left: 0;
+	margin-right: 0;
 	padding-left: 2.5%;
 	padding-right: 2.5%;
 	@include drm-clearfix();
@@ -119,7 +120,8 @@
 // Each element will be the exact same width
 
 @mixin drm-feature-box($total: 3) {
-	margin: 0;
+	margin-left: 0;
+	margin-right: 0;
 	width: ( 100% / $total );
 	float: left;
 	@include box-sizing(border-box);
@@ -142,14 +144,6 @@
 	width: (100% / $total) - ($margin * 2);
 	float: left;
 	@include box-sizing(border-box);
-
-	&:first-child {
-		margin-left: 0;
-	}
-
-	&:last-child {
-		margin-right: 0;
-	}
 
 	@include drm-breakpoint(tall) {
 		padding: 10px;
@@ -205,7 +199,7 @@
 
 // horizonatally center element
 
-@mixin drm-horizonatally-center($container-element-width, $width) {
+@mixin drm-horizontally-center($container-element-width, $width) {
 	position: absolute;
 	width: $width;
 	top: ($container-element-width / 2) - ($width / 2);
