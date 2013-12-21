@@ -161,7 +161,7 @@
 // Styles a rounded button with a 1px border and transparent background
 // Useful for <button> and <a> elements
 
-@mixin drm-button-link($color: white, $bk-color: $link-color, $width: 40%, $align: center, $border-radius: 3px, $border-color: none) {
+@mixin drm-button-link($color: white, $bk-color: $link-color, $width: 40%, $center: center, $border-radius: 3px, $border-color: none) {
 	width: $width;
 	border: 1px solid $color;
 	color: $color;
@@ -171,17 +171,16 @@
 	padding: 10px 0 10px 0;
 	text-decoration: none;
 	cursor: pointer;
+	background-color: transparent;
 	@include border-radius($border-radius);
 	@include text-shadow(none);
 	@include box-shadow(none);
 	@include box-sizing(border-box);
 	@include transition(all, .3s ease-out);
 
-	@if $align == center {
-		margin: 10px auto 10px auto;		
-	} @else {
-		margin-top: 10px;
-		margin-bottom: 10px;
+	@if $center == center {
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	&:visited {
@@ -230,10 +229,8 @@
 	}
 
 	@if $center == center {
-		margin: 10px auto 10px auto;		
-	} @else {
-		margin-top: 10px;
-		margin-bottom: 10px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	&:visited {
@@ -252,12 +249,11 @@
 
 // Styles a rectangular button with a 2px solid drop shadow
 
-@mixin drm-rectangle-button($color: $link-color, $text: white, $border-radius: 0, $width: 40%) {
+@mixin drm-rectangle-button($color: $link-color, $text: white, $border-radius: 0, $width: 40%, $center: center) {
 	border: 1px solid darken($color, 10%);
 	background-color: $color;
 	font-weight: bold;
 	color: $text;
-	margin: 20px 0 20px 0;
 	padding: 10px 60px 10px 60px;
 	cursor: pointer;
 	width: $width;
@@ -267,6 +263,11 @@
 
 	@if $border-radius != 0 {
 		@include border-radius($border-radius);	
+	}	
+
+	@if $center == center {
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	&:visited {
@@ -285,7 +286,7 @@
 
 // pill button
 
-@mixin drm-pill-button-link($height: 50px, $color: white, $bk-color: $link-color, $width: 40%, $center: center) {
+@mixin drm-pill-button-link($height: 50px, $color: white, $bk-color: $link-color, $width: 40%, $center: center, $border-color: none) {
 	width: $width;
 	height: $height;
 	border: 1px solid $color;
@@ -296,17 +297,16 @@
 	padding: 10px 0 10px 0;
 	text-decoration: none;
 	cursor: pointer;
+	line-height: 1.8;
 	@include border-radius($height / 2);
 	@include text-shadow(none);
 	@include box-shadow(none);
 	@include box-sizing(border-box);
 	@include transition(all, .3s ease-out);
 
-	@if $align == center {
-		margin: 10px auto 10px auto;		
-	} @else {
-		margin-top: 10px;
-		margin-bottom: 10px;
+	@if $center == center {
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	&:visited {
@@ -314,9 +314,15 @@
 	}
 
 	&:hover {
+
+		@if $border-color != none {
+			border: 1px solid $border-color;		
+		} @else {
+			border: 1px solid $color;
+		}
+
 		background-color: $color;
 		color: $bk-color;
-		border: 1px solid $bk-color;
 		text-decoration: none;
 		@include text-shadow(none);
 		@include box-shadow(none);
@@ -338,6 +344,7 @@
 	padding: 10px 0 10px 0;
 	text-decoration: none;
 	cursor: pointer;
+	line-height: 1.8;
 	@include border-radius($height / 2);
 	@include text-shadow(none);
 	@include box-sizing(border-box);

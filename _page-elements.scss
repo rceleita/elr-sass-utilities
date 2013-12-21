@@ -267,7 +267,7 @@
 	@include drm-em-font(14);
 }
 
-@mixin context-box($type: info, $border-radius: 0) {
+@mixin drm-context-box($type: info, $border-radius: 0, $color: none) {
 	padding: 10px 20px 10px 20px;
 
 	@if $border-radius != 0 {
@@ -288,7 +288,40 @@
 		border: 1px solid $success-color;		
 	} @elseif $type == muted {
 		background-color: lighten($muted-color, 20%);
-		border: 1px solid $muted-color;		
+		border: 1px solid $muted-color;				
+	} @elseif $type == custom {
+		background-color: lighten($color, 20%);
+		border: 1px solid $color;		
+	} @else {
+		@warn "#{error("That's not a context box type!")}";
+	}
+}
+
+@mixin drm-label($type: info, $border-radius: 3px, $color: none) {
+	padding: 5px 10px 5px 10px;
+
+	@if $border-radius != 0 {
+		border-radius: $border-radius;
+	}
+
+	@if $type == info {
+		background-color: lighten($info-color, 20%);
+		border: 1px solid $info-color;
+	} @elseif $type == danger {
+		background-color: lighten($danger-color, 20%);
+		border: 1px solid $danger-color;		
+	} @elseif $type == warning {
+		background-color: lighten($warning-color, 20%);
+		border: 1px solid $warning-color;		
+	} @elseif $type == success {
+		background-color: lighten($success-color, 20%);
+		border: 1px solid $success-color;		
+	} @elseif $type == muted {
+		background-color: lighten($muted-color, 20%);
+		border: 1px solid $muted-color;			
+	} @elseif $type == custom {
+		background-color: lighten($color, 20%);
+		border: 1px solid $color;		
 	} @else {
 		@warn "#{error("That's not a context box type!")}";
 	}
