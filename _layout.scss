@@ -55,6 +55,7 @@
 	padding-left: 2.5%;
 	padding-right: 2.5%;
 	@include drm-clearfix();
+	@include box-sizing(border-box);
 
 	@include drm-breakpoint(trenta) {
 		padding-left: 10%;
@@ -86,10 +87,12 @@
 // container-inner elements
 
 %drm-row {
-	@extend %drm-reset-box;
+	margin-left: 0;
+	margin-right: 0;
 	width: 100%;
 	display: block;
 	@include drm-clearfix();
+	@include box-sizing(border-box);
 }
 
 // Centers an element horizontally on the page
