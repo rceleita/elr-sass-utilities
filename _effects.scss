@@ -149,17 +149,21 @@
 
 @mixin drm-inset-border($color, $shadow-color: $shadow-color) {
 	border-bottom: 1px solid $color;
-	@include box-shadow(0 1px 0 $shadow-color);
+	@include single-box-shadow(0, 1px, 0, $shadow-color);
 }
 
 // creates a slight box shadow
 
 @mixin drm-inset-box($shadow-color: $shadow-color) {
-	@include box-shadow(1px 1px 0 $shadow-color);	
+	@include single-box-shadow(1px, 1px, 0, $shadow-color);	
 }
 
 // creates a thick bottom drop shadow
 
 @mixin drm-boxy-drop-shadow($shadow-color: $grey) {
-	@include box-shadow($shadow-color 0 30px 15px -20px);	
+	@include single-box-shadow($shadow-color, 0, 30px, 15px, -20px);	
+}
+
+@mixin drm-softer-thick-box-shadow($shadow-color: $dark-grey) {
+	@include single-box-shadow($dark-grey, 0, 65px, 46px, -60px);
 }

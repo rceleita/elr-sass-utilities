@@ -247,31 +247,35 @@
 	}	
 }
 
-// Styles a rectangular button with a 2px solid drop shadow
+// Styles a rectangular button with a solid drop shadow
 
 @mixin drm-rectangle-button($color: $link-color, $text: white, $border-radius: 0, $width: 40%, $center: center) {
 	border: 1px solid darken($color, 10%);
 	background-color: $color;
 	font-weight: bold;
 	color: $text;
-	padding: 10px 60px 10px 60px;
+	padding: 10px 10px 10px 10px;
 	cursor: pointer;
 	width: $width;
+	text-decoration: none;
+	display: block;
 	@include drm-solid-drop-shadow(darken($color, 10%));
 	@include transition(all, .3s ease-out);
 	@include box-sizing(border-box);
 
+	@if $center == center {
+		margin: 10px auto 10px auto;		
+	} @else {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
 	@if $border-radius != 0 {
 		@include border-radius($border-radius);	
-	}	
-
-	@if $center == center {
-		margin-left: auto;
-		margin-right: auto;
 	}
 
 	&:visited {
-		color: $color;
+		color: $text;
 	}
 
 	&:hover {
