@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Drm-sass-utlilites by Beth3346</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Drm-sass-utlilites</h1>
+        <h2>Library of flexible and reusable sass mixins for use in development projects. This is still a work in progress.</h2>
+        <a href="https://github.com/Beth3346/drm-sass-utlilites" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="dynamic-response-media-sass-utilities" class="anchor" href="#dynamic-response-media-sass-utilities"><span class="octicon octicon-link"></span></a>Dynamic Response Media Sass Utilities</h1>
+
+<h2>
+<a name="about-drm-sass-utilities" class="anchor" href="#about-drm-sass-utilities"><span class="octicon octicon-link"></span></a>About drm-sass-utilities</h2>
+
+<p>These are some sass extends and mixins that we are using over and over in our projects
+This is an ongoing project. Expect frequent changes to the code.</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<ul>
+<li>Add utilities folder and _drm-sass-utilities.scss to project sass folder</li>
+<li>Import _drm-sass-utilities.scss into main scss file</li>
+</ul><h2>
+<a name="sass-utilities" class="anchor" href="#sass-utilities"><span class="octicon octicon-link"></span></a>Sass Utilities</h2>
+
+<h3>
+<a name="media-query-breakpoints" class="anchor" href="#media-query-breakpoints"><span class="octicon octicon-link"></span></a>Media Query Breakpoints</h3>
+
+<p>breakpoint deminsions can be customized in variables file</p>
+
+<ul>
+<li>
+<p><strong>@drm-breakpoint</strong></p>
+
+<pre><code>@include drm-breakpoint(trenta) {
+    // place rules here
+}
+
+@include drm-breakpoint(venti) {
+    // place rules here
+}
+</code></pre>
+
+<ul>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$point: breakpoint name<br><ul>
+<li>trenta</li>
+<li>venti</li>
+<li>grande</li>
+<li>tall</li>
+<li>short</li>
+<li>espresso</li>
+<li>bean</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-hide-breakpoint</strong></p>
+
+<pre><code>@include drm-hide-breakpoint($point);
+</code></pre>
+
+<ul>
+<li>hides element at breakpoint</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$point: breakpoint name<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h3>
+<a name="layout-utilities" class="anchor" href="#layout-utilities"><span class="octicon octicon-link"></span></a>Layout Utilities</h3>
+
+<ul>
+<li>
+<p><strong>%drm-container</strong></p>
+
+<pre><code>@extend %drm-container;
+</code></pre>
+
+<ul>
+<li>Centers an element on the page</li>
+<li>includes built in breakpoints for responsiveness</li>
+</ul>
+</li>
+<li>
+<p><strong>%drm-container-full-width</strong></p>
+
+<pre><code>@extend %drm-container-full-width;
+</code></pre>
+
+<ul>
+<li>Centers an element on the page</li>
+<li>for elements that take up the entire width of the wrapper</li>
+<li>includes built in breakpoints for responsiveness</li>
+</ul>
+</li>
+<li>
+<p><strong>%drm-reset-box</strong></p>
+
+<pre><code>@extend %drm-reset-box;
+</code></pre>
+
+<ul>
+<li>removes margin and padding from an element</li>
+</ul>
+</li>
+<li>
+<p><strong>%drm-row</strong></p>
+
+<pre><code>@extend %drm-row;
+</code></pre>
+
+<ul>
+<li>creates an element that completely fills its container</li>
+</ul>
+</li>
+<li>
+<p><strong>%drm-center-block</strong></p>
+
+<pre><code>@extend %drm-center-block;
+</code></pre>
+
+<ul>
+<li>centers an element horizontally</li>
+<li>only works on elements with a definted width rule</li>
+</ul>
+</li>
+<li>
+<p><strong>%drm-comment-titles</strong></p>
+
+<pre><code>@extend %drm-comment-titles;
+</code></pre>
+
+<ul>
+<li>comment titles</li>
+</ul>
+</li>
+<li>
+<p><strong>%drm-heading</strong></p>
+
+<pre><code>@extend %drm-heading;
+</code></pre>
+
+<ul>
+<li>heading formatting</li>
+</ul>
+</li>
+<li>
+<p><strong>%drm-lists</strong></p>
+
+<pre><code>@extend %drm-lists;
+</code></pre>
+
+<ul>
+<li>list formatting</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-feature-box</strong></p>
+
+<pre><code>@include drm-feature-box($total);
+</code></pre>
+
+<ul>
+<li>creates a row of equally sized boxes</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$total: total number of boxes per row (optional - defaults to 3)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-feature-box-margin</strong></p>
+
+<pre><code>@include drm-feature-box-margin($total, $margin);
+</code></pre>
+
+<ul>
+<li>creates a row of equally sized boxes with margins</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$total: total number of boxes per row (optional - defaults to 3)</li>
+<li>$margin: margin for feature boxes (optional - defaults to 1%)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-circle-blocks</strong></p>
+
+<pre><code>@include drm-circle-blocks($container-element-width, $margin, $total);
+</code></pre>
+
+<ul>
+<li>creates a row of equally sized circle elements<br>
+</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$container-element-width: width of container element (optional - defaults to to 1000px)</li>
+<li>$margin: margin for circle blocks (optional - defaults to 20px)</li>
+<li>$total: total number of elements per row (optional - defaults to 3)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-em-font</strong></p>
+
+<pre><code>@include drm-em-font($size);
+</code></pre>
+
+<ul>
+<li>converts px font to em font</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$size: takes a whole number</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-em-margin</strong></p>
+
+<pre><code>@include drm-em-margin($top, $right, $bottom, $left);
+</code></pre>
+
+<ul>
+<li>converts px margin to em margin</li>
+<li>$top is required, the rest are optional</li>
+<li>if $right is null the first argument is used for all sides of element</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$top</li>
+<li>$right</li>
+<li>$bottom</li>
+<li>$left</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-em-padding</strong></p>
+
+<pre><code>@include drm-em-padding($top, $right, $bottom, $left);
+</code></pre>
+
+<ul>
+<li>converts px padding to em padding</li>
+<li>$top is required, the rest are optional</li>
+<li>if $right is null the first argument is used for all sides of element</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$top</li>
+<li>$right</li>
+<li>$bottom</li>
+<li>$left</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-vertically-center</strong></p>
+
+<pre><code>@include drm-vertically-center($container-element-height, $height);
+</code></pre>
+
+<ul>
+<li>vertically centers an element using absolute positioning<br>
+</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$container-element-height: height of container element</li>
+<li>$height: height of element to be positioned vertically<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-horizontally-center</strong></p>
+
+<pre><code>@include drm-horizontally-center($container-element-width, $width);
+</code></pre>
+
+<ul>
+<li>horizontally centers an element using absolute positioning<br>
+</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$container-element-width: width of container element</li>
+<li>$width: width of element to be positioned horizontally<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h3>
+<a name="page-element-utilities" class="anchor" href="#page-element-utilities"><span class="octicon octicon-link"></span></a>Page Element Utilities</h3>
+
+<ul>
+<li>
+<p><strong>%drm-info-block</strong></p>
+
+<pre><code>@extend %drm-info-block;
+</code></pre>
+
+<ul>
+<li>creates a horizontally centered box that takes up 90% of its container</li>
+<li>text is centered</li>
+</ul>
+</li>
+<li>
+<p><strong>%drm-feature-heading</strong></p>
+
+<pre><code>@extend %drm-feature-heading;
+</code></pre>
+
+<ul>
+<li>heading for feature boxes</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-section-heading</strong></p>
+
+<pre><code>@include drm-section-heading($align, $size);
+</code></pre>
+
+<ul>
+<li>styles a basic section heading</li>
+<li>usually applied to h1 elements</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$align: text-alignment (optional - defaults to center)</li>
+<li>$size: font-size (optional - defaults to 24px)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-section-sub-heading</strong></p>
+
+<pre><code>@include drm-section-sub-heading($align, $size);
+</code></pre>
+
+<ul>
+<li>styles a basic section sub-heading</li>
+<li>usually applied to h2 elements</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$align: text-alignment (optional - defaults to center)</li>
+<li>$size: font-size (optional - defaults to 20px)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-pill-heading</strong></p>
+
+<pre><code>@include drm-pill-heading($bk-color, $text-color);
+</code></pre>
+
+<ul>
+<li>styles a text element with a solid background and a slight border radius</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$bk-color: background color of text element</li>
+<li>$text-color: color of text</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-ribbon-heading</strong></p>
+
+<pre><code>@include drm-ribbon-heading($color, $stitch-color, $text-color, $text-shadow);
+</code></pre>
+
+<p><strong>html implementation</strong> </p>
+
+<pre><code>&lt;h1&gt;&lt;span class="ribbon-content"&gt;Ribbon Heading&lt;/span&gt;&lt;/h1&gt;
+</code></pre>
+
+<ul>
+<li>styles a heading with a ribbon style</li>
+<li>ribbon folds sit below heading</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$color: ribbon color</li>
+<li>$stitch-color: color of stitch effect (optional - defaults to white)</li>
+<li>$text-color: color of text (optional - defaults to white)</li>
+<li>$text-shadow: color of text-shadow (optional - defaults to none for no text-shadow)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-unstyled-list</strong></p>
+
+<pre><code>@include drm-unstyled-list($align);
+</code></pre>
+
+<ul>
+<li>removes default bullets and numbers from a list</li>
+<li>also applies hover underline states to link elements within list</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$align: text-alignment (optional - defaults to left)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-border-list</strong></p>
+
+<pre><code>@include drm-border-list($align, $border-color, $shadow-color);
+</code></pre>
+
+<ul>
+<li>styles a list with 1px bottom borders on each li element</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$align: text-alignment (optional - defaults to left)</li>
+<li>$border-color: color of bottom border (optional - defaults to dark grey)</li>
+<li>$shadow-color: optional shadow color for inset effect
+
+<ul>
+<li>recommend lighten($border-color, 30%)</li>
+<li>optional - defaults to none for no shadow effect</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-inline-list</strong></p>
+
+<pre><code>@include drm-inline-list();
+</code></pre>
+
+<ul>
+<li>sets li and a elements to inline</li>
+<li>removes margin and padding from container</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-triangle-list</strong></p>
+
+<pre><code>@include drm-triangle-list();
+</code></pre>
+
+<ul>
+<li>creates a list with triangle bullets</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-checked-list</strong></p>
+
+<pre><code>@include drm-checked-list();
+</code></pre>
+
+<ul>
+<li>creates a list with checkmark bullets</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-floated-list</strong></p>
+
+<pre><code>@include drm-floated-list()
+</code></pre>
+
+<ul>
+<li>creates a list of elements floated to the left</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-post-meta</strong></p>
+
+<pre><code>@include drm-post-meta($image);
+</code></pre>
+
+<ul>
+<li>adds an image to the left of a wordpress post meta element</li>
+<li>**Arguments:*
+
+<ul>
+<li>$image: icon to display next to post meta element (should be about 15px square)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>context-box</strong></p>
+
+<pre><code>@include context-box($type);
+</code></pre>
+
+<ul>
+<li>styles a block element with a light backround and darker border</li>
+<li>color variables are set in variables.scss</li>
+<li>useful for displaying messages to users</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$type: message content; can be: info, danger, warning, success, muted</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h3>
+<a name="shapes-utilities" class="anchor" href="#shapes-utilities"><span class="octicon octicon-link"></span></a>Shapes Utilities</h3>
+
+<ul>
+<li>
+<p><strong>drm-circle</strong></p>
+
+<pre><code>@include drm-circle($diameter);
+</code></pre>
+
+<ul>
+<li>creates a perfect circle</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$diameter: diameter of circle</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-ellipse</strong></p>
+
+<pre><code>@include drm-ellipse($width, $height, $display);
+</code></pre>
+
+<ul>
+<li>creates an ellipse</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$width: width of ellipse</li>
+<li>$height: height of ellipse</li>
+<li>$display: optional - defaults to block<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-rectangle</strong></p>
+
+<pre><code>@include drm-rectangle($width, $height, $display, $border-radius);
+</code></pre>
+
+<ul>
+<li>creates a rectangle</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$width: width of rectangle</li>
+<li>$height: height of rectangle</li>
+<li>$display: optional - defaults to block</li>
+<li>$border-radius - optional - defaults to 0 for no border-radius<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-square</strong></p>
+
+<pre><code>@include drm-square($width, $display, $border-radius);
+</code></pre>
+
+<ul>
+<li>creates a perfect square</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$width: width and height of square</li>
+<li>$display: optional - defaults to block</li>
+<li>$border-radius - optional - defaults to 0 for no border-radius<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-triangle</strong></p>
+
+<pre><code>@include drm-triangle($direction, $base, $height, $color);
+</code></pre>
+
+<ul>
+<li>creates a triangle element</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$direction: optional - defaults to top for a triangle that points up
+
+<ul>
+<li>use top-left, top-right, bottom-left, or bottom-right for a right triangle</li>
+</ul>
+</li>
+<li>$base: size of triangle (optional - defaults to 50px)</li>
+<li>$height: optional - defaults to half
+
+<ul>
+<li>for a flatter triangle use $height: half</li>
+<li>use $height: auto for a triangle of equal height and width</li>
+</ul>
+</li>
+<li>$color: triangle color (optional - defaults to light grey color)<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-equilateral-triangle</strong></p>
+
+<pre><code>@include drm-equilateral-triangle($direction, $base, $color);
+</code></pre>
+
+<ul>
+<li>creates an equilateral triangle element</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$direction: optional - defaults to top for a triangle that points up
+
+<ul>
+<li>use top, right, left, or bottom</li>
+</ul>
+</li>
+<li>$base: size of triangle (optional - defaults to 50px)</li>
+<li>$color: triangle color (optional - defaults to light grey color)<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-quadrilateral-diamond</strong></p>
+
+<pre><code>@include drm-quadrilateral-diamond($size, $skew);
+</code></pre>
+
+<ul>
+<li>creates a diamond shaped element</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$size: size of triangle element</li>
+<li>$skew: use positive skew for horizontal diamond; negative skew for vertical diamond
+
+<ul>
+<li>optional - defaults to 0 for an equilateral diamond<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-pentagon</strong></p>
+
+<pre><code>@include drm-pentagon($width, $height, $background-color);
+</code></pre>
+
+<ul>
+<li>creates a five sided element</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$width: width of pentagon element</li>
+<li>$height: height of pentagon element</li>
+<li>$background-color: color of pentagon element<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-hexagon</strong></p>
+
+<pre><code>@include drm-hexagon($width, $height, $background-color);
+</code></pre>
+
+<ul>
+<li>creates a six sided element</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$width: width of hexagon element</li>
+<li>$height: height of hexagon element</li>
+<li>$background-color: color of hexagon element<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-octagon</strong></p>
+
+<pre><code>@include drm-octagon($width, $height, $background-color);
+</code></pre>
+
+<ul>
+<li>creates an eight sided element</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$width: width of octagon element</li>
+<li>$height: height of octagon element</li>
+<li>$background-color: color of octagon element<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-parallelogram</strong></p>
+
+<pre><code>@include drm-parallelogram($width, $height, $skew);
+</code></pre>
+
+<ul>
+<li>creates a parallelogram shaped element<br>
+</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$width: width of parallelogram</li>
+<li>$height: height of parallelogram</li>
+<li>$skew: acute angle degree of parallelogram element (optional - defaults to 20)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-trapezoid</strong></p>
+
+<pre><code>@include drm-trapezoid($width, $height, $background-color);
+</code></pre>
+
+<ul>
+<li>creates a trapezoid shaped element<br>
+</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$width: width of trapezoid element</li>
+<li>$height: height of trapezoid element</li>
+<li>$background-color: color of trapezoid element</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-ribbon-wrapper</strong></p>
+
+<pre><code>@include drm-ribbon-wrapper($height, $color, $stitch-color);
+</code></pre>
+
+<ul>
+<li>creates a stitched ribbon that wraps a block element<br>
+</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$height: height of ribbon</li>
+<li>$color: $color of ribbon wrapper</li>
+<li>$stitch-color: color of stitches (optional - defaults to white)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-star-5</strong></p>
+
+<pre><code>@include drm-star-5($width, $background-color, $z-index);
+</code></pre>
+
+<ul>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$width: width of element</li>
+<li>$background-color: color of element (optional - defaults to light grey)</li>
+<li>$z-index: optional - defaults to 0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-star-6</strong></p>
+
+<pre><code>@include drm-star-6($width, $background-color, $z-index);
+</code></pre>
+
+<ul>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$width: width of element</li>
+<li>$background-color: color of element (optional - defaults to light grey)</li>
+<li>$z-index: optional - defaults to 0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-star-8</strong></p>
+
+<pre><code>@include drm-star-8($width, $background-color, $z-index);
+</code></pre>
+
+<ul>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$width: width of element</li>
+<li>$background-color: color of element (optional - defaults to light grey)</li>
+<li>$z-index: optional - defaults to 0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-badge</strong> </p>
+
+<pre><code>@include drm-badge($width, $background-color, $z-index);
+</code></pre>
+
+<ul>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$width: width of element</li>
+<li>$background-color: color of element (optional - defaults to light grey)</li>
+<li>$z-index: optional - defaults to 0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h3>
+<a name="navigation-utilities" class="anchor" href="#navigation-utilities"><span class="octicon octicon-link"></span></a>Navigation Utilities</h3>
+
+<ul>
+<li>
+<p><strong>drm-nav-bar</strong></p>
+
+<pre><code>@include drm-nav-bar($text-color, $hover-color, $align);
+</code></pre>
+
+<ul>
+<li>creates a horizontal list of links</li>
+<li>has a transparent background</li>
+<li>has a a:hover effect</li>
+<li>takes an optional $align argument; otherwize left alignment</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$text-color: color of navigation link text (optional - defaults to $text-color)</li>
+<li>$hover-color: color of text when user mouses over a link (optional - defaults to $link-color)</li>
+<li>$align: text alignment (optional - defaults to left)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-nav-bar-stacked</strong></p>
+
+<pre><code>@include drm-nav-bar-stacked($text-color, $hover-color, $align)
+</code></pre>
+
+<ul>
+<li>creates a vertical list of links</li>
+<li>has a transparent background</li>
+<li>has a a:hover effect</li>
+<li>takes an optional $align argument; otherwize left alignment</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$text-color: color of navigation link text (optional - defaults to $text-color)</li>
+<li>$hover-color: color of text when user mouses over a link (optional - defaults to $link-color)</li>
+<li>$align: text alignment (optional - defaults to left)<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-nav-bar-solid</strong></p>
+
+<pre><code>@include drm-nav-bar-solid($text-color, $background-color, $align);
+</code></pre>
+
+<ul>
+<li>creates a horizontal list of links with a solid color background</li>
+<li>hover state will invert text color and background color</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$text-color: color of navigation link text (optional - defaults to white)</li>
+<li>$background-color: color of link element's background (optional - defaults to $link-color)</li>
+<li>$align: text-alignment (optional - defaults to center)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-nav-bar-solid-stacked</strong></p>
+
+<pre><code>@include drm-nav-bar-solid-stacked($text-color, $background-color, $align);
+</code></pre>
+
+<ul>
+<li>creates a vertical list of links with a solid color background</li>
+<li>hover state will invert text color and background color</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$text-color: color of navigation link text (optional - defaults to white)</li>
+<li>$background-color: color of link element's background (optional - defaults to $link-color)</li>
+<li>$align: text-alignment (optional - defaults to center)<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-nav-bar-pills</strong></p>
+
+<pre><code>@include drm-nav-bar-pills($text-color, $hover-color, $align);
+</code></pre>
+
+<ul>
+<li>creates a horizontal list of links with a pill shaped background when a user mouses over link element</li>
+<li>hover state will invert text color and background color</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$text-color: color of navigation link text (optional - defaults to white)</li>
+<li>$hover-color: color of link element's background (optional - defaults to $link-color)</li>
+<li>$align: text-alignment (optional - defaults to center)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-nav-bar-pills-stacked</strong></p>
+
+<pre><code>@include drm-nav-bar-pills-stacked($text-color, $hover-color, $align);
+</code></pre>
+
+<ul>
+<li>creates a vertical list of links with a pill shaped background when a user mouses over link element</li>
+<li>hover state will invert text color and background color</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$text-color: color of navigation link text (optional - defaults to white)</li>
+<li>$hover-color: color of link element's background (optional - defaults to $link-color)</li>
+<li>$align: text-alignment (optional - defaults to center)<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-nav-bar-pills-solid</strong></p>
+
+<pre><code>@include drm-nav-bar-pills-solid($text-color, $background-color, $align);
+</code></pre>
+
+<ul>
+<li>creates a horizontal list of links with a pill shaped background</li>
+<li>hover state will invert text color and background color</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$text-color: color of navigation link text (optional - defaults to white)</li>
+<li>$background-color: color of link element's background (optional - defaults to $link-color)</li>
+<li>$align: text-alignment (optional - defaults to center)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-nav-bar-pills-solid-stacked</strong></p>
+
+<pre><code>@include drm-nav-bar-pills-solid-stacked($text-color, $background-color, $align);
+</code></pre>
+
+<ul>
+<li>creates a vertical list of links with a pill shaped background</li>
+<li>hover state will invert text color and background color</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$text-color: color of navigation link text (optional - defaults to white)</li>
+<li>$background-color: color of link element's background (optional - defaults to $link-color)</li>
+<li>$align: text-alignment (optional - defaults to center)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-button-link</strong></p>
+
+<pre><code>@include drm-button-link($color, $bk-color, $width, $center, $border-radius);
+</code></pre>
+
+<ul>
+<li>creates a button with a 1px border and transparent background</li>
+<li>has a solid background when a user mouses over button</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$color: color of border and text (optional - defaults to white)</li>
+<li>$bk-color: background color on hover state (optional - defaults to $link-color)</li>
+<li>$width: width of button (optional - defaults to 40%)</li>
+<li>$center: alignment of link or button element (optional - defaults to center)</li>
+<li>$border-radius: optional - defaults to 3px<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-button-solid</strong></p>
+
+<pre><code>@include drm-button-solid($bk-color, $color, $width, $center, $border-radius, $border-color);
+</code></pre>
+
+<ul>
+<li>creates a solid button</li>
+<li>inverts text and background on hover state</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$bk-color: background-color of element (optional - defaults to $link-color)</li>
+<li>$color: text color of element (optional - defaults to white)</li>
+<li>$width: width of button (optional - defaults to 40%)</li>
+<li>$center: alignment of link or button element (optional - defaults to center)</li>
+<li>$border-radius: optional - defaults to 3px</li>
+<li>$border-color: color of border (optional - defaults to none for no border)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-rectangle-button</strong></p>
+
+<pre><code>@include drm-rectangular-button($color, $text, $border-radius, $width);
+</code></pre>
+
+<ul>
+<li>creates a solid button with a 3px drop shadow</li>
+<li>button has a 1px border that is slightly darker than the button</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$color: background-color of button (optional - defaults to $link-color)</li>
+<li>$text: text color (optional - defaults to white)</li>
+<li>$border-radius: optional - defaults to 0 for no radius</li>
+<li>$width: width or button (optional - defaults to 40%)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-pill-button-link</strong></p>
+
+<pre><code>@include drm-pill-button-link($height, $color, $bk-color, $width, $center);
+</code></pre>
+
+<ul>
+<li>creates a pill shaped button with a 1px border and transparent background</li>
+<li>has a solid background color on hover state</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$height: height of button (optional - defaults to 50px)</li>
+<li>$color: text-color (optional - defualts to white)</li>
+<li>$bk-color: background color of button (optional - defaults to $link-color)</li>
+<li>$width: width of button (optional - defaults to 40%)</li>
+<li>$center: centers element in container (optional - defaults to center)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-pill-button-solid</strong></p>
+
+<pre><code>@include drm-pill-button-solid($height, $color, $bk-color, $width, $center, $border-color);
+</code></pre>
+
+<ul>
+<li>creates a pill shaped button with a solid background</li>
+<li>inverts text and background color on hover state</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$height: height of button (optional - defaults to 50px)</li>
+<li>$color: text-color (optional - defualts to white)</li>
+<li>$bk-color: background color of button (optional - defaults to $link-color)</li>
+<li>$width: width of button (optional - defaults to 40%)</li>
+<li>$center: centers element in container (optional - defaults to center)</li>
+<li>$border-color: optional border color - defaults to none for no border</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h3>
+<a name="effects-utilities" class="anchor" href="#effects-utilities"><span class="octicon octicon-link"></span></a>Effects Utilities</h3>
+
+<ul>
+<li>
+<p><strong>drm-solid-drop-shadow</strong></p>
+
+<pre><code>@include drm-solid-drop-shadow($color);
+</code></pre>
+
+<ul>
+<li>Applies a solid 3px drop shadow to an element</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$color: color of the drop shadow</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-background-transparent</strong></p>
+
+<pre><code>@include drm-background-transparent($color, $opacity);
+</code></pre>
+
+<ul>
+<li>Creates a slightly transparent background with a hex color fallback for browsers that do not support rgba colors</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$color: element background color</li>
+<li>$opacity: opacity of the element background color (optional - defualts to 0.7)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-border-transparent</strong></p>
+
+<pre><code>@include drm-border-transparent($color, $thickness, $opacity);
+</code></pre>
+
+<ul>
+<li>Creates a slightly transparent border with a hex color fallback for browsers that do not support rgba colors</li>
+<li>Accepts a hex color value and pixel value for border-width</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$color: hex color for element border</li>
+<li>$thickness: border width (optional - defualts to 5px)</li>
+<li>$opacity: opacity of element border (optional - defualts to 0.7)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-stitched-box</strong></p>
+
+<pre><code>@include drm-stitched-box($color, $stitch-color, $border-radius, $border-color, $opacity);
+</code></pre>
+
+<ul>
+<li>Creates an element with a stitched border effect</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$color: background color of element</li>
+<li>$stitch-color: color of stitches (optional - defaults to white)</li>
+<li>$border-radius: optional - defaults to 0</li>
+<li>$border-color: optional - defaults to none</li>
+<li>$opacity: optional - defaults to 1 for no transparency</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-stitched-row</strong></p>
+
+<pre><code>@include drm-stitched-row($color, $stitched-color, $border-color, $opacity, $shadow);
+</code></pre>
+
+<ul>
+<li>Creates a stitched top and bottom border</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$color: background color of element</li>
+<li>$stitch-color: color of stitches (optional - defaults to white)</li>
+<li>$border-color: optional - defaults to none</li>
+<li>$opacity: optional - defaults to 1 for no transparency</li>
+<li>$shadow: adds a drop shadow (optional - defaults to transparent for no shadow)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-figure-transparent-border</strong></p>
+
+<pre><code>@include drm-figure-transparent-border($color, $thickness, $hover-color);
+</code></pre>
+
+<ul>
+<li>Styles a div or figure with a transparent border that sits on top of the <img> element</li>
+<li>Specify a width and height on div or figure and img elements</li>
+<li>Make sure the containing element has a z-index of 100 and position: relative</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$color: color of transparent border</li>
+<li>$hover-color: color of border when users mouse over element</li>
+<li>$thickness: thickness of transparent border (optional - defaults to 5px)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-triple-shadow</strong></p>
+
+<pre><code>@include drm-triple-shadow($color1, $color2);
+</code></pre>
+
+<ul>
+<li>creates a shadow with two thick borders and one thin border using solid box-shadows</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$color1: color of outside, thick borders</li>
+<li>$color2: color of inside, thin border</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-inset-text</strong></p>
+
+<pre><code>@include drm-inset-text($shadow-color);
+</code></pre>
+
+<ul>
+<li>creates a slight shadow effect on text</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$shadow-color: color of text-shadow (optional - defaults to $shadow-color)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-inset-border</strong></p>
+
+<pre><code>@include drm-inset-border($color, $shadow-color);
+</code></pre>
+
+<ul>
+<li>creates a bottom border with a slight shadow effect</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$color: color of bottom-border</li>
+<li>$shadow-color: color of text-shadow (optional - defaults to $shadow-color)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-inset-box</strong></p>
+
+<pre><code>@include drm-inset-box($shadow-color);
+</code></pre>
+
+<ul>
+<li>creates a slight box shadow</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$shadow-color: color of text-shadow (optional - defaults to $shadow-color) </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>drm-boxy-drop-shadow</strong></p>
+
+<pre><code>@include drm-boxy-drop-shadow($shadow-color);
+</code></pre>
+
+<ul>
+<li>creates a thick drop shadow</li>
+<li>takes an optional color argument</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$shadow-color: color of text-shadow (optional - defaults to $shadow-color)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h3>
+<a name="forms" class="anchor" href="#forms"><span class="octicon octicon-link"></span></a>Forms</h3>
+
+<ul>
+<li>
+<p><strong>drm-form-state</strong></p>
+
+<pre><code>@include drm-form-state($glow, $background, $border)
+</code></pre>
+
+<ul>
+<li>adds form state styles for form controls</li>
+<li>glow effect when a user mouses over and element</li>
+<li>darker outline and lighter background on focus state</li>
+<li>smooth transition effects when changing form states</li>
+<li>
+<strong>Arguments:</strong>
+
+<ul>
+<li>$glow: color of glow effect (optional - defaults to aqua)</li>
+<li>$background: color of form element background (optional - defaults to light grey)</li>
+<li>$border: color of form element border (optional - defaults to grey)<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h2>
+<a name="helper-methods" class="anchor" href="#helper-methods"><span class="octicon octicon-link"></span></a>Helper Methods</h2>
+
+<h3>
+<a name="general" class="anchor" href="#general"><span class="octicon octicon-link"></span></a>General</h3>
+
+<ul>
+<li><p>body</p></li>
+<li><p>.wrapper</p></li>
+</ul><h3>
+<a name="clear-and-alignment" class="anchor" href="#clear-and-alignment"><span class="octicon octicon-link"></span></a>Clear and Alignment</h3>
+
+<ul>
+<li><p>.pull-left</p></li>
+<li><p>.pull-right</p></li>
+<li><p>.clear</p></li>
+</ul><h3>
+<a name="typography" class="anchor" href="#typography"><span class="octicon octicon-link"></span></a>Typography</h3>
+
+<ul>
+<li><p>.bold</p></li>
+<li><p>.italic</p></li>
+<li><p>.underline</p></li>
+<li><p>.uppercase</p></li>
+<li><p>.smaller-text</p></li>
+<li><p>.left</p></li>
+<li><p>.right</p></li>
+<li><p>.center</p></li>
+<li><p>.muted</p></li>
+<li><p>.danger</p></li>
+<li><p>.error</p></li>
+<li><p>.info</p></li>
+<li><p>.warning</p></li>
+<li><p>.success</p></li>
+<li><p>mark</p></li>
+<li><p>.highlight</p></li>
+<li><p>p</p></li>
+<li><p>small</p></li>
+<li><p>blockquote</p></li>
+<li><p>cite</p></li>
+</ul><h3>
+<a name="headings" class="anchor" href="#headings"><span class="octicon octicon-link"></span></a>Headings</h3>
+
+<p>remove default bold from all heading elements</p>
+
+<ul>
+<li><p>h1</p></li>
+<li><p>h2</p></li>
+<li><p>h3</p></li>
+<li><p>h4</p></li>
+<li><p>h5</p></li>
+<li><p>h6</p></li>
+</ul><h3>
+<a name="lists" class="anchor" href="#lists"><span class="octicon octicon-link"></span></a>Lists</h3>
+
+<ul>
+<li><p>ul</p></li>
+<li><p>ol</p></li>
+<li><p>li</p></li>
+<li><p>dl</p></li>
+<li><p>dd</p></li>
+<li><p>dt</p></li>
+<li><p>.unstyled-list</p></li>
+<li><p>.inline-list</p></li>
+<li><p>.triangle-list</p></li>
+<li><p>.checked-list</p></li>
+</ul><h3>
+<a name="links" class="anchor" href="#links"><span class="octicon octicon-link"></span></a>Links</h3>
+
+<ul>
+<li>a</li>
+</ul><h3>
+<a name="tables" class="anchor" href="#tables"><span class="octicon octicon-link"></span></a>Tables</h3>
+
+<ul>
+<li><p>table</p></li>
+<li><p>td</p></li>
+</ul>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/Beth3346/drm-sass-utlilites/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/Beth3346/drm-sass-utlilites/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/Beth3346/drm-sass-utlilites"></a> is maintained by <a href="https://github.com/Beth3346">Beth3346</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
