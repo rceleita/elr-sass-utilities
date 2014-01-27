@@ -205,5 +205,5 @@
 @mixin drm-horizontally-center($container-element-width, $width) {
 	position: absolute;
 	width: $width;
-	top: ($container-element-width / 2) - ($width / 2);
+	left: ($container-element-width / 2) - ($width / 2);
 }

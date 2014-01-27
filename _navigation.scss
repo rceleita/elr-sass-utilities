@@ -6,6 +6,7 @@
 
 @mixin drm-nav-bar($text-color: $text-color, $hover-color: $link-color, $align: left) {
 	@extend %drm-reset-box;
+	@include drm-clearfix();
 
 	li {
 		@extend %drm-reset-box;
@@ -259,19 +260,17 @@
 	width: $width;
 	text-decoration: none;
 	display: block;
+	text-align: center;
 	@include drm-solid-drop-shadow(darken($color, 10%));
 	@include transition(all, .3s ease-out);
 	@include box-sizing(border-box);
+	@include border-radius($border-radius);	
 
 	@if $center == center {
 		margin: 10px auto 10px auto;		
 	} @else {
 		margin-top: 10px;
 		margin-bottom: 10px;
-	}
-
-	@if $border-radius != 0 {
-		@include border-radius($border-radius);	
 	}
 
 	&:visited {
