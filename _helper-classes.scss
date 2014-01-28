@@ -113,10 +113,13 @@ body {
 }
 
 mark {
-	background-color: transparent;
+	background-color: $link-color;
+	color: white;
+	padding-left: 3px;
+	padding-right: 3px;
 }
 
-mark, .highlight {
+.highlight {
 	color: $link-color;
 }
 
@@ -250,4 +253,32 @@ td {
 
 thead {
 	font-weight: bold;
+}
+
+/*-----------------------------------------------------------------------------
+	Alerts
+-----------------------------------------------------------------------------*/
+
+.info-alert {
+	@include drm-context-box(info, 3px);
+}
+
+.danger-alert {
+	@include drm-context-box(danger, 3px);
+}
+
+.warning-alert {
+	@include drm-context-box(warning, 3px);
+}
+
+.success-alert {
+	@include drm-context-box(success, 3px);
+}
+
+.muted-alert {
+	@include drm-context-box(muted, 3px);
+}
+
+.custom-alert {
+	@include drm-context-box(custom, 3px, $drm-blue);
 }

@@ -153,8 +153,7 @@
     border-style: solid;
     border-color: $background-color transparent;
 
-    &:before
-        {
+    &:before {
         content: "";
         position: absolute;
         height: 0;
@@ -177,8 +176,7 @@
     position: relative;
     
     &:before,
-    &:after
-    {
+    &:after {
         content: "";
         position: absolute;
         width: 0;
@@ -190,14 +188,12 @@
         border-right: $width/2 solid transparent;
     }
 
-        &:before
-        {
+        &:before {
             top: -$width/4;
             border-bottom: $width/4 solid $background-color;
         }
 
-        &:after
-        {
+        &:after {
             bottom: -$width/4;
             border-top: $width/4 solid $background-color;
         }
@@ -213,8 +209,7 @@
     position: relative;
 
     &:before,
-    &:after
-    {
+    &:after {
         content: "";
         position: absolute;
         left: 0;
@@ -226,14 +221,12 @@
         border-right: $width*0.29 solid transparent;        
     }
 
-        &:before
-        {
+        &:before {
             top: -$height*0.29;
             border-bottom: $height*0.29 solid $background-color;
         }
 
-        &:after
-        {
+        &:after {
             bottom: -$height*0.29;
             border-top: $height*0.29 solid $background-color;
         }

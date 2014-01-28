@@ -269,6 +269,54 @@
 
 @mixin drm-context-box($type: info, $border-radius: 0, $color: none) {
 	padding: 10px 20px 10px 20px;
+	width: 95%;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	position: relative;
+	@include box-sizing(border-box);
+	@include drm-clearfix();
+
+	@include drm-breakpoint(trenta) {
+		width: 80%;
+		margin-left: 10%;
+		margin-right: 10%;
+		@include box-sizing(border-box);
+	}
+
+	@include drm-breakpoint(venti) {
+		width: 95%;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		@include box-sizing(border-box);
+	}
+
+	@include drm-breakpoint(grande) {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		@include box-sizing(border-box);
+	}
+
+	.close {
+		position: absolute;
+		right: 5px;
+		top: 3px;
+		border: none;
+		background: none;
+		padding: 0;
+		margin: 0;
+		@include drm-square(20px);
+		@include drm-em-font(14);
+		@include single-transition(color, .3s, ease-out);
+
+		&:hover {
+			color: white;
+			cursor: pointer;
+			@include single-transition(color, .3s, ease-in);
+		}
+	}
 
 	@if $border-radius != 0 {
 		border-radius: $border-radius;
@@ -277,21 +325,52 @@
 	@if $type == info {
 		background-color: lighten($info-color, 20%);
 		border: 1px solid $info-color;
+
+		.close {
+			color: $info-color;
+		}
+
 	} @elseif $type == danger {
 		background-color: lighten($danger-color, 20%);
-		border: 1px solid $danger-color;		
+		border: 1px solid $danger-color;
+		color: white;
+
+		.close {
+			color: $danger-color;
+		}
+
 	} @elseif $type == warning {
 		background-color: lighten($warning-color, 20%);
-		border: 1px solid $warning-color;		
+		border: 1px solid $warning-color;
+
+		.close {
+			color: $warning-color;
+		}	
+
 	} @elseif $type == success {
 		background-color: lighten($success-color, 20%);
-		border: 1px solid $success-color;		
+		border: 1px solid $success-color;
+
+		.close {
+			color: $success-color;
+		}	
+
 	} @elseif $type == muted {
 		background-color: lighten($muted-color, 20%);
-		border: 1px solid $muted-color;				
+		border: 1px solid $muted-color;
+
+		.close {
+			color: $muted-color;
+		}	
+
 	} @elseif $type == custom {
 		background-color: lighten($color, 20%);
-		border: 1px solid $color;		
+		border: 1px solid $color;
+
+		.close {
+			color: $color;
+		}	
+
 	} @else {
 		@warn "#{error("That's not a context box type!")}";
 	}

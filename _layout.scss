@@ -164,6 +164,13 @@
 	margin: $margin;
 	@include drm-circle( ( $container-width - 120 ) / $total );
 	@include box-sizing(border-box);	
+
+	@include drm-breakpoint(tall) {
+		padding: 10px;
+		margin: $margin auto $margin auto;
+		float: none;
+		@include box-sizing(border-box);
+	}
 }
 
 // calculates em font size from px font size
