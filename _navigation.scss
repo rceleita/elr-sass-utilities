@@ -176,7 +176,15 @@
 			color: $text-color;
 			position: absolute;
 			width: 120%;
+			display: none;
 			@include drm-nav-bar-solid-stacked();
+
+			> li ul {
+				display: none;
+				position: absolute;
+				left: 100%;
+				top: 0;
+			}
 		}
 	}
 }
