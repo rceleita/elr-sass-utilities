@@ -405,3 +405,35 @@
 		@warn "#{error("That's not a context box type!")}";
 	}
 }
+
+@mixin drm-accordion($label-color: $link-color, $border-radius: 0, $color: white, $border-color: $grey) {
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+	.drm-accordion-label, .drm-accordion-inner {
+
+		@if $border-color != none {
+			border: 1px solid $border-color;
+		}
+		
+		@if $border-radius != 0 {
+			border-radius: $border-radius;
+		}
+			
+		margin: 5px;
+		padding: 5px 10px 5px 10px;
+		background-color: $color;
+	}
+
+	.drm-accordion-label {
+		color: $label-color;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	.drm-accordion-inner {
+		display: none;	
+	}	
+}

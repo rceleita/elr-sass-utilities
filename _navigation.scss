@@ -159,6 +159,28 @@
 	}
 }
 
+@mixin drm-dropdown-nav($text-color: white, $background-color: $link-color) {
+	margin-bottom: 300px;
+	@include drm-nav-bar-solid();
+
+	li {
+		position: relative;
+
+		a {
+			padding-left: 20px;
+			padding-right: 20px;
+		}	
+
+		> ul {
+			background-color: $background-color;
+			color: $text-color;
+			position: absolute;
+			width: 120%;
+			@include drm-nav-bar-solid-stacked();
+		}
+	}
+}
+
 // Styles a rounded button with a 1px border and transparent background
 // Useful for <button> and <a> elements
 
