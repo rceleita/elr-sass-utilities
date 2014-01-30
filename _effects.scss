@@ -149,13 +149,13 @@
 
 @mixin drm-inset-border($color, $shadow-color: $shadow-color) {
 	border-bottom: 1px solid $color;
-	@include single-box-shadow(0, 1px, 0, $shadow-color);
+	@include box-shadow($shadow-color 0 1px 0);
 }
 
 // creates a slight box shadow
 
 @mixin drm-inset-box($shadow-color: $shadow-color) {
-	@include single-box-shadow(1px, 1px, 0, $shadow-color);	
+	@include box-shadow($shadow-color 1px 1px 0);	
 }
 
 // creates a thick bottom drop shadow

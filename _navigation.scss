@@ -22,6 +22,12 @@
 			text-decoration: none;
 			@include box-sizing(border-box);
 			@include transition(all, .3s);
+			@include drm-em-font(14);
+
+			&.text-disabled {
+				color: $light-grey;
+				cursor: not-allowed;
+			}
 
 			&:hover, &:focus {
 				color: $hover-color;
@@ -31,11 +37,15 @@
 	}
 }
 
-@mixin drm-nav-bar-stacked($text-color: $text-color, $hover-color: $link-color, $align: left) {
+@mixin drm-nav-bar-stacked($text-color: $text-color, $hover-color: $link-color, $align: left, $divider-color: $light-grey) {
 	@include drm-nav-bar($text-color, $hover-color, $align);
 
 	li {
-		float: none;	
+		float: none;
+
+		&.divider {
+			@include drm-list-divider($divider-color);
+		}	
 	}	
 }
 
@@ -61,9 +71,9 @@
 	}
 }
 
-@mixin drm-nav-bar-solid-stacked($text-color: white, $background-color: $link-color, $align: left) {
+@mixin drm-nav-bar-solid-stacked($text-color: white, $background-color: $link-color, $align: left, $divider-color: $light-grey) {
 	background-color: $background-color;
-	@include drm-nav-bar-stacked($text-color, $background-color, $align);
+	@include drm-nav-bar-stacked($text-color, $background-color, $align, $divider-color);
 
 	a {
 		display: block;
@@ -159,7 +169,7 @@
 	}
 }
 
-@mixin drm-dropdown-nav($text-color: white, $background-color: $link-color) {
+@mixin drm-dropdown-nav($text-color: white, $background-color: $link-color, $divider-color: $light-grey) {
 	margin-bottom: 300px;
 	@include drm-nav-bar-solid();
 
@@ -177,7 +187,7 @@
 			position: absolute;
 			width: 120%;
 			display: none;
-			@include drm-nav-bar-solid-stacked();
+			@include drm-nav-bar-solid-stacked($text-color, $background-color, left, $divider-color);
 
 			> li ul {
 				display: none;
@@ -187,18 +197,42 @@
 			}
 		}
 	}
+
+	.carat {
+		position: relative;
+		
+		&:after {
+			content: "v";
+			position: absolute;
+			right: 5%;
+			font-weight: bold;
+			@include drm-em-font(12);
+		}
+	}
+
+	.carat-right {
+		position: relative;
+		
+		&:after {
+			content: ">";
+			position: absolute;
+			right: 5%;
+			font-weight: bold;
+			@include drm-em-font(12);
+		}
+	}
 }
 
 // Styles a rounded button with a 1px border and transparent background
 // Useful for <button> and <a> elements
 
-@mixin drm-button-link($color: white, $bk-color: $link-color, $width: 40%, $center: center, $border-radius: 3px, $border-color: none) {
+@mixin drm-button-link($color: white, $bk-color: $link-color, $width: 40%, $center: center, $border-radius: 3px, $border-color: none, $display: block) {
 	width: $width;
 	border: 1px solid $color;
 	color: $color;
 	font-weight: bold;
 	text-align: center;
-	display: block;
+	display: $display;
 	padding: 10px 0 10px 0;
 	text-decoration: none;
 	cursor: pointer;
@@ -238,13 +272,13 @@
 // Styles a rounded button with a 1px border and solid background
 // Useful for <button> and <a> elements
 
-@mixin drm-button-solid($bk-color: $link-color, $color: white, $width: 40%, $center: center, $border-radius: 3px, $border-color: none) {
+@mixin drm-button-solid($bk-color: $link-color, $color: white, $width: 40%, $center: center, $border-radius: 3px, $border-color: none, $display: block) {
 	background-color: $bk-color;
 	width: $width;
 	color: $color;
 	font-weight: bold;
 	text-align: center;
-	display: block;
+	display: $display;
 	padding: 10px 0 10px 0;
 	text-decoration: none;
 	cursor: pointer;
@@ -280,7 +314,7 @@
 
 // Styles a rectangular button with a solid drop shadow
 
-@mixin drm-rectangle-button($color: $link-color, $text: white, $border-radius: 0, $width: 40%, $center: center) {
+@mixin drm-rectangle-button($color: $link-color, $text: white, $border-radius: 0, $width: 40%, $center: center, $display: block) {
 	border: 1px solid darken($color, 10%);
 	background-color: $color;
 	font-weight: bold;
@@ -289,7 +323,7 @@
 	cursor: pointer;
 	width: $width;
 	text-decoration: none;
-	display: block;
+	display: $display;
 	text-align: center;
 	@include drm-solid-drop-shadow(darken($color, 10%));
 	@include transition(all, .3s ease-out);
@@ -319,14 +353,14 @@
 
 // pill button
 
-@mixin drm-pill-button-link($height: 50px, $color: white, $bk-color: $link-color, $width: 40%, $center: center, $border-color: none) {
+@mixin drm-pill-button-link($height: 50px, $color: white, $bk-color: $link-color, $width: 40%, $center: center, $border-color: none, $display: block) {
 	width: $width;
 	height: $height;
 	border: 1px solid $color;
 	color: $color;
 	font-weight: bold;
 	text-align: center;
-	display: block;
+	display: $display;
 	padding: 10px 0 10px 0;
 	text-decoration: none;
 	cursor: pointer;
@@ -366,14 +400,14 @@
 // Styles a rounded button with a 1px border and solid background
 // Useful for <button> and <a> elements
 
-@mixin drm-pill-button-solid($height: 50px, $bk-color: $link-color, $color: white, $width: 40%, $center: center, $border-color: none) {
+@mixin drm-pill-button-solid($height: 50px, $bk-color: $link-color, $color: white, $width: 40%, $center: center, $border-color: none, $display: block) {
 	background-color: $bk-color;
 	width: $width;
 	height: $height;
 	color: $color;
 	font-weight: bold;
 	text-align: center;
-	display: block;
+	display: $display;
 	padding: 10px 0 10px 0;
 	text-decoration: none;
 	cursor: pointer;
@@ -408,4 +442,112 @@
 		@include box-shadow(none);
 		@include transition(all, .3s ease-in);
 	}	
+}
+
+@mixin drm-button-group($bk-color: $link-color, $color: white, $border-radius: 0) {
+	@include drm-clearfix();
+
+	button {
+		float: left;
+		background-color: $bk-color;
+		color: $color;
+		font-weight: bold;
+		text-align: center;
+		display: block;
+		padding: 10px 20px 10px 20px;
+		text-decoration: none;
+		cursor: pointer;
+		margin: 0;
+		border: none;
+		@include text-shadow(none);
+		@include box-sizing(border-box);
+		@include transition(all, .3s ease-out);
+		@include box-shadow(none);
+
+		&:visited {
+			color: $color;
+		}
+
+		&:hover {
+			background-color: $color;
+			color: $bk-color;
+			text-decoration: none;
+			@include text-shadow(none);
+			@include box-shadow(none);
+			@include transition(all, .3s ease-in);
+		}
+
+		@if $border-radius != 0 {
+			&:first-of-type {
+				@include border-radius($border-radius 0 0 $border-radius);
+			}
+
+			&:last-of-type {
+				@include border-radius(0 $border-radius $border-radius 0);	
+			}
+		}
+	}
 }	
+
+@mixin drm-dropdown-button-solid($bk-color: $link-color, $color: white, $width: 40%, $divider-color: $light-grey) {
+	width: $width;
+	position: relative;
+
+	button {
+		margin: 0 0 5px 0;
+		position: relative;
+		@include drm-button-solid($bk-color, $color, 100%);
+		
+		&:after {
+			content: "v";
+			position: absolute;
+			right: 5%;
+		}
+
+		&.clicked {
+			color: $bk-color;
+			background-color: $color;
+		}	
+	}
+
+	ul {
+		margin: 0;
+		width: 100%;
+		position: absolute;
+		padding: 5px 0 5px 0;
+		display: none;
+		@include border-radius(3px);
+		@include drm-nav-bar-solid-stacked($bk-color, $color, left, $divider-color);
+	}
+}	
+
+@mixin drm-dropdown-button-split($bk-color: $link-color, $color: white, $divider-color: $light-grey, $border-radius: 0) {
+	position: relative;
+
+	button {
+		position: relative;
+		margin: 0 0 5px 0;
+
+		&:last-of-type {
+			border-left: 1px solid darken($bk-color, 5%);
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		&.clicked {
+			color: $bk-color;
+			background-color: $color;
+		}	
+	}
+
+	ul {
+		margin: 0;
+		width: 100%;
+		position: absolute;
+		padding: 5px 0 5px 0;
+		top: 100%;
+		display: none;
+		@include border-radius($border-radius);
+		@include drm-nav-bar-solid-stacked($bk-color, $color, left, $divider-color);
+	}
+}

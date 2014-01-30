@@ -132,6 +132,13 @@
 // An unstyled list
 // li elements have a 20px indent
 
+@mixin drm-list-divider($color: $light-grey) {
+	height: 1px;
+	padding: 0;
+	margin: 5px 0 5px 0;
+	border-bottom: 1px solid $color;	
+}
+
 @mixin drm-unstyled-list($align: left) {
 
 	li {
@@ -142,6 +149,10 @@
 
 		&:last-child {
 			padding-bottom: 0;
+		}
+
+		&.divider {
+			@include drm-list-divider();
 		}
 	}
 
@@ -292,13 +303,6 @@
 		@include box-sizing(border-box);
 	}
 
-	@include drm-breakpoint(grande) {
-		width: 100%;
-		margin-left: 0;
-		margin-right: 0;
-		@include box-sizing(border-box);
-	}
-
 	.close {
 		position: absolute;
 		right: 5px;
@@ -325,6 +329,7 @@
 	@if $type == info {
 		background-color: lighten($info-color, 20%);
 		border: 1px solid $info-color;
+		color: darken($info-color, 20%);
 
 		.close {
 			color: $info-color;
@@ -333,7 +338,7 @@
 	} @elseif $type == danger {
 		background-color: lighten($danger-color, 20%);
 		border: 1px solid $danger-color;
-		color: white;
+		color: darken($danger-color, 20%);
 
 		.close {
 			color: $danger-color;
@@ -342,6 +347,7 @@
 	} @elseif $type == warning {
 		background-color: lighten($warning-color, 20%);
 		border: 1px solid $warning-color;
+		color: darken($warning-color, 20%);
 
 		.close {
 			color: $warning-color;
@@ -350,14 +356,16 @@
 	} @elseif $type == success {
 		background-color: lighten($success-color, 20%);
 		border: 1px solid $success-color;
+		color: darken($success-color, 20%);
 
 		.close {
 			color: $success-color;
 		}	
 
 	} @elseif $type == muted {
-		background-color: lighten($muted-color, 20%);
+		background-color: lighten($muted-color, 10%);
 		border: 1px solid $muted-color;
+		color: darken($muted-color, 20%);
 
 		.close {
 			color: $muted-color;
@@ -366,6 +374,7 @@
 	} @elseif $type == custom {
 		background-color: lighten($color, 20%);
 		border: 1px solid $color;
+		color: darken($color, 20%);
 
 		.close {
 			color: $color;
@@ -386,21 +395,27 @@
 	@if $type == info {
 		background-color: lighten($info-color, 20%);
 		border: 1px solid $info-color;
+		color: darken($info-color, 20%);
 	} @elseif $type == danger {
 		background-color: lighten($danger-color, 20%);
-		border: 1px solid $danger-color;		
+		border: 1px solid $danger-color;
+		color: darken($danger-color, 20%);		
 	} @elseif $type == warning {
 		background-color: lighten($warning-color, 20%);
-		border: 1px solid $warning-color;		
+		border: 1px solid $warning-color;
+		color: darken($warning-color, 20%);		
 	} @elseif $type == success {
 		background-color: lighten($success-color, 20%);
-		border: 1px solid $success-color;		
+		border: 1px solid $success-color;
+		color: darken($success-color, 20%);		
 	} @elseif $type == muted {
-		background-color: lighten($muted-color, 20%);
-		border: 1px solid $muted-color;			
+		background-color: lighten($muted-color, 10%);
+		border: 1px solid $muted-color;
+		color: darken($muted-color, 20%);			
 	} @elseif $type == custom {
 		background-color: lighten($color, 20%);
-		border: 1px solid $color;		
+		border: 1px solid $color;
+		color: darken($color, 20%);		
 	} @else {
 		@warn "#{error("That's not a context box type!")}";
 	}
