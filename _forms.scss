@@ -2,7 +2,7 @@
 	Forms
 -----------------------------------------------------------------------------*/
 
-@mixin drm-form-state($glow: #00b3bb, $background: #e2e2e2, $border: #999) {
+@mixin drm-form-state($glow: $drm-blue, $background: $lightest-grey, $border: $grey) {
 	background-color: $background;
 	border: solid 1px $border;
 	@include transition(border .5s ease-out, box-shadow .5s ease-out);

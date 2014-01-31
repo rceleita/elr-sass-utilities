@@ -140,6 +140,7 @@
 }
 
 @mixin drm-unstyled-list($align: left) {
+	list-style: none;
 
 	li {
 		text-align: $align;
@@ -450,5 +451,34 @@
 
 	.drm-accordion-inner {
 		display: none;	
+	}	
+}
+
+@mixin drm-thumbnail-list($border-color: white, $width: 150px, $height: 120px, $glow: $drm-blue) {
+	@include drm-unstyled-list();
+	@include drm-clearfix();
+
+	li {
+		margin: 10px;
+		float: left;
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	img {
+		@extend %drm-reset-box;
+		@include drm-thumbnail();
+		@include single-transition(box-shadow, .3s, ease-out);
+
+		&:hover {
+			@include single-transition(box-shadow, .3s, ease-in);
+			@include box-shadow($grey 0 0 0 1px, $glow 0 0 3px 2px);
+		}
 	}	
 }

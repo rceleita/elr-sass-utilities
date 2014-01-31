@@ -208,7 +208,7 @@ dt {
 	font-weight: bold;
 }
 
-.unstlyled-list {
+.unstyled-list {
 	@include drm-unstyled-list();
 }
 
@@ -285,4 +285,13 @@ thead {
 
 .custom-alert {
 	@include drm-context-box(custom, 3px, $drm-blue);
+}
+
+/*-----------------------------------------------------------------------------
+	Images
+-----------------------------------------------------------------------------*/
+
+.thumbnail {
+	margin: 10px;
+	@include drm-thumbnail();
 }
