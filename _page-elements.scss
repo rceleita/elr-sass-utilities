@@ -455,6 +455,7 @@
 }
 
 @mixin drm-thumbnail-list($border-color: white, $width: 150px, $height: 120px, $glow: $drm-blue) {
+	padding: 10px;
 	@include drm-unstyled-list();
 	@include drm-clearfix();
 
