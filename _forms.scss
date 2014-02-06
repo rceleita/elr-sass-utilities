@@ -20,3 +20,44 @@
 		@include transition(border .5s ease-in, background .5s ease-in);
 	}
 }
+
+@mixin drm-tabular-form() {
+	margin: 10px;
+	padding: 10px;
+
+	label, input {
+		display: block;
+	}
+
+	label {
+		margin: 15px 5px 5px 5px;
+		@include drm-em-font(14);
+	}
+
+	small {
+		display: block;
+		color: $grey;
+		margin: 0 0 20px 5px;
+		padding: 0;
+	}
+
+	input, textarea {
+		margin: 5px;
+		padding: 5px 10px 5px 10px;
+		@include border-radius(3px);
+		@include drm-form-state();
+	}
+
+	input {
+		width: 80%;
+	}
+
+	textarea {
+		width: 100%;
+	}
+
+	input[type="submit"], button {		
+		margin: 5px;
+		@include drm-button-solid($drm-blue, white, 180px, null, 3px, $drm-blue, inline-block);
+	}
+}

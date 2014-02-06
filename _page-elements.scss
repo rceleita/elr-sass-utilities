@@ -527,4 +527,52 @@
 			@include drm-square(125px);
 		}	
 	}
+
+	.drm-modal {
+		background-color: white;
+		border: 1px solid $grey;
+		padding: 0;
+		width: 30%;
+		top: 100px;
+		left: 35%;
+		position: absolute;
+		@include border-radius(5px);
+
+		.header {
+			@extend %drm-container-full-width;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			border-bottom: 1px solid $light-grey;
+		}
+
+		.body {
+			@extend %drm-container-full-width;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			border-bottom: 1px solid $light-grey;
+		}
+
+		.footer {
+			@extend %drm-container-full-width;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		form {
+			@include drm-tabular-form();
+		}
+
+		button {		
+			@include drm-button-solid($drm-blue, white, 180px, left, 3px, $drm-blue);
+		}
+
+		.video-holder {
+			@extend %drm-center-block;
+			width: 90%;
+
+			iframe {
+				width: 100%;
+			}
+		}
+	}
 }
