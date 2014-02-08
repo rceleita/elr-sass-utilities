@@ -585,6 +585,7 @@
 	background-color: $bk-color;
 	color: $color;
 	display: none;
+	min-height: 50px;
 	@include border-radius(5px);
 	@include box-sizing(border-box);
 	@include drm-em-font(14);

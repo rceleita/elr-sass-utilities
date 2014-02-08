@@ -202,10 +202,11 @@
 		position: relative;
 		
 		&:after {
-			content: "v";
+			content: "\25BE";
 			position: absolute;
 			right: 5%;
 			font-weight: bold;
+			line-height: 1.9em;
 			@include drm-em-font(12);
 		}
 	}
@@ -214,10 +215,11 @@
 		position: relative;
 		
 		&:after {
-			content: ">";
+			content: "\25B8";
 			position: absolute;
 			right: 5%;
 			font-weight: bold;
+			line-height: 1.9em;
 			@include drm-em-font(12);
 		}
 	}
@@ -499,7 +501,7 @@
 		@include drm-button-solid($bk-color, $color, 100%);
 		
 		&:after {
-			content: "v";
+			content: "\25BE";
 			position: absolute;
 			right: 5%;
 		}
