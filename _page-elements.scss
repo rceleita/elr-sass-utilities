@@ -586,6 +586,7 @@
 	color: $color;
 	display: none;
 	min-height: 50px;
+	z-index: 100;
 	@include border-radius(5px);
 	@include box-sizing(border-box);
 	@include drm-em-font(14);

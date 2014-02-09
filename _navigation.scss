@@ -187,6 +187,7 @@
 			position: absolute;
 			width: 120%;
 			display: none;
+			z-index: 100;
 			@include drm-nav-bar-solid-stacked($text-color, $background-color, left, $divider-color);
 
 			> li ul {
@@ -194,6 +195,7 @@
 				position: absolute;
 				left: 100%;
 				top: 0;
+				z-index: 100;
 			}
 		}
 	}
@@ -518,6 +520,7 @@
 		position: absolute;
 		padding: 5px 0 5px 0;
 		display: none;
+		z-index: 100;
 		@include border-radius(3px);
 		@include drm-nav-bar-solid-stacked($bk-color, $color, left, $divider-color);
 	}
@@ -549,6 +552,7 @@
 		padding: 5px 0 5px 0;
 		top: 100%;
 		display: none;
+		z-index: 100;
 		@include border-radius($border-radius);
 		@include drm-nav-bar-solid-stacked($bk-color, $color, left, $divider-color);
 	}
@@ -559,9 +563,9 @@
 	width: $width;
 	position: absolute;
 	left: 0;
-	overflow-y: scroll;
 	height: 100%;
 	background-color: $bk-color;
+	z-index: 100;
 	@include box-sizing(border-box);
 
 	ul {
