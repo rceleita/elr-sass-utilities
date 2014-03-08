@@ -596,7 +596,7 @@
 			position: absolute;
 			top: 20px;
 			left: 200px;
-			@include drm-triangle(right, 20px, half, $drm-blue);
+			@include drm-triangle(right, 20px, half, $bk-color);
 		}
 	} @elseif $direction == "top" {
 		bottom: 55px;
@@ -606,7 +606,7 @@
 			position: absolute;
 			bottom: -10px;
 			left: (200px / 2) - 10;
-			@include drm-triangle(bottom, 20px, half, $drm-blue);
+			@include drm-triangle(bottom, 20px, half, $bk-color);
 		}	
 	} @elseif $direction == "bottom" {
 		&:before {
@@ -614,7 +614,7 @@
 			position: absolute;
 			top: -10px;
 			left: (200px / 2) - 10;
-			@include drm-triangle(top, 20px, half, $drm-blue);
+			@include drm-triangle(top, 20px, half, $bk-color);
 		}
 	} @elseif $direction == "right" {
 		top: -13px;
@@ -625,9 +625,174 @@
 			position: absolute;
 			top: 20px;
 			left: -10px;
-			@include drm-triangle(left, 20px, half, $drm-blue);
+			@include drm-triangle(left, 20px, half, $bk-color);
 		}
 	} @else {
-		@warn "#{error("That's not a context box type!")}";
+		@warn "#{error("That's not a popover direction!")}";
 	} 
+}
+
+@mixin drm-simple-slider() {
+    @extend %drm-center-block;
+    margin-top: 50px;
+    margin-bottom: 0;
+    z-index: -1;
+    width: 700px;
+    height: 350px;
+    box-sizing: border-box;
+    @include drm-clearfix;
+
+	.drm-simple-slide-holder {  
+	    @extend %drm-reset-box;
+	    position: relative;
+	    width: 700px;
+	    height: 350px;
+	    overflow: hidden;
+	    box-sizing: border-box;
+	    @include drm-clearfix;
+	}
+
+	.drm-simple-slide {
+	    @extend %drm-reset-box;
+	    z-index: 0;
+	    width: 700px;
+	    height: 350px;
+	    box-sizing: border-box;
+
+	    figure {
+	        @extend %drm-reset-box;
+	        width: 100%;
+	        height: 100%;
+	        position: relative;
+	        box-sizing: border-box;
+
+	        img {
+	            width: 100%;
+	            height: 100%;
+	        }
+
+	        figcaption {
+	            position: absolute;
+	            top: 75%;
+	            left: 0;
+	            color: $dark-grey;
+	            padding: 10px 10px 10px 20px;
+	            margin: 0;
+	            width: 80%;
+	            box-sizing: border-box;
+	            font-weight: bold;
+	            @include drm-background-transparent(white, 0.5);
+	        }
+	    }
+	}   
+
+	.drm-simple-slider-list {
+	    @extend %drm-reset-box;
+	    position: absolute;
+	    text-align: center;
+	    z-index: 1;
+	    width: 700px;
+	    bottom: 10px;
+	    box-sizing: border-box;
+
+	    button {
+	        text-decoration: none;
+	        border: none;
+	        cursor: pointer;
+	        margin: 0 1px 0 1px;
+	        padding: 0;
+	        @include drm-circle(10px, inline-block);    
+	        box-sizing: border-box;
+	        @include drm-background-transparent(white, 0.5);
+
+	        &:hover, &:focus {
+	            background-color: white;
+	        }
+
+	        &.active {
+	            background-color: $drm-blue;
+	        }
+	    }
+	}
+
+	.drm-simple-slider-nav {
+	    margin: 0;
+	    padding: 0 20px 0 20px;
+	    z-index: 1;
+	    width: 100%;
+	    @include drm-vertically-center(350px, 64px);
+	    box-sizing: border-box;
+	    @include drm-clearfix;
+
+	    button {
+	        @extend %drm-reset-box;
+	        border: none;
+	        cursor: pointer;
+	        @include opacity(.3);
+	        @include drm-square(64px);
+
+	        &:hover, &:focus {
+	            @include opacity(1);
+	        }
+	    }
+
+	    .drm-simple-slide-prev {
+	        float: left;
+	        background: image-url("previous.png") no-repeat center transparent;
+	    }
+
+	    .drm-simple-slide-next {
+	        float: right;
+	        background: image-url("next.png") no-repeat center transparent; 
+	    }
+	}
+}
+
+@mixin drm-tooltip($direction, $bk-color: $link-color, $color: white, $width: 100px) {
+    width: $width;
+    padding: 5px 10px 5px 10px;
+    position: absolute;
+    background-color: $bk-color;
+    color: $color;
+    z-index: 100;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    @include drm-em-font(12);
+
+    @if $direction == "left" {
+        &:before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: $width;
+            @include drm-triangle(right, 10px, half, $bk-color);
+        }
+    } @elseif $direction == "top" {
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: ($width / 2) - 5;
+            @include drm-triangle(bottom, 10px, half, $bk-color);
+        }   
+    } @elseif $direction == "bottom" {
+        &:before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: ($width / 2) - 5;
+            @include drm-triangle(top, 10px, half, $bk-color);
+        }
+    } @elseif $direction == "right" {    
+        &:before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: -5px;
+            @include drm-triangle(left, 10px, half, $bk-color);
+        }
+    } @else {
+        @warn "#{error("That's not a popover direction!")}";
+    } 
 }

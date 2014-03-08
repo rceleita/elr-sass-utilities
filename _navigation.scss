@@ -24,6 +24,10 @@
 			transition: all, .3s;
 			@include drm-em-font(14);
 
+			&.active {
+				color: $hover-color
+			}
+
 			&.text-disabled {
 				color: $light-grey;
 				cursor: not-allowed;
@@ -61,12 +65,18 @@
 		margin: 0;
 		background-color: $background-color;
 
+		&.active {
+			background-color: $text-color;
+			color: $link-color;
+		}
+
 		&:visited {
 			color: $text-color;
 		}
 
 		&:hover, &:focus {
 			background-color: $text-color;
+			color: $link-color;
 		}	
 	}
 }
@@ -79,11 +89,18 @@
 		display: block;
 		background-color: $background-color;
 
+		&.active {
+			color: $background-color;
+			background-color: $text-color;
+		}
+
 		&:visited {
 			color: $text-color;
+			background-color: $background-color;
 		}
 
 		&:hover, &:focus {
+			color: $background-color;
 			background-color: $text-color;
 		}	
 	}
@@ -91,7 +108,7 @@
 
 // creates a nav-bar with a pill shaped button that shows on hover
 
-@mixin drm-nav-bar-pills($text-color: $link-color, $hover-color: white, $align: left ) {
+@mixin drm-nav-bar-pills($text-color: $link-color, $hover-color: white, $align: left, $border: none ) {
 	@include drm-nav-bar($text-color, $hover-color, $align);
 
 	li {
@@ -99,15 +116,26 @@
 
 		&:last-child {
 			margin-right: 0;
-		}		
+		}	
 	}
 
 	a {
 		color: $text-color;
 		border-radius: 5px;
 
+		@if $border != none {
+			border: 1px solid $border;		
+		} @else {
+			border: none;
+		}
+
 		&:visited {
 			color: $text-color;
+		}
+
+		&.active {
+			background-color: $text-color;
+			color: $hover-color;
 		}
 		
 		&:hover, &:focus {
@@ -117,8 +145,8 @@
 	}
 }
 
-@mixin drm-nav-bar-pills-stacked($text-color: $link-color, $hover-color: white, $align: left ) {
-	@include drm-nav-bar-pills($text-color, $hover-color, $align);
+@mixin drm-nav-bar-pills-stacked($text-color: $link-color, $hover-color: white, $align: left, $border: none ) {
+	@include drm-nav-bar-pills($text-color, $hover-color, $align, $border);
 
 	li {
 		float: none;
@@ -137,8 +165,8 @@
 
 // creates a nav-bar with pill shaped buttons
 
-@mixin drm-nav-bar-pills-solid($text-color: white, $background-color: $link-color, $align: left) {
-	@include drm-nav-bar-pills($text-color, $background-color, $align);
+@mixin drm-nav-bar-pills-solid($text-color: white, $background-color: $link-color, $align: left, $border: none) {
+	@include drm-nav-bar-pills($text-color, $background-color, $align, $border);
 
 	li {
 		margin-left: 5px;
@@ -153,8 +181,8 @@
 	}
 }
 
-@mixin drm-nav-bar-pills-solid-stacked($text-color: white, $background-color: $link-color, $align: left) {
-	@include drm-nav-bar-pills-stacked($text-color, $background-color, $align);
+@mixin drm-nav-bar-pills-solid-stacked($text-color: white, $background-color: $link-color, $align: left, $border: none) {
+	@include drm-nav-bar-pills-stacked($text-color, $background-color, $align, $border);
 
 	li {
 		margin-top: 5px;
@@ -170,7 +198,6 @@
 }
 
 @mixin drm-dropdown-nav($text-color: white, $background-color: $link-color, $divider-color: $light-grey) {
-	margin-bottom: 300px;
 	@include drm-nav-bar-solid();
 
 	li {
@@ -447,7 +474,7 @@
 	}	
 }
 
-@mixin drm-button-group($bk-color: $link-color, $color: white, $border-radius: 0) {
+@mixin drm-button-group($bk-color: $link-color, $color: white, $border-radius: 0, $border: none) {
 	@include drm-clearfix();
 
 	button {
@@ -461,11 +488,16 @@
 		text-decoration: none;
 		cursor: pointer;
 		margin: 0;
-		border: none;
 		text-shadow: none;
 		box-sizing: border-box;
 		transition: all, .3s ease-out;
 		box-shadow: none;
+
+		@if $border == 'none' {
+ 			border: none;
+		} @else {
+			border: 1px solid $border;
+		}
 
 		&:visited {
 			color: $color;
@@ -492,14 +524,18 @@
 	}
 }	
 
-@mixin drm-dropdown-button-solid($bk-color: $link-color, $color: white, $width: 40%, $divider-color: $light-grey) {
+@mixin drm-dropdown-button-solid($bk-color: $link-color, $color: white, $width: 40%, $border: none, $border-radius: 0, $divider-color: $light-grey) {
 	width: $width;
 	position: relative;
 
 	button {
 		margin: 0 0 5px 0;
 		position: relative;
-		@include drm-button-solid($bk-color, $color, 100%);
+		@if $border == none {			
+			@include drm-button-solid($bk-color, $color, 100%);
+		} @else {
+			@include drm-button-solid($bk-color, $color, 100%, center, $border-radius, $border);
+		}
 		
 		&:after {
 			content: "\25BE";
@@ -520,17 +556,26 @@
 		padding: 5px 0 5px 0;
 		display: none;
 		z-index: 100;
-		border-radius: 3px;
+		border-radius: $border-radius;
+		@if $border != none {
+			border: 1px solid $divider-color;
+			box-sizing: border-box;
+		}
 		@include drm-nav-bar-solid-stacked($bk-color, $color, left, $divider-color);
 	}
 }	
 
-@mixin drm-dropdown-button-split($bk-color: $link-color, $color: white, $divider-color: $light-grey, $border-radius: 0) {
+@mixin drm-dropdown-button-split($bk-color: $link-color, $color: white, $border-radius: 0, $border: none, $divider-color: $light-grey) {
 	position: relative;
+
+    .drm-dropdown-button-group {
+		margin: 0 0 5px 0;
+        @include drm-button-group($drm-blue, white, $border-radius, $border);
+    }
 
 	button {
 		position: relative;
-		margin: 0 0 5px 0;
+		margin: 0;
 
 		&:last-of-type {
 			border-left: 1px solid darken($bk-color, 5%);
@@ -553,6 +598,10 @@
 		display: none;
 		z-index: 100;
 		border-radius: $border-radius;
+		@if $border != none {
+			border: 1px solid $divider-color;
+			box-sizing: border-box;
+		}
 		@include drm-nav-bar-solid-stacked($bk-color, $color, left, $divider-color);
 	}
 }
@@ -574,4 +623,31 @@
 			padding: 10px 15px 10px 15px;
 		}
 	}	
+}
+
+@mixin drm-sticky-menu($position) {
+	@if $position == 'top' {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background-color: $dark-grey;
+        padding: 10px 10% 10px 10%;
+        box-sizing: border-box;
+        
+        a {
+            color: white;
+        }  
+	} @elseif $position == 'left' {
+		position: fixed;
+        top: 5%;
+        
+        @include drm-breakpoint(trenta) {
+        	left: 10%;
+        }
+
+        @include drm-breakpoint(venti) {
+        	left: 2.5%;
+        }
+	}
 }
