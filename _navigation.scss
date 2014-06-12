@@ -4,7 +4,7 @@
 
 // creates a nav-bar with a transparent background
 
-@mixin drm-nav-bar($text-color: $text-color, $hover-color: $link-color, $align: left) {
+@mixin drm-nav-bar($text-color: $text-color, $hover-color: $link-color, $align: left, $divider-color: $light-grey) {
 	@extend %drm-reset-box;
 	@include drm-clearfix();
 
@@ -14,60 +14,86 @@
 		display: block;
 		float: left;
 
-		a {
-			padding: 5px 10px 5px 10px;
-			width: 100%;
-			text-align: $align;
+		> ul {
 			color: $text-color;
-			text-decoration: none;
-			box-sizing: border-box;
-			transition: all, .3s;
-			@include drm-em-font(14);
+			padding-left: 0;
+			padding-right: 20px;
 
-			&.active {
-				color: $hover-color
+			li {
+				float: none;
+
+				&.divider {
+					@include drm-list-divider($divider-color);
+				}	
 			}
 
-			&.text-disabled {
-				color: $light-grey;
-				cursor: not-allowed;
+			a {
+				@include drm-em-font(12);
 			}
-
-			&:hover, &:focus {
-				color: $hover-color;
-				transition: all, .3s;
-			}	
 		}	
+	}
+
+	a {
+		padding: 5px 10px 5px 10px;
+		width: 100%;
+		text-align: $align;
+		color: $text-color;
+		text-decoration: none;
+		box-sizing: border-box;
+		transition: all, .3s;
+		@include drm-em-font(14);
+
+		&.active {
+			color: $hover-color
+		}
+
+		&.text-disabled {
+			color: $light-grey;
+			cursor: not-allowed;
+		}
+
+		&:hover, &:focus {
+			color: $hover-color;
+			transition: all, .3s;
+		}
 	}
 }
 
-@mixin drm-nav-bar-stacked($text-color: $text-color, $hover-color: $link-color, $align: left, $divider-color: $light-grey) {
+@mixin drm-nav-bar-stacked($text-color: $text-color, $hover-color: $link-color, $align: left) {
 	@include drm-nav-bar($text-color, $hover-color, $align);
 
 	li {
 		float: none;
 
-		&.divider {
-			@include drm-list-divider($divider-color);
-		}	
+		> ul {
+			padding: 0;
+
+			a {
+				padding-left: 20px;
+			}
+		}
 	}	
 }
 
 // creates a nav bar with a solid color background
 // hover state will invert text color and background color
 
-@mixin drm-nav-bar-solid($text-color: white, $background-color: $link-color, $align: center) {
-	background-color: $background-color;
+@mixin drm-nav-bar-solid($text-color: white, $background-color: $link-color, $align: center, $active-color: $hover-color) {
 	@include drm-nav-bar($text-color, $background-color, $align);
+
+	li > ul {
+		padding: 0;
+	}
 
 	a {
 		display: block;
 		margin: 0;
 		background-color: $background-color;
+		color: $text-color;
 
 		&.active {
-			background-color: $text-color;
-			color: $link-color;
+			background-color: $active-color;
+			color: $text-color;
 		}
 
 		&:visited {
@@ -75,34 +101,38 @@
 		}
 
 		&:hover, &:focus {
-			background-color: $text-color;
-			color: $link-color;
+			background-color: $active-color;
+			color: $text-color;
 		}	
 	}
 }
 
-@mixin drm-nav-bar-solid-stacked($text-color: white, $background-color: $link-color, $align: left, $divider-color: $light-grey) {
+@mixin drm-nav-bar-solid-stacked($text-color: white, $background-color: $link-color, $align: left, $active-color: $hover-color) {
 	background-color: $background-color;
-	@include drm-nav-bar-stacked($text-color, $background-color, $align, $divider-color);
+	@include drm-nav-bar-stacked($text-color, $background-color, $align);
+
+	li > ul {
+		padding: 0;
+	}
 
 	a {
 		display: block;
 		background-color: $background-color;
+		color: $text-color;
 
 		&.active {
-			color: $background-color;
-			background-color: $text-color;
+			background-color: $active-color;
+			color: $text-color;
 		}
 
 		&:visited {
 			color: $text-color;
-			background-color: $background-color;
 		}
 
 		&:hover, &:focus {
-			color: $background-color;
-			background-color: $text-color;
-		}	
+			background-color: $active-color;
+			color: $text-color;
+		}
 	}
 }
 
@@ -122,6 +152,7 @@
 	a {
 		color: $text-color;
 		border-radius: 5px;
+		width: 100%;
 
 		@if $border != none {
 			border: 1px solid $border;		
@@ -155,7 +186,11 @@
 
 		&:last-child {
 			margin-bottom: 0;
-		}	
+		}
+
+		> ul a {
+				padding-left: 20px;
+		}
 	}
 
 	a {
@@ -165,8 +200,8 @@
 
 // creates a nav-bar with pill shaped buttons
 
-@mixin drm-nav-bar-pills-solid($text-color: white, $background-color: $link-color, $align: left, $border: none) {
-	@include drm-nav-bar-pills($text-color, $background-color, $align, $border);
+@mixin drm-nav-bar-pills-solid($text-color: white, $background-color: $link-color, $align: left, $border: none, $active-color: $hover-color) {
+	@include drm-nav-bar-pills($text-color, $active-color, $align, $border);
 
 	li {
 		margin-left: 5px;
@@ -176,12 +211,26 @@
 		}	
 	}
 
+	ul>li {
+		margin: 5px 0 10px 0;
+	}
+
 	a {
 		background-color: $background-color;
+
+		&.active {
+			color: $text-color;
+			background-color: $active-color;
+		}
+		
+		&:hover, &:focus {
+			color: $text-color;
+			background-color: $active-color;
+		}
 	}
 }
 
-@mixin drm-nav-bar-pills-solid-stacked($text-color: white, $background-color: $link-color, $align: left, $border: none) {
+@mixin drm-nav-bar-pills-solid-stacked($text-color: white, $background-color: $link-color, $align: left, $border: none, $active-color: $hover-color) {
 	@include drm-nav-bar-pills-stacked($text-color, $background-color, $align, $border);
 
 	li {
@@ -194,6 +243,16 @@
 
 	a {
 		background-color: $background-color;
+
+		&.active {
+			color: $text-color;
+			background-color: $active-color;
+		}
+		
+		&:hover, &:focus {
+			color: $text-color;
+			background-color: $active-color;
+		}
 	}
 }
 
@@ -214,7 +273,7 @@
 			width: 120%;
 			display: none;
 			z-index: 100;
-			@include drm-nav-bar-solid-stacked($text-color, $background-color, left, $divider-color);
+			@include drm-nav-bar-solid-stacked($text-color, $background-color, left);
 
 			> li ul {
 				display: none;
@@ -262,7 +321,6 @@
 	color: $color;
 	font-weight: bold;
 	text-align: center;
-	display: $display;
 	padding: 10px 0 10px 0;
 	text-decoration: none;
 	cursor: pointer;
@@ -274,8 +332,13 @@
 	transition: all, .3s ease-out;
 
 	@if $center == center {
-		margin-left: auto;
-		margin-right: auto;
+		margin: 10px auto 10px auto;
+		display: block;
+	} @else {
+		margin-top: 10px;
+		margin-bottom: 10px;
+        margin-right: 5px;
+		display: $display;
 	}
 
 	&:visited {
@@ -308,7 +371,6 @@
 	color: $color;
 	font-weight: bold;
 	text-align: center;
-	display: $display;
 	padding: 10px 0 10px 0;
 	text-decoration: none;
 	cursor: pointer;
@@ -324,8 +386,13 @@
 	}
 
 	@if $center == center {
-		margin-left: auto;
-		margin-right: auto;
+		margin: 10px auto 10px auto;
+		display: block;
+	} @else {
+		margin-top: 10px;
+		margin-bottom: 10px;
+        margin-right: 5px;
+		display: $display;
 	}
 
 	&:visited {
@@ -353,18 +420,20 @@
 	cursor: pointer;
 	width: $width;
 	text-decoration: none;
-	display: $display;
 	text-align: center;
 	transition: all, .3s ease-out;
 	box-sizing: border-box;
 	border-radius: $border-radius;
-	@include drm-solid-drop-shadow(darken($color, 10%));	
+	@include drm-solid-drop-shadow(darken($color, 10%));
 
 	@if $center == center {
-		margin: 10px auto 10px auto;		
+		margin: 10px auto 10px auto;
+		display: block;
 	} @else {
 		margin-top: 10px;
 		margin-bottom: 10px;
+        margin-right: 5px;
+		display: $display;
 	}
 
 	&:visited {
@@ -381,8 +450,6 @@
 
 // glass button
 
-// pill button
-
 @mixin drm-pill-button-link($height: 50px, $color: white, $bk-color: $link-color, $width: 40%, $center: center, $border-color: none, $display: block) {
 	width: $width;
 	height: $height;
@@ -390,7 +457,6 @@
 	color: $color;
 	font-weight: bold;
 	text-align: center;
-	display: $display;
 	padding: 10px 0 10px 0;
 	text-decoration: none;
 	cursor: pointer;
@@ -402,8 +468,13 @@
 	transition: all, .3s ease-out;
 
 	@if $center == center {
-		margin-left: auto;
-		margin-right: auto;
+		margin: 10px auto 10px auto;
+		display: block;
+	} @else {
+		margin-top: 10px;
+		margin-bottom: 10px;
+        margin-right: 5px;
+		display: $display;
 	}
 
 	&:visited {
@@ -437,7 +508,6 @@
 	color: $color;
 	font-weight: bold;
 	text-align: center;
-	display: $display;
 	padding: 10px 0 10px 0;
 	text-decoration: none;
 	cursor: pointer;
@@ -454,10 +524,12 @@
 	}
 
 	@if $center == center {
-		margin: 10px auto 10px auto;		
+		margin: 10px auto 10px auto;
+		display: block;
 	} @else {
 		margin-top: 10px;
 		margin-bottom: 10px;
+		display: $display;
 	}
 
 	&:visited {
@@ -475,6 +547,7 @@
 }
 
 @mixin drm-button-group($bk-color: $link-color, $color: white, $border-radius: 0, $border: none) {
+	border-collapse: collapse;
 	@include drm-clearfix();
 
 	button {
@@ -493,14 +566,24 @@
 		transition: all, .3s ease-out;
 		box-shadow: none;
 
-		@if $border == 'none' {
+		@if $border == none {
  			border: none;
 		} @else {
 			border: 1px solid $border;
+			border-left: none;
 		}
 
 		&:visited {
 			color: $color;
+		}
+
+		&.active {
+			background-color: $color;
+			color: $bk-color;
+			text-decoration: none;
+			text-shadow: none;
+			box-shadow: none;
+			transition: all, .3s ease-in;			
 		}
 
 		&:hover {
@@ -515,6 +598,12 @@
 		@if $border-radius != 0 {
 			&:first-of-type {
 				border-radius: $border-radius 0 0 $border-radius;
+
+				@if $border == none {
+		 			border-left: none;
+				} @else {
+					border-left: 1px solid $border;
+				}
 			}
 
 			&:last-of-type {
@@ -529,7 +618,6 @@
 	position: relative;
 
 	button {
-		margin: 0 0 5px 0;
 		position: relative;
 		@if $border == none {			
 			@include drm-button-solid($bk-color, $color, 100%);
@@ -556,11 +644,18 @@
 		padding: 5px 0 5px 0;
 		display: none;
 		z-index: 100;
-		border-radius: $border-radius;
+
+		@if $border-radius > 5px {
+			border-radius: 5px;
+		} @else if $border-radius {
+			border-radius: $border-radius
+		}
+
 		@if $border != none {
 			border: 1px solid $divider-color;
 			box-sizing: border-box;
 		}
+
 		@include drm-nav-bar-solid-stacked($bk-color, $color, left, $divider-color);
 	}
 }	
@@ -570,7 +665,7 @@
 
     .drm-dropdown-button-group {
 		margin: 0 0 5px 0;
-        @include drm-button-group($drm-blue, white, $border-radius, $border);
+        @include drm-button-group(white, $drm-blue, $border-radius, $border);
     }
 
 	button {
@@ -578,7 +673,6 @@
 		margin: 0;
 
 		&:last-of-type {
-			border-left: 1px solid darken($bk-color, 5%);
 			padding-left: 10px;
 			padding-right: 10px;
 		}
@@ -597,11 +691,18 @@
 		top: 100%;
 		display: none;
 		z-index: 100;
-		border-radius: $border-radius;
+		
+		@if $border-radius > 5px {
+			border-radius: 5px;
+		} @else if $border-radius {
+			border-radius: $border-radius
+		}
+
 		@if $border != none {
 			border: 1px solid $divider-color;
 			box-sizing: border-box;
 		}
+		
 		@include drm-nav-bar-solid-stacked($bk-color, $color, left, $divider-color);
 	}
 }
@@ -625,7 +726,7 @@
 	}	
 }
 
-@mixin drm-sticky-menu($position) {
+@mixin drm-sticky-menu($position: 'top') {
 	@if $position == 'top' {
         position: fixed;
         left: 0;
@@ -637,7 +738,8 @@
         
         a {
             color: white;
-        }  
+        }
+
 	} @elseif $position == 'left' {
 		position: fixed;
         top: 5%;
@@ -649,5 +751,27 @@
         @include drm-breakpoint(venti) {
         	left: 2.5%;
         }
+	}
+}
+
+@mixin drm-back-to-top($bk-color: $link-color, $color: white) {
+	color: white;
+	position: fixed;
+	bottom: 5%;
+	right: 5%;
+	border: none;
+	cursor: pointer;
+	padding: 0 0 5px 0;
+	line-height: 0;
+	@include drm-background-transparent($bk-color, 0.7);
+	@include drm-square(50px, none, 3px);
+	@include drm-em-font(48);
+
+	@include drm-breakpoint(trenta) {
+		right: 10%;
+	}
+
+	&:hover {
+		@include drm-background-transparent($bk-color, 1);
 	}
 }

@@ -15,19 +15,20 @@ body {
 
 	@include drm-breakpoint(tall) {		
 		font-size: ($default-font-size + 2)#{px};
-		line-height: $default-line-height + .2;
+		line-height: $default-line-height + .5;
 	}
 }
 
-.wrapper {
-	margin: auto;
+.drm-wrapper {
+	@extend %drm-container;
+	margin-top: 20px;
 }	
 
 /*-----------------------------------------------------------------------------
 	Visibility
 -----------------------------------------------------------------------------*/	
 
-.hide {
+.drm-hide {
 	display: none;
 }
 
@@ -35,15 +36,15 @@ body {
 	Clear and Alignment
 -----------------------------------------------------------------------------*/
 
-.pull-left {
+.drm-pull-left {
 	float: left;
 }
 
-.pull-right {
+.drm-pull-right {
 	float: right;
 }
 
-.clear {
+.drm-clear {
 	@include drm-clearfix();
 }
 
@@ -51,68 +52,72 @@ body {
 	Typography
 -----------------------------------------------------------------------------*/
 
-.bold {
+.drm-bold {
 	font-weight: bold;
 }	
 
-.italic {
+.drm-italic {
 	font-style: italic;
 }	
 
-.underline {
+.drm-underline {
 	text-decoration: underline;
 }	
 
-.uppercase {
+.drm-uppercase {
 	text-transform: uppercase;
 }
 
-.smaller-text {
+.drm-capitalize {
+	text-transform: capitalize;
+}
+
+.drm-smaller-text {
 	@include drm-em-font(10);
 }
 
-.text-left {
+.drm-text-left {
 	text-align: left;
 }
 
-.text-right {
+.drm-text-right {
 	text-align: right;
 }
 
-.text-center {
+.drm-text-center {
 	text-align: center;
 }
 
-.text-justified {
+.drm-text-justified {
 	text-align: justify;
 }
 
-.text-muted {
+.drm-text-muted {
 	color: $muted-color;
 }
 
-.text-disabled {
+.drm-text-disabled {
 	color: $light-grey;
 }
 
-.text-danger {
+.drm-text-danger {
 	color: $danger-color;	
 }
 
-.text-error {
+.drm-text-error {
 	color: $danger-color;
 	font-weight: bold;
 }
 
-.text-info {
+.drm-text-info {
 	color: $info-color;
 }
 
-.text-warning {
+.drm-text-warning {
 	color: $warning-color;
 }
 
-.text-success {
+.drm-text-success {
 	color: $success-color;
 }
 
@@ -123,7 +128,7 @@ mark {
 	padding-right: 3px;
 }
 
-.highlight {
+.drm-highlight {
 	color: $link-color;
 }
 
@@ -156,7 +161,12 @@ pre {
 	border-radius: 3px;
 	white-space: pre-wrap;
 	word-wrap: break-word;
+	max-width: 800px;
 	@include drm-em-font(14);
+
+	@include drm-breakpoint(tall) {
+		width: 100%;
+	}
 }
 
 /*-----------------------------------------------------------------------------
@@ -164,6 +174,7 @@ pre {
 -----------------------------------------------------------------------------*/
 
 h1, h2, h3, h4, h5, h6 {
+	margin: 0;
 	font-weight: normal;
 }
 
@@ -185,11 +196,18 @@ h3 {
 	@include drm-em-font(18);
 }
 
+h4 {
+	padding: 5px 0 5px 0;
+	@include drm-em-font(16);	
+}
+
 h5 {
+	padding: 5px 0 5px 0;
 	@include drm-em-font(14);
 }
 
 h6 {
+	padding: 5px 0 5px 0;
 	@include drm-em-font(12);
 }
 
@@ -198,11 +216,13 @@ h6 {
 -----------------------------------------------------------------------------*/
 
 ul {
+	margin: 0;
 	padding: 10px 10px 10px 20px;
 	list-style: disc;	
 }
 
 ol {
+	margin: 0;
 	padding: 10px 10px 10px 20px;
 	list-style: decimal;
 }
@@ -213,27 +233,26 @@ li, dd, dt {
 }
 
 dl {
-	list-style: disc;
-	padding: 5px;
+	@extend %drm-reset-box;
 }
 
 dt {
 	font-weight: bold;
 }
 
-.unstyled-list {
-	@include drm-unstyled-list();
+.drm-unstyled-list {
+	@include drm-unstyled-list(left, no);
 }
 
-.inline-list {
+.drm-inline-list {
 	@include drm-inline-list();
 }
 
-.triangle-list {
+.drm-triangle-list {
 	@include drm-triangle-list();
 }
 
-.checked-list {
+.drm-checked-list {
 	@include drm-checked-list();
 }
 
@@ -255,48 +274,30 @@ a {
 }
 
 /*-----------------------------------------------------------------------------
-	Tables
------------------------------------------------------------------------------*/
-
-table { 
-	border-spacing: 0;
-	border-collapse: collapse;
-}
-
-td {
-	text-align: left;
-	font-weight: normal;
-}
-
-thead {
-	font-weight: bold;
-}
-
-/*-----------------------------------------------------------------------------
 	Alerts
 -----------------------------------------------------------------------------*/
 
-.info-alert {
+.drm-info-alert {
 	@include drm-context-box(info, 3px);
 }
 
-.danger-alert {
+.drm-danger-alert {
 	@include drm-context-box(danger, 3px);
 }
 
-.warning-alert {
+.drm-warning-alert {
 	@include drm-context-box(warning, 3px);
 }
 
-.success-alert {
+.drm-success-alert {
 	@include drm-context-box(success, 3px);
 }
 
-.muted-alert {
+.drm-muted-alert {
 	@include drm-context-box(muted, 3px);
 }
 
-.custom-alert {
+.drm-custom-alert {
 	@include drm-context-box(custom, 3px, $drm-blue);
 }
 
@@ -304,7 +305,7 @@ thead {
 	Images
 -----------------------------------------------------------------------------*/
 
-.thumbnail {
+.drm-thumbnail {
 	margin: 10px;
 	@include drm-thumbnail();
 }

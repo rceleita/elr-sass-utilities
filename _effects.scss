@@ -11,8 +11,13 @@
 // Creates a slightly transparent background with a hex color backup
 
 @mixin drm-background-transparent($color, $opacity: 0.7) {
-	background-color: $color;
-	background-color: rgba($color, $opacity);
+	@if $opacity == 1 {
+		background-color: $color;
+	} @else {
+		background-color: $color;
+		background-color: rgba($color, $opacity);
+	}
+
 }
 
 // Creates a slightly transparent border with a hex color backup
@@ -115,7 +120,7 @@
 	margin: auto;
 	box-sizing: border-box;
 	@include drm-border-transparent($color, $thickness);
-	transition: border, .3s, ease-out;
+	@include single-transition(border, .3s, ease-out);
 
 	img {
 		z-index: -10;
@@ -129,7 +134,7 @@
 
 	&:hover {
 		@include drm-border-transparent($hover-color, $thickness);
-		transition: border, .3s, ease-in;
+		@include single-transition(border, .3s, ease-in);
 	}
 }
 
@@ -165,11 +170,19 @@
 }
 
 @mixin drm-softer-thick-box-shadow($shadow-color: $dark-grey) {
-	box-shadow: $dark-grey 0 65px 46px -60px;
+	box-shadow: $shadow-color 0 58px 18px -53px;
 }
 
-@mixin drm-thumbnail($border-color: white, $width: 150px, $height: 125px) {
+@mixin drm-thumbnail($border-color: white, $width: 150px, $height: 125px, $border-radius: 0, $display: block) {
 	border: 5px solid $border-color;
 	box-shadow: $grey 0 0 0 1px;
-	@include drm-rectangle($width, $height);
+
+	@if $border-radius == 'round' {
+		@include drm-circle($width);
+	} @else if $border-radius != 0 {
+		@include drm-rectangle($width, $height, $display, $border-radius);
+	} @else if $border-radius == 0 {
+		@include drm-rectangle($width, $height, $display);
+	}
+
 }
