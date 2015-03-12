@@ -4,7 +4,7 @@
 
 @mixin drm-breakpoint($point) {
 
-@if $point == mercury {
+    @if $point == mercury {
     	@media screen and (min-width: $mercury) { @content; }
     } @else if $point == venus {
     	@media screen and (max-width: $venus) { @content; }
@@ -22,6 +22,8 @@
         @media screen and (max-width: $neptune) { @content; }
     } @else if $point == pluto {
         @media screen and (max-width: $pluto) { @content; }
+    } @else {
+        @media screen and (max-width: $point) { @content; }
     }
 }
 
