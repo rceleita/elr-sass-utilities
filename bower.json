@@ -1,0 +1,31 @@
+{
+  "name": "elr-sass-utilities",
+  "version": "1.0.0",
+  "homepage": "https://github.com/elr-utilities/elr-sass-utilities",
+  "authors": [
+    "Elizabeth Rogers <beth@elizabeth-rogers.com>"
+  ],
+  "description": "Sass Utilities",
+  "main": "dist/elr-sass-utilities.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "sass",
+    "mixins",
+    "css",
+    "ui"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src"
+  ],
+  "dependencies": {
+    "sass": ""
+  }
+}
