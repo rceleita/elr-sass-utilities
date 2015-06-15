@@ -14,7 +14,8 @@
     "sass",
     "mixins",
     "css",
-    "ui"
+    "ui",
+    "scss"
   ],
   "license": "MIT",
   "ignore": [
