@@ -1,6 +1,4 @@
-/*-----------------------------------------------------------------------------
-    Layout Classes
------------------------------------------------------------------------------*/
+// Layout Classes
 
 @mixin elr-layout-classes() {
     .elr-pull-left {
@@ -12,6 +10,10 @@
     }
 
     .elr-clear {
-        @include elr-clearfix();
+        @include elr-clearfix;
+    }
+
+    .elr-center-block {
+        @include elr-center-block;
     }
 }

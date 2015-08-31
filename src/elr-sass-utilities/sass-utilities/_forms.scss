@@ -1,10 +1,31 @@
-/*-----------------------------------------------------------------------------
-    Forms
------------------------------------------------------------------------------*/
+// Forms
 
 @mixin elr-form($glow: $elr-blue, $bk-color: $lightest-grey, $border: $grey, $button-color: $dark-grey) {
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
+
+    .elr-container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+        .elr-col-full {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
+        .elr-col-half:first-child,
+        .elr-col-third:first-child,
+        .elr-col-quarter:first-child {
+            padding-left: 0 !important;
+        }
+
+        .elr-col-half:last-child,
+        .elr-col-third:last-child,
+        .elr-col-quarter:last-child {
+            padding-right: 0 !important;
+        }
+    }
 
     small {
         display: block;
@@ -97,8 +118,6 @@
     .elr-control-label {
         margin: 0;
         padding: 5px 0;
-        font-weight: normal;
-        @include elr-em-font(18);
     }
 
     .elr-tabular-control-group {
@@ -153,7 +172,7 @@
             float: left;
 
             input[type="checkbox"], input[type="radio"] {
-                margin-top: 3px;
+                margin-top: 14px;
                 margin-left: 10px;
             }
         }
@@ -246,7 +265,7 @@
         display: inline-block;
 
         input[type="checkbox"], input[type="radio"] {
-            margin-top: 0;
+            margin-top: 14px;
         }
     }
 
@@ -261,5 +280,87 @@
             color: white;
             transition: none;
         }
+    }
+}
+
+@mixin elr-formstack-reset {
+    // Formstack Form reset
+    .fsForm {
+        border: 0 !important;
+        color: $text-color;
+        width: 100% !important;
+    }
+
+    .fsBody .fsLabel, .fsBody label {
+        font-weight: normal !important;
+    }
+
+    .fsForm input[type=text],
+    .fsForm input[type=name],
+    .fsForm input[type=email],
+    .fsForm input[type=tel],
+    .fsForm textarea {
+        width: 100% !important;
+        background-image: none !important;
+        max-width: none !important;
+        box-shadow: none !important;
+    }
+
+    .fsPage:after,
+    .fsPage:before,
+    .fsSection:after,
+    .fsSection:before,
+    .fsFieldRow:after,
+    .fsFieldRow:before {
+        content: "";
+        display: table;
+    }
+
+    .fsPage:after,
+    .fsSection:after,
+    .fsFieldRow:after {
+        clear: both;
+    }
+
+    .fsForm .fsSubmit {
+        background: none !important;
+        text-align: right;
+    }
+
+    .fsForm .fsSubmit input {
+        border: 0 !important;
+        padding: 0.5em 1em !important;
+        font-weight: normal !important;
+        border-radius: 2px !important;
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+    }
+
+    .fsForm input.fsField[type="email"]:focus,
+    .fsForm input.fsField[type="file"]:focus,
+    .fsForm input.fsField[type="number"]:focus,
+    .fsForm input.fsField[type="tel"]:focus,
+    .fsForm input.fsField[type="text"]:focus,
+    .fsForm textarea.fsField:focus {
+        border-color: #ffd100 !important;
+    }
+
+    .fsError {
+        border: 0 !important;
+        background: 0 !important;
+        color: #e7402f !important;
+        text-align: left !important;
+    }
+
+    .fsForm {
+        color: black !important;
+    }
+
+    .fsboxshadow .fsBody .fsForm {
+        box-shadow: none !important;
+    }
+
+    .fsFieldFocused {
+        background-color: transparent !important;
     }
 }

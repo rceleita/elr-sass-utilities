@@ -1,35 +1,51 @@
-/*-----------------------------------------------------------------------------
-    Responsive Classes
------------------------------------------------------------------------------*/
+// Responsive Classes
 
 @mixin elr-responsive-classes() {
+    .elr-show {
+        display: block !important;
+    }
+
     .elr-hide {
-        display: none;
+        display: none !important;
     }
 
     .elr-hide-desktop {
-        @include elr-breakpoint($mercury) {
-            display: none;
-        }
-
-        @include elr-breakpoint($venus) {
-            display: none;
-        }
-
-        @include elr-breakpoint($saturn) {
-            display: block;
+        @include elr-breakpoint($saturn - 1, 'min-width') {
+            display: none !important;
         }
     }
 
     .elr-hide-tablet {
-        @include elr-breakpoint($saturn) {
-            display: none;
+        @include elr-breakpoint($saturn, 'max-width', $neptune - 1, 'min-width') {
+            display: none !important;
         }
     }
 
     .elr-hide-mobile {
-        @include elr-breakpoint($neptune) {
-            display: none;
+        @include elr-breakpoint(neptune) {
+            display: none !important;
+        }
+    }
+
+    .elr-show-desktop {
+        @include elr-breakpoint($saturn, 'max-width') {
+            display: none !important;
+        }
+    }
+
+    .elr-show-tablet {
+        @include elr-breakpoint($saturn, 'min-width') {
+            display: none !important;
+        }
+
+        @include elr-breakpoint($neptune, 'max-width') {
+            display: none !important;
+        }
+    }
+
+    .elr-show-mobile {
+        @include elr-breakpoint($neptune, 'min-width') {
+            display: none !important;
         }
     }
 }
