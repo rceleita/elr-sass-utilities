@@ -1,6 +1,4 @@
-/*-----------------------------------------------------------------------------
-    Lists
------------------------------------------------------------------------------*/
+// Lists
 
 // An unstyled list
 
@@ -64,9 +62,10 @@
     }
 }
 
-@mixin elr-inline-list() {
+@mixin elr-inline-list($align: left) {
     padding: 0;
     margin: 0;
+    text-align: $align;
 
     li {
         display: inline-block;
@@ -124,6 +123,7 @@
 
     li {
         margin-left: 0;
+        padding-left: 10px;
 
         &:before {
             content: $icon;
@@ -131,6 +131,23 @@
             padding-right: 10px;
             font-size: $icon-font-size;
             vertical-align: middle;
+        }
+    }
+}
+
+@mixin elr-font-awesome-list($icon, $icon-font-size: 80%) {
+    @include elr-unstyled-list;
+
+    li {
+        margin-left: 0;
+        padding-left: 10px;
+
+        &:before {
+            display: inline;
+            padding-right: 10px;
+            font-size: $icon-font-size;
+            vertical-align: middle;
+            @include elr-font-awesome($icon);
         }
     }
 }
