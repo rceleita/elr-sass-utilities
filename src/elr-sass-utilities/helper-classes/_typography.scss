@@ -2,132 +2,44 @@
 
 @mixin elr-typography-classes() {
 
-    mark {
-        background-color: $main-color;
-        color: white;
-        padding-left: 3px;
-        padding-right: 3px;
-    }
+    .elr-bold { font-weight: bold; }
 
-    p {
-        margin: 0;
-        padding: 0 0 10px 0;
-        @include elr-em-font($default-font-size);
+    .elr-italic { font-style: italic; }
 
-        @include elr-breakpoint(neptune) {
-            @include elr-em-font($default-font-size - 2);
-        }
-    }
+    .elr-underline { text-decoration: underline; }
 
-    small {
-        @include elr-em-font($default-font-size - 4);
-    }
+    .elr-uppercase { text-transform: uppercase; }
 
-    blockquote {
-        margin: 0;
-        padding: 10px;
-        font-style: italic;
-    }
+    .elr-capitalize { text-transform: capitalize; }
 
-    cite {
-        font-style: normal;
-    }
+    .elr-smaller-text { font-size: 80%; }
 
-    pre {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        background-color: $lightest-grey;
-        border: 1px solid $light-grey;
-        padding: 10px;
-        border-radius: 3px;
-        white-space: pre-wrap;
-        word-wrap: break-word;
-        @include elr-em-font(14);
+    .elr-text-left { text-align: left; }
 
-        @include elr-breakpoint(neptune) {
-            width: 100%;
-        }
-    }
+    .elr-text-right { text-align: right; }
 
-    a {
-        text-decoration: underline;
-        color: $link-color;
+    .elr-text-center { text-align: center; }
 
-        &:hover, &:focus {
-            text-decoration: none;
-        }
-    }
+    .elr-text-justified { text-align: justify; }
 
-    .elr-bold {
-        font-weight: bold;
-    }   
+    .elr-text-muted { color: $muted-color; }
 
-    .elr-italic {
-        font-style: italic;
-    }   
+    .elr-text-disabled { color: $light-grey; }
 
-    .elr-underline {
-        text-decoration: underline;
-    }   
-
-    .elr-uppercase {
-        text-transform: uppercase;
-    }
-
-    .elr-capitalize {
-        text-transform: capitalize;
-    }
-
-    .elr-smaller-text {
-        @include elr-em-font(10);
-    }
-
-    .elr-text-left {
-        text-align: left;
-    }
-
-    .elr-text-right {
-        text-align: right;
-    }
-
-    .elr-text-center {
-        text-align: center;
-    }
-
-    .elr-text-justified {
-        text-align: justify;
-    }
-
-    .elr-text-muted {
-        color: $muted-color;
-    }
-
-    .elr-text-disabled {
-        color: $light-grey;
-    }
-
-    .elr-text-danger {
-        color: $danger-color;   
-    }
+    .elr-text-danger { color: $danger-color; }
 
     .elr-text-error {
         color: $danger-color;
-        font-weight: bold;
+        font-weight: $bold;
     }
 
-    .elr-text-info {
-        color: $info-color;
-    }
+    .elr-text-info { color: $info-color; }
 
-    .elr-text-warning {
-        color: $warning-color;
-    }
+    .elr-text-warning { color: $warning-color; }
 
-    .elr-text-success {
-        color: $success-color;
-    }
+    .elr-text-success { color: $success-color; }
 
-    .elr-highlight {
-        color: $main-color;
-    }
+    .elr-highlight { color: $accent-color; }
+
+    .elr-avoid-wrap { display: inline-block; }
 }
